@@ -1,16 +1,33 @@
 {
+  "name": "jass-ws24",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "next build",
     "dev": "next dev",
-    "start": "next start"
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "next": "latest",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "@contentstack/json-rte-serializer": "^2.0.6",
+    "@graphcms/rich-text-react-renderer": "^0.6.1",
+    "html-react-parser": "^5.1.8",
+    "next": "14.1.0",
+    "nodemailer": "^6.9.12",
+    "prettier": "^3.2.5",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-icons": "^5.0.1",
+    "sass": "^1.70.0"
   },
-  "engines": {
-    "node": ">=18"
+  "devDependencies": {
+    "@next/eslint-plugin-next": "^14.0.4",
+    "eslint": "^8",
+    "eslint-config-next": "14.1.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-lit-a11y": "^1.1.0-next.1",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-unicorn": "^50.0.1"
   }
 }
