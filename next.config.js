@@ -4,20 +4,30 @@ module.exports = {
   async redirects() {
     return [
       {
-        source: "/about",
-        destination: "/about/ucd",
+        source: "/calendar",
+        destination: "/calendar",
         permanent: true,
       },
       {
-        source: "/events",
-        destination: "/events/chapter",
+        source: "/meet-us",
+        destination: "/meetus",
         permanent: true,
       },
       {
-        source: "/members",
-        destination: "/members/new",
+        source: "/components",
+        destination: "/components",
         permanent: true,
       },
+      {
+        source: "/join-us",
+        destination: "/joinus",
+        permanent: true,
+      },
+      {
+        source: "/contact-us",
+        destination: "/contact",
+        permanent: true,
+      }
     ];
   },
   images: {
