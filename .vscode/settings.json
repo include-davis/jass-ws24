@@ -1,0 +1,17 @@
+{
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit"
+    },
+    "eslint.validate": [
+        "javascript"
+    ],
+    "[javascriptreact]": {
+        "editor.indentSize": 4
+    },
+    "[javascript]": {
+        "editor.indentSize": 4
+    },
+    "[jsonc]": {
+        "editor.indentSize": 4
+    }
+}
