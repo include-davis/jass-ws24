@@ -2,6 +2,6 @@ import { Component } from "react";
 
 export default function Home() {
   return (
-    <Component/>
+    <h1>Hello World</h1>
   );
 }
