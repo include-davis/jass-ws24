@@ -1,0 +1,56 @@
+@use "src/styles/mixins.scss";
+
+
+#contact-us{
+    display: flex;
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+
+
+.contactTitle{
+    font-size: 40px;
+    align-items: center;
+}
+
+
+.contactText{
+    font-size: 20px;
+    
+}
+.contactContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    
+}
+
+
+.leftSection{
+    flex: 1;
+    padding: 20px;
+    
+
+}
+
+.rightSection{
+    flex: 1;
+    border: 1px solid #ccc;
+    padding: 37px;
+    width: 70%;
+    height: 60%;
+    max-width: 878px;
+    max-height: 718px;
+    
+  
+    border-radius: 5px;
+    background-color: #afafaf;
+
+
+}
+
+.contactForm{
+    font-size: 30px;
+}
