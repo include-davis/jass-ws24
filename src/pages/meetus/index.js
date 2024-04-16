@@ -1,4 +1,5 @@
-import styles from './meetus.css';
+import '@/styles/pages/meetus.module.scss';
+//mport styles from '@/styles/pages/meetus/module.scss';
 
 export default function MeetUs() {
     return (
