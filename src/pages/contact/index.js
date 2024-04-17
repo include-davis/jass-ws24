@@ -4,7 +4,7 @@ import styles from "@/styles/pages/contact/contact.module.scss"
 
 export default function Contact() {
   return (
-    <><body id="whole">
+    <><body className={styles.main}>
       <div className={styles.contactContainer}>
       <div className={styles.leftSection}>
       <div id="contact-us">
@@ -20,19 +20,35 @@ export default function Contact() {
       <div className={styles.rightSection}>
       <div id="container">
         <h1 className={styles.contactForm}>Contact Form</h1>
-        <label htmlFor="name">Name</label>
-        <input type="text" id="name" name="name" />
+
+        <div className={styles.inputRow}>
+        <div className={styles.inputContainer}>
+          <label htmlFor="name" className={styles.label}>Name</label>
         
-        <label htmlFor="email">Email</label>
-        <input type="text" id="email" name="email" />
+          <input type="text" id="name" name="name"  className={`${styles.inputText} ${styles.nameInput}`} />
+        </div>
+
+
+
+        <div className={styles.inputContainer}>
+        <label htmlFor="email" className={styles.label}>Email</label>
+        <input type="text" id="email" name="email"  className={`${styles.inputText} ${styles.emailInput}`} />
+        </div>
+        </div>
+
+
+
+        <br></br>
+        <div className={styles.inputContainer}>
+          <label htmlFor="subject" className={styles.label}>Subject</label>
+          <input type="text" id="subject" name="subject" className={`${styles.inputText} ${styles.subjectInput}`} />
+        </div>
         <br></br>
 
-        <label htmlFor="subject">Subject</label>
-        <input type="text" id="subject" name="subject" />
-        <br></br>
-
-        <label htmlFor="textbook">Textbook</label>
-        <input type="text" id="textbook" name="textbook" />
+        <div className={styles.inputContainer}>
+          <label htmlFor="textbook" className={styles.label}>Textbook</label>
+          <input type="text" id="textbook" name="textbook" className={`${styles.inputText} ${styles.textbookInput}`} />
+        </div>
 
 
 
