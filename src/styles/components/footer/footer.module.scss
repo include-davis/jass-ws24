@@ -1,1 +1,50 @@
 @use "src/styles/mixins.scss";
+  .footer {
+    font-family: Arial;
+  }
+
+  .footerTop {
+    background-color: rgb(2,39,81);
+    color: rgb(255, 255, 255);
+  }
+
+  .submitButton {
+    color: rgb(2,39,81);
+
+    background-color: rgb(244,127,143);
+    border-radius: 70px;
+    border: none;
+    width: auto;
+    height: auto;
+    font-size: auto;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .links{
+    font-weight: bold;
+  }
+
+  .link{
+    font-weight: bold;
+  }
+
+
+
+
+
+
+
+
+  .credit {
+    background-color: rgb(244,127,143);
+    width: 1440px;
+    height: 64px;
+    padding: 20px;
+  }  
+  
+  .creditText {
+    color: rgb(64,68,71);
+    font-size: 18px;
+  }
+
