@@ -4,7 +4,7 @@ import styles from "@/styles/pages/contact/contact.module.scss"
 
 export default function Contact() {
   return (
-    <><body className={styles.main}>
+    <><div className={styles.main}>
       <div className={styles.contactContainer}>
       <div className={styles.leftSection}>
       <div id="contact-us">
@@ -59,7 +59,7 @@ export default function Contact() {
 
       </div>
 
-    </body>
+    </div>
 
 
 

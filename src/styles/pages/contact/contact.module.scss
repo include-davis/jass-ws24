@@ -1,6 +1,7 @@
 @use "src/styles/mixins.scss";
 
 
+
 #contact-us{
     display: flex;
     font-family: 'Courier New', Courier, monospace;
@@ -81,6 +82,8 @@
     width: 100%;
     padding: 10px;
     margin-top: 5px;
+    word-wrap: break-word;
+    resize: none;
 }
 
 .nameInput {
@@ -114,13 +117,32 @@
 }
 
 .textbookInput{
-    width: 97%;
-    height: 260px;
-    border-radius: 8px;
+    display: flex;
+    align-items: flex-start;
+
+    width: 100%;
+    height: 50vh;
+    max-height: 240px;
+    border-radius: 15px;
     border: 1px solid #afafaf;
     background-color: white;
+    box-sizing: border-box;
 
 }
+.textbookInput textarea {
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 10px;
+    resize: none;
+    box-sizing: border-box;
+    word-wrap: break-word; /* Allow long words to break and wrap */
+    overflow-wrap: break-word; /* For older browsers */
+    align-items: flex-start; /* Align text to the top */
+    vertical-align: top; /* Alternative way to align text to the top */
+    line-height: 1.5; /* Adjust line height for better readability */
+}
+
 .label{
     font-weight: bold;
     font-size: 19px;
