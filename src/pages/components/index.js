@@ -1,5 +1,7 @@
 import styles from "@/styles/components/footer/footer.module.scss"
 
+
+
 export default function Footer() {
     return (
       <div className = {styles.footer}>
@@ -9,14 +11,16 @@ export default function Footer() {
             <input className = {styles.input} type = "email" placeholder = "Enter email" />
             <button className={styles.submitButton}>Submit</button>
           </div>
+
           <div className={styles.links}>
-            <p className={styles.link}>Home</p>
-            <p className={styles.link}>Calendar</p>
-            <p className={styles.link}>Meet Us</p>
-            <p className={styles.link}>Media</p>
-            <p className={styles.link}>Youtube</p>
-            <p className={styles.link}>Google Photos</p>
+            <p>Home</p>
+            <p>Calendar</p>
+            <p>Meet Us</p>
+            <p>Media</p>
+            <p>Youtube</p>
+            <p>Google Photos</p>
           </div>
+
           <div className={styles.contact}>
             <p>JASS at UC Davis</p>
             <a href="mailto:jassofficers@ucdavis.edu">jassofficers@ucdavis.edu</a>
@@ -24,12 +28,11 @@ export default function Footer() {
           </div>
         </div>
 
-
-
         <div className={styles.credit}>
-          <p className = {styles.creditText}>Made with love by #include at Davis c 2024</p>
+          <p className = {styles.creditText}>Made with &#x2661; by #include at Davis &#9426; 2024</p>
         </div>
       </div>
+
 
     );
   }

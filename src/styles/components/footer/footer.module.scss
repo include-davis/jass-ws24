@@ -1,11 +1,16 @@
 @use "src/styles/mixins.scss";
+
+@import url('https://fonts.googleapis.com/css2?family=Gaegu&display=swap');
+
   .footer {
-    font-family: Arial;
+    font-family: 'Gaegu';
   }
 
   .footerTop {
     background-color: rgb(2,39,81);
-    color: rgb(255, 255, 255);
+    p, h1{
+        color: white;
+    }
   }
 
   .submitButton {
@@ -22,12 +27,8 @@
   }
   
   .links{
-    font-weight: bold;
   }
 
-  .link{
-    font-weight: bold;
-  }
 
 
 
@@ -40,7 +41,6 @@
     background-color: rgb(244,127,143);
     width: 1440px;
     height: 64px;
-    padding: 20px;
   }  
   
   .creditText {
