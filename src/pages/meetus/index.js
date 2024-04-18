@@ -13,6 +13,12 @@ export default function MeetUs() {
 
         <div className={styles.board}>
           <h1> Meet our Board Members </h1>
+
+          <div className={styles.parent}>
+            <div className={styles.child}>child 1</div>
+            <div className={styles.board}>child 2</div>
+          </div>
+
         </div>
 
       </div>
