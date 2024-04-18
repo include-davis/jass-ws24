@@ -1,0 +1,34 @@
+@use "src/styles/mixins.scss";
+
+.landing_body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 80px;
+    img{
+        width: 90vw;
+    }
+    button {
+        border-radius: 20px;
+        border: none;
+        width: 100px;
+        height: 42px;
+        color: #1b044e;
+        background-color: #F47F8F;
+        font-size: medium;
+    }
+}
+.landing_center {
+    margin-top: 80px;
+    // align-items: center;
+    text-align: center;
+}
+.gaegu_regular {
+    font-family: "Gaegu", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    p{
+        font-size:large;
+    }
+  }
