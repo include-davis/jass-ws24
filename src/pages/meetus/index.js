@@ -1,4 +1,5 @@
 import styles from '@/styles/pages/meetus/meetus.module.scss';
+import { Card } from './card.js';
 
 export default function MeetUs() {
     return (
@@ -15,21 +16,17 @@ export default function MeetUs() {
           <h1> Meet our Board Members </h1>
 
           <div className={styles.parent}>
+            <Card/>
+            <Card/>
+            <Card/>
 
-            <div className={styles.child}>
+            <Card/>
+            <Card/>
+            <Card/>
 
-              <div className={styles.childtop}>
-                [img]
-              </div>
-              <div className={styles.childbottom}>
-                Position | Major, Year
-              </div>
-
-            </div>
-
-            <div className={styles.child}>child 2</div>
-
-            <div className={styles.child}>child 3</div>
+            <Card/>
+            <Card/>
+            <Card/>
           </div>
 
         </div>
