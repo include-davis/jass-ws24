@@ -38,5 +38,14 @@
     .child {
         display: inline-block;
         border: 1px solid red;
+        background-color: #F0F0F0;
+        padding: 8% 10%;
+    }
+
+    .childtop {
+        background-color: #D9D9D9;
+        height: 100%;
+        width: 100%;
+
     }
 }
