@@ -13,8 +13,8 @@ const newsletter = () => {
     return (
         <section className={styles.container}>
           <div className={styles.section}></div>
-            <h2 className={styles.text}>Sign up for our newsletter</h2>
-            <h2 className={styles.text}>& stay connected!</h2>
+            <h1 className={styles.text}>Sign up for our newsletter</h1>
+            <h1 className={styles.text}>& stay connected!</h1>
             <form className={styles.form} onSubmit={handleSubmit}>
                 <input
                     type="email"
@@ -26,6 +26,8 @@ const newsletter = () => {
                 />
                 <button type="submit" className={styles.button}>Submit</button>
             </form>
+
+            
         </section>
     );
 };
