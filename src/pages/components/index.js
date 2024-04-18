@@ -1,6 +1,11 @@
 export default function Components() {
     return (
-      <h1>components</h1>
+        <div>
+            <h1>JASS @ UC Davis</h1>
+            <p>
+                Meet friendly and open people through events, games, and more!
+            </p>
+            <button>Join JASS</button>
+        </div>
     );
-  }
-  
+}
