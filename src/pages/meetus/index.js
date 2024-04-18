@@ -27,7 +27,10 @@ export default function MeetUs() {
 
             </div>
 
-            <div className={styles.child}>child 2</div>
+            <div className={styles.child}>
+              <img src="https://t3.ftcdn.net/jpg/05/16/27/58/360_F_516275801_f3Fsp17x6HQK0xQgDQEELoTuERO4SsWV.jpg"/>
+            
+            </div>
             <div className={styles.child}>child 3</div>
           </div>
 
