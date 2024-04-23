@@ -6,8 +6,15 @@
     justify-content: center;
     align-items: center;
     margin: 80px;
+    align-content: space-around;
     img{
-        width: 90vw;
+        width: 1216px;
+        height: 400px;
+        position: relative;
+        overflow: hidden;
+        object-fit: cover;
+        border-radius: 15px;
+        object-position: 100% 80%;
     }
     button {
         border-radius: 20px;

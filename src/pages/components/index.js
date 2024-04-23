@@ -1,5 +1,7 @@
 import styles from '@/styles/components/components.module.scss';
-import Video from './Video.png';
+// import jass_gp from './JASS_GROUP.jpeg';
+// import { Link } from 'react-router-dom';
+import Image from 'next/image';
 
 export default function Components() {
     return (
@@ -9,7 +11,7 @@ export default function Components() {
                 url('https://fonts.googleapis.com/css2?family=Gaegu&display=swap');
             </style>
             <div className={styles.landing_body}>
-                <img src={Video} alt="group_photo" />
+                <Image src={jass_gp} alt="group_photo" />
                 <div className={styles.landing_center}>
                     <h1>JASS @ UC Davis</h1>
                     <br />
@@ -18,7 +20,9 @@ export default function Components() {
                         more!
                     </p>
                     <br />
+                    {/* <Link to="/joinus"> */}
                     <button>Join JASS</button>
+                    {/* </Link> */}
                 </div>
             </div>
         </div>
