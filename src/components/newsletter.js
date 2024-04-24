@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import styles from "@/styles/components/newsletter/newsletter.module.scss"
-import image1 from "@/styles/components/newsletter/JASSsocial1.jpeg"; 
-import image2 from "@/styles/components/newsletter/JASSsocial2.jpeg";
-import image3 from "@/styles/components/newsletter/JASSsocial3.jpeg";
+import Image from 'next/image'
+
+const images = {
+    image1: '/images/JASSsocial1.jpeg',
+    image2: '/images/JASSsocial2.jpeg',
+    image3: '/images/JASSsocial3.jpeg',
+};
 
 export function Newsletter(){
     const [email, setEmail] = useState('');
@@ -28,9 +32,9 @@ export function Newsletter(){
                 />
                 <button type="submit" className={styles.button}>Submit</button>
                 <div className={styles.imageContainer}>
-                  <img src={image1} alt="Image 1" className={styles.image} />
-                  <img src={image2} alt="Image 2" className={styles.image} />
-                  <img src={image3} alt="Image 3" className={styles.image} />
+                  <img src={images.image1} alt="Image 1" className={styles.image} />
+                  <img src={images.image2} alt="Image 2" className={styles.image} />
+                  <img src={images.image3} alt="Image 3" className={styles.image} />
               </div>
             </form>
             
