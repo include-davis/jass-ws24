@@ -1,6 +1,3 @@
 export default function MeetUs() {
-    return (
-      <h1>meet us</h1>
-    );
-  }
-  
+    return <h1>meet us</h1>;
+}
