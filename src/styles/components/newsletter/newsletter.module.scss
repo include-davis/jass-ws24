@@ -56,7 +56,9 @@
     width: 460px;
     height: 58px;
 }
-
+.input:hover {
+    background-color: #ffc107;
+}
 .imageContainer {
     display: flex;
     justify-content: space-between;
@@ -66,4 +68,17 @@
     font-family: "Gaegu", sans-serif;
     font-weight: 400;
     font-style: normal;
+}
+
+.imageContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.image {
+    width: auto;
+    height: auto;
+    border-radius: 8px;
+    margin-right: 10px;
 }

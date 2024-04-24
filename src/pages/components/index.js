@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import styles from "@/styles/components/newsletter/newsletter.module.scss"
+import image1 from "@/styles/components/newsletter/JASSsocial1.jpeg"; 
+import image2 from "@/styles/components/newsletter/JASSsocial2.jpeg";
+import image3 from "@/styles/components/newsletter/JASSsocial3.jpeg";
 
 const newsletter = () => {
     const [email, setEmail] = useState('');
-
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log('Email submitted:', email);
@@ -26,8 +28,11 @@ const newsletter = () => {
                 />
                 <button type="submit" className={styles.button}>Submit</button>
             </form>
-
-            
+            <div className={styles.imageContainer}>
+                <img src={image1} alt="Image 1" className={styles.image} />
+                <img src={image2} alt="Image 2" className={styles.image} />
+                <img src={image3} alt="Image 3" className={styles.image} />
+            </div>
         </section>
     );
 };
