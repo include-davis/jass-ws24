@@ -27,12 +27,13 @@ const newsletter = () => {
                     required
                 />
                 <button type="submit" className={styles.button}>Submit</button>
+                <div className={styles.imageContainer}>
+                  <img src={image1} alt="Image 1" className={styles.image} />
+                  <img src={image2} alt="Image 2" className={styles.image} />
+                  <img src={image3} alt="Image 3" className={styles.image} />
+              </div>
             </form>
-            <div className={styles.imageContainer}>
-                <img src={image1} alt="Image 1" className={styles.image} />
-                <img src={image2} alt="Image 2" className={styles.image} />
-                <img src={image3} alt="Image 3" className={styles.image} />
-            </div>
+            
         </section>
     );
 };
