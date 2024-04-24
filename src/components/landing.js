@@ -30,7 +30,9 @@ export default function Landing() {
                         more!
                     </p>
                     <br />
-                    <button onClick={handleClick}>Join JASS</button>
+                    <button onClick={handleClick} style={{ marginTop: '20px' }}>
+                        Join JASS
+                    </button>
                 </div>
             </div>
         </div>
