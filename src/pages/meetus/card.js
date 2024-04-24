@@ -6,7 +6,7 @@ export const Card = () => {
         <div className={styles.child}>
 
             <div className={styles.childtop}>
-            [img]
+             <img src="../../Images/placeholder.jpg"/>
             </div>
 
             <div className={styles.childbottom}>
