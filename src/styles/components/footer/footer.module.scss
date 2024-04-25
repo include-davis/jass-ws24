@@ -4,13 +4,70 @@
 
   .footer {
     font-family: 'Gaegu';
+    height: auto;
+    width: auto;
   }
 
   .footerTop {
     background-color: rgb(2,39,81);
+    height: 336px;
+    width: 1440px;
     p, h1{
         color: white;
     }
+  }
+
+  .footerContent{
+    position: absolute;
+    top: 58.5px;
+    left: 40px;
+
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+
+
+  .links{
+    position: absolute;
+    left: 292px;
+    font-size: 24px;
+    line-height: 140%;
+  }
+
+  .linksRight{
+    position: absolute;
+    left: 225px;
+    top: 0px;
+    width: 150px;
+    height: auto;
+  }
+
+  .linksLeft{
+    width: 165px;
+    height: auto; //not needed curerntly
+  }
+
+  .link{
+    margin-bottom: 20px;
+  }
+  
+  //newsletter
+  .newsletter{
+    position: absolute;
+    top: 49px;
+    left: 759px;
+    height: 228px; //needs to be auto
+    width: 650px;
+
+  }
+
+  .title {
+    margin: 10px;
+    margin-bottom: 40px;
+    line-height: 120%;
+    font-weight: bold;
+    font-size: 54px;
   }
 
   .submitButton {
@@ -19,25 +76,60 @@
     background-color: rgb(244,127,143);
     border-radius: 70px;
     border: none;
-    width: auto;
-    height: auto;
-    font-size: auto;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    //padding: 12px 24px; not sure what this is doing
+    width: 116px; //needs to be auto
+    height: 58px; //needs to be auto
+
+    margin: 10px;
+     
+    font-size: 24px;
+    line-height: 140%;
     text-align: center;
-    cursor: pointer;
+  }
+
+  .submitButton:hover {
+    background-color: gold
   }
   
-  .links{
+  .input{
+    color: rgb(2,39,81);
+
+    background-color: rgb(255, 255, 255);
+    border-radius: 70px;
+    border: none;
+
+    text-align-last: left;
+    padding-left: 24px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-right: 320px;
+
+    margin: 10px;
+
+    width: 460px; //needs to be auto
+    height: 58px; //needs to be auto
+
+    font-size: 24px;
+    line-height: 140%;
+    text-align: center;
+
+    &::placeholder {
+      color: rgb(2,39,81);
+      opacity: 1;
+    }
+  }
+  
+  .input:hover{
+    background-color: goldenrod;
   }
 
-
-
-
-
-
-
-
-
-  .credit {
+//credit
+  .footerBottom {
     background-color: rgb(244,127,143);
     width: 1440px;
     height: 64px;
