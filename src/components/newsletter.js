@@ -18,26 +18,29 @@ export function Newsletter(){
 
     return (
         <section className={styles.container}>
-          <div className={styles.section}></div>
-            <h1 className={styles.text}>Sign up for our newsletter</h1>
-            <h1 className={styles.text}>& stay connected!</h1>
-            <form className={styles.form} onSubmit={handleSubmit}>
-                <input
-                    type="email"
-                    value={email}
-                    className={styles.input}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Enter email"
-                    required
-                />
-                <button type="submit" className={styles.button}>Submit</button>
-                <div className={styles.imageContainer}>
-                  <img src={images.image1} alt="Image 1" className={styles.image} />
-                  <img src={images.image2} alt="Image 2" className={styles.image} />
-                  <img src={images.image3} alt="Image 3" className={styles.image} />
-              </div>
-            </form>
-            
+            <div className={styles.seccontainer}>
+                <h1 className={styles.text}>Sign up for our newsletter & stay connected!</h1>
+          
+                <form className={styles.form} onSubmit={handleSubmit}>
+                    <input
+                        type="email"
+                        value={email}
+                        className={styles.input}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="Enter email"
+                        required
+                    />
+                    
+                    <button type="submit" className={styles.button}>Submit</button>
+                    
+                </form>
+            </div>
+
+            <div className={styles.imagecontainer}>
+                <img src={images.image1} alt="Image 1" className={styles.image} />
+                <img src={images.image2} alt="Image 2" className={styles.image} />
+                <img src={images.image3} alt="Image 3" className={styles.image} />
+            </div>
         </section>
     );
 };
