@@ -1,9 +1,12 @@
 import styles from "@/styles/components/footer/footer.module.scss"
-import jassLogo from './JASS_LOGO.jpeg';
-import discLogo from './discordIcon.png';
-import instaLogo from './instagramIcon.png';
-import fbLogo from './facebookIcon.png';
-import emailLogo from './emailIcon.png';
+
+const images = {
+  discLogo: '/images/discordIcon.png',
+  emailLogo: '/images/emailIcon.png',
+  fbLogo: '/images/facebookIcon.png',
+  instaLogo: '/images/instagramIcon.png',
+  jassLogo: '/images/JASS_LOGO.jpeg',
+};
 
 export function Footer() {
   return (
@@ -29,16 +32,16 @@ export function Footer() {
 
 
           <div className={styles.contact}>
-            <img className= {styles.image} src = {jassLogo} height="124px" alt="logo" />
+            <img className= {styles.image} src = {images.jassLogo} height="124px" width = "124px" alt="logo" />
             <p>JASS at UC Davis</p>
             <div className = {styles.emailFrame}>
-              <img className= {styles.image} src = {emailLogo} height = "24.52px" alt = "emailLogo" />
+              <img className= {styles.image} src = {images.emailLogo} height = "24.52px" alt = "emailLogo" />
               <a href="mailto:jassofficers@ucdavis.edu">jassofficers@ucdavis.edu</a>
             </div>
             <div className = {styles.icons}>
-              <img className= {styles.image} src = {instaLogo} height="24.52px" alt="instalogo" />
-              <img className= {styles.image}src = {fbLogo} height="24.52" alt="fblogo" />
-              <img className= {styles.image} src = {discLogo} height="24.52" alt="disclogo" />
+              <img className= {styles.image} src = {images.instaLogo} height="24.52px" alt="instalogo" />
+              <img className= {styles.image}src = {images.fbLogo} height="24.52" alt="fblogo" />
+              <img className= {styles.image} src = {images.discLogo} height="24.52" alt="disclogo" />
             </div>
 
             {/* Add social media icons here */}
@@ -47,8 +50,13 @@ export function Footer() {
 
         <div className = {styles.newsletter}>
           <p className = {styles.title}>Sign up for our newsletter & stay connected!</p>
-          <input className = {styles.input} type = "email" placeholder = "Enter email" />
-          <button className={styles.submitButton}>Submit</button>
+          <div className = {styles.interactive}>
+            <div className= {styles.inputWrapper}>
+              <input className = {styles.input} type = "email" placeholder = "Enter email" />
+            </div>
+            <button className={styles.submitButton}>Submit</button>
+          </div>
+
         </div>
 
       </div>

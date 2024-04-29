@@ -28,6 +28,8 @@
     gap: 68px; //same here
   }
 
+  //contact
+
   .contact {
     display: flex;
     position: absolute;
@@ -41,6 +43,13 @@
     gap: 16px;
   }
 
+  .icons {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+  }
+
+  // links
   .linksOuterFrame{
     display: flex;
     flex-direction: row;
@@ -61,7 +70,7 @@
     flex-direction: column;
 
     position: absolute;
-    gap: 18px;
+    gap: 14px;
     left: 225px;
     width: 150px;
     height: auto;
@@ -71,7 +80,7 @@
     display: flex;
     flex-direction: column;
     
-    gap: 18px;
+    gap: 14px;
     width: 165px;
     height: auto; //not needed curerntly
   }
@@ -82,20 +91,25 @@
   
   //newsletter
   .newsletter{
+    display: flex;
     position: relative;
     top: 49px;
     left: 759px;
-    height: 228px; //needs to be auto
-    width: 650px;
-
+    width: 650px; //needs to be auto
+    height: 228px;
+    flex-direction: column;
+    gap: 40px;
   }
 
   .title {
-    margin: 10px;
-    margin-bottom: 40px;
     line-height: 120%;
     font-weight: bold;
     font-size: 54px;
+  }
+
+  .interactive {
+    display: flex;
+    gap: 24px;
   }
 
   .submitButton {
@@ -105,55 +119,58 @@
     border-radius: 70px;
     border: none;
 
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    //padding: 12px 24px; not sure what this is doing
-    width: 116px; //needs to be auto
-    height: 58px; //needs to be auto
-
-    margin: 10px;
+    padding: 12px 24px;
+    width: auto; //needs to be auto
+    height: auto; //needs to be auto
      
     font-size: 24px;
     line-height: 140%;
-    text-align: center;
   }
 
   .submitButton:hover {
     background-color: gold
   }
+
+  .inputWrapper {
+    display: flex;
+    position: relative;
+    padding: 12px 320px 24px 12px;
+    background-color: white;
+    border-radius: 70px;
+    border: none;
+    height: 58px;
+    width: 460px;
+  }
   
   .input{
-    color: rgb(2,39,81);
+    display: flex;
+    position: absolute;
+    top: 0px;
+    left: 0px;
 
-    background-color: rgb(255, 255, 255);
+    padding-left: 24px;
+
+    width: 100%;
+    height: 100%;
+    color: rgb(2,39,81);
+    background: none;
     border-radius: 70px;
     border: none;
 
-    text-align-last: left;
-    padding-left: 24px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    padding-right: 320px;
+    outline: none;
 
-    margin: 10px;
-
-    width: 460px; //needs to be auto
-    height: 58px; //needs to be auto
 
     font-size: 24px;
     line-height: 140%;
-    text-align: left;
 
     &::placeholder {
       color: rgb(2,39,81);
       opacity: 1;
     }
-  }
-  
-  .input:hover{
-    background-color: goldenrod;
+
+    &:hover{
+      background-color: goldenrod;
+    }
   }
 
 //credit
