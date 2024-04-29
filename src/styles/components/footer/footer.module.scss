@@ -6,44 +6,72 @@
     font-family: 'Gaegu';
     height: auto;
     width: auto;
+    flex-direction: column;
   }
 
   .footerTop {
     background-color: rgb(2,39,81);
-    height: 336px;
     width: 1440px;
-    p, h1{
+    height: 336px;
+    p, h1, a{
         color: white;
     }
+    position: relative;
   }
 
   .footerContent{
     position: absolute;
-    top: 58.5px;
     left: 40px;
+    top: 58.5px;
 
-    display: flex;
-    flex-wrap: nowrap;
+    display: flex; //test if its doing anything
+    gap: 68px; //same here
   }
 
-
-
-  .links{
+  .contact {
+    display: flex;
     position: absolute;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .emailFrame{
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+  }
+
+  .linksOuterFrame{
+    display: flex;
+    flex-direction: row;
+
+    position: relative;
     left: 292px;
+  }
+
+  .linksInnerFrame{
+    display: flex;
+    position: absolute;
     font-size: 24px;
     line-height: 140%;
   }
 
   .linksRight{
+    display: flex;
+    flex-direction: column;
+
     position: absolute;
+    gap: 18px;
     left: 225px;
-    top: 0px;
     width: 150px;
     height: auto;
   }
 
   .linksLeft{
+    display: flex;
+    flex-direction: column;
+    
+    gap: 18px;
     width: 165px;
     height: auto; //not needed curerntly
   }
@@ -54,7 +82,7 @@
   
   //newsletter
   .newsletter{
-    position: absolute;
+    position: relative;
     top: 49px;
     left: 759px;
     height: 228px; //needs to be auto
@@ -116,7 +144,7 @@
 
     font-size: 24px;
     line-height: 140%;
-    text-align: center;
+    text-align: left;
 
     &::placeholder {
       color: rgb(2,39,81);
