@@ -1,5 +1,5 @@
 import styles from '@/styles/pages/meetus/meetus.module.scss';
-import { Card } from '../../components/card.js';
+import { MeetUsCard } from '@/components/meetUsCard';
 
 export default function MeetUs() {
     return (
@@ -18,17 +18,17 @@ export default function MeetUs() {
                 <h1> Meet our Board Members </h1>
 
                 <div className={styles.parent}>
-                    <Card />
-                    <Card />
-                    <Card />
+                    <MeetUsCard />
+                    <MeetUsCard />
+                    <MeetUsCard />
 
-                    <Card />
-                    <Card />
-                    <Card />
+                    <MeetUsCard />
+                    <MeetUsCard />
+                    <MeetUsCard />
 
-                    <Card />
-                    <Card />
-                    <Card />
+                    <MeetUsCard />
+                    <MeetUsCard />
+                    <MeetUsCard />
                 </div>
             </div>
         </div>
