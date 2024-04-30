@@ -4,8 +4,8 @@ module.exports = {
   async redirects() {
     return [
       {
-        source: "/meet-us",
-        destination: "/meetus",
+        source: "/meetus",
+        destination: "/meet-us",
         permanent: true,
       },
       {
