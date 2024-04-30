@@ -11,10 +11,10 @@ export default function Landing() {
     }
     return (
         <div className={styles.gaegu_regular}>
-            <style>
+            {/* <style>
                 @import
                 url('https://fonts.googleapis.com/css2?family=Gaegu&display=swap');
-            </style>
+            </style> */}
             <div className={styles.landing_body}>
                 <Image
                     src={images.jass_gp}
