@@ -10,7 +10,9 @@ export default function MeetUs() {
         <div>
             <div className={styles.intro}>
                 <h1>Meet Us!</h1>
-                <div description={content.description}></div>
+                <p>
+                    {content.description}
+                </p>
             </div>
 
             <div className={styles.board}>
