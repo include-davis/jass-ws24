@@ -1,5 +1,5 @@
-import { Component } from 'react';
+// import {Components} from '/components/index.js';
 
 export default function Home() {
-    return <h1>Hello World</h1>;
+    return <h1>Hello World</h1>
 }
