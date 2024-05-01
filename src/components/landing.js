@@ -4,6 +4,9 @@ import Image from 'next/image';
 const images = {
     jass_gp: `/images/JASS_GROUP.jpeg`,
 };
+const content = {
+    join_button: 'Join JASS',
+};
 export default function Landing() {
     function handleClick() {
         // TODO: add router redirect
@@ -11,10 +14,10 @@ export default function Landing() {
     }
     return (
         <div className={styles.gaegu_regular}>
-            {/* <style>
+            <style>
                 @import
                 url('https://fonts.googleapis.com/css2?family=Gaegu&display=swap');
-            </style> */}
+            </style>
             <div className={styles.landing_body}>
                 <Image
                     src={images.jass_gp}
@@ -31,7 +34,7 @@ export default function Landing() {
                     </p>
                     <br />
                     <button onClick={handleClick} style={{ marginTop: '20px' }}>
-                        Join JASS
+                        {content.join_button}
                     </button>
                 </div>
             </div>

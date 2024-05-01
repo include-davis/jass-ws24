@@ -8,8 +8,8 @@
     margin: 80px;
     align-content: space-around;
     img{
-        width: 1216px;
-        height: 400px;
+        width: 96%;
+        // height: 10%;
         position: relative;
         overflow: hidden;
         object-fit: cover;
@@ -17,13 +17,17 @@
         object-position: 100% 80%;
     }
     button {
-        border-radius: 20px;
+        border-radius: 70px;
         border: none;
-        width: 100px;
-        height: 42px;
+        padding: 12px;
+        padding-left: 19px;
+        padding-right: 19px;
         color: #1b044e;
         background-color: #F47F8F;
         font-size: medium;
+    }
+    button:hover{
+        background-color: #E6BF1D;
     }
 }
 .landing_center {
