@@ -1,4 +1,5 @@
 import styles from "@/styles/pages/contact/contact.module.scss"
+import { useState } from 'react'
 
 export function Contact () {
     return (
@@ -49,6 +50,10 @@ export function Contact () {
             {/*ensure text */}
             {/*<input type="text" id="textbook" name="textbook" className={`${styles.inputText} ${styles.textbookInput}`} /> */}
             <textarea style={{ verticalAlign: 'top' }} id="textbook" name="textbook" className={`${styles.inputText} ${styles.textbookInput}`} />
+            </div>
+
+            <div className={styles.submitButton}>
+                <button type="submit">Submit</button>
             </div>
 
 
