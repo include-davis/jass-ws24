@@ -59,4 +59,10 @@
     border-radius: 29px; 
     font-size: 24px;
     color: #022751;
+    border: 0px;
+  }
+
+  .button:hover {
+    background-color: #E6BF1D;
+    transition: 0.2s;
   }
