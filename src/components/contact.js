@@ -1,6 +1,21 @@
 import styles from "@/styles/pages/contact/contact.module.scss"
 import { useState } from 'react'
 
+
+//i can create my own styles for the submit button 
+//I need to also add colors it doesnt matter too much
+//
+
+//create json objects for texts on left side  - done
+
+const textContent = {
+    text1: {
+        title: "Get In Touch With Us",
+        description: "Lorem ipsum dolor sit amet consectur adipiscing elitm sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+
+    }
+   
+}
 export function Contact () {
     return (
         <>
