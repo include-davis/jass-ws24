@@ -1,6 +1,10 @@
+import { EventsSlider } from "@/components/eventsSlider";
+
 export default function Components() {
     return (
-      <h1>components</h1>
+      <div>
+        <EventsSlider/>
+      </div>
     );
   }
   
