@@ -9,8 +9,8 @@ module.exports = {
                 permanent: true,
             },
             {
-                source: '/contact-us',
-                destination: '/contact',
+                source: '/joinus',
+                destination: '/meet-us',
                 permanent: true,
             },
         ];
