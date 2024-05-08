@@ -6,6 +6,8 @@ const images = {
 };
 const content = {
     join_button: 'Join JASS',
+    header: 'JASS @ UC Davis',
+    paragraph: 'Meet friendly and open people through events, games, and more!',
 };
 export default function Landing() {
     function handleClick() {
@@ -14,10 +16,6 @@ export default function Landing() {
     }
     return (
         <div className={styles.gaegu_regular}>
-            <style>
-                @import
-                url('https://fonts.googleapis.com/css2?family=Gaegu&display=swap');
-            </style>
             <div className={styles.landing_body}>
                 <Image
                     src={images.jass_gp}
@@ -26,12 +24,9 @@ export default function Landing() {
                     height="400"
                 />
                 <div className={styles.landing_center}>
-                    <h1>JASS @ UC Davis</h1>
+                    <h1>{content.header}</h1>
                     <br />
-                    <p>
-                        Meet friendly and open people through events, games, and
-                        more!
-                    </p>
+                    <p>{content.paragraph}</p>
                     <br />
                     <button onClick={handleClick} style={{ marginTop: '20px' }}>
                         {content.join_button}
