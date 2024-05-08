@@ -1,3 +1,5 @@
+import styles from '@/styles/pages/calendar/calendar.module.scss';
+
 export default function Calendar() {
-    return <h1>calendar</h1>;
+  return <></>;
 }
