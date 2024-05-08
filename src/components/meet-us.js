@@ -5,6 +5,16 @@ const content = {
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 }
 
+const boardMembers = [
+    { name: 'First Last', position: 'Position', major: 'Major', year: 'Year' },
+    { name: 'Second Last', position: 'Position', major: 'Major', year: 'Year' },
+    { name: 'Third Last', position: 'Position', major: 'Major', year: 'Year' },
+    { name: 'Fourth Last', position: 'Position', major: 'Major', year: 'Year' },
+    { name: 'Fifth Last', position: 'Position', major: 'Major', year: 'Year' },
+    { name: 'Sixth Last', position: 'Position', major: 'Major', year: 'Year' },
+    // Add more board members as needed
+];
+
 export default function MeetUs() {
     return (
         <div>
@@ -19,18 +29,17 @@ export default function MeetUs() {
                 <h1> Meet our Board Members </h1>
 
                 <div className={styles.parent}>
-                    <MeetUsCard />
-                    <MeetUsCard />
-                    <MeetUsCard />
-
-                    <MeetUsCard />
-                    <MeetUsCard />
-                    <MeetUsCard />
-
-                    <MeetUsCard />
-                    <MeetUsCard />
-                    <MeetUsCard />
+                    {boardMembers.map((member, index) => (
+                        <MeetUsCard
+                            key={index}
+                            name={member.name}
+                            position={member.position}
+                            major={member.major}
+                            year={member.year}
+                        />
+                    ))}
                 </div>
+
             </div>
         </div>
     );
