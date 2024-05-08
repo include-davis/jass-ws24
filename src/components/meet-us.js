@@ -12,6 +12,9 @@ const boardMembers = [
     { name: 'Fourth Last', position: 'Position', major: 'Major', year: 'Year' },
     { name: 'Fifth Last', position: 'Position', major: 'Major', year: 'Year' },
     { name: 'Sixth Last', position: 'Position', major: 'Major', year: 'Year' },
+    { name: 'Seventh Last', position: 'Position', major: 'Major', year: 'Year' },
+    { name: 'Eighth Last', position: 'Position', major: 'Major', year: 'Year' },
+    { name: 'Nineth Last', position: 'Position', major: 'Major', year: 'Year' },
     // Add more board members as needed
 ];
 
