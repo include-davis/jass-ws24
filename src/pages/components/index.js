@@ -1,3 +1,3 @@
 export default function Components() {
-    return <></>;
+    return <h1>components</h1>;
 }

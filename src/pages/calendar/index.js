@@ -1,5 +1,5 @@
-import styles from '@/styles/pages/calendar/calendar.module.scss';
+import { CalendarComp } from '@/components/calendar';
 
 export default function Calendar() {
-  return <></>;
+    return <CalendarComp />;
 }

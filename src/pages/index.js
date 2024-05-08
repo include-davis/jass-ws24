@@ -3,7 +3,7 @@ import { EventsSlider } from "@/components/eventsSlider";
 import {Newsletter} from '@/components/newsletter'
 
 export default function Home() {
-    return(
+    return (
         <div>
             <Newsletter/>
             <EventsSlider/>
