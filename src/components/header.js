@@ -1,11 +1,8 @@
 import React from 'react';
 import styles from '@/styles/components/navbar/navbar.module.scss';
 
-const image = {
-    logo: '/images/JASS_LOGO.jpeg'
-}
-
-const button = {
+const container = {
+    logo: '/images/JASS_LOGO.jpeg',
     message: 'Join JASS'
 }
 
@@ -13,7 +10,7 @@ export default function Header() {
     return (
         <div className={`${styles.header} ${styles.globalstyles} ${styles.font} ${styles.nav}`}> 
             <img 
-                src={image.logo} 
+                src={container.logo} 
                 alt="JASS logo" 
                 className = {styles.logo}
             />
@@ -26,7 +23,7 @@ export default function Header() {
                 <button 
                     type="button" 
                     className={`${styles.buttonhover} ${styles.button}`} 
-                    href="/joinourcabinet">{button.message}
+                    href="/joinourcabinet">{container.message}
                 </button>
             </nav>
         </div>
