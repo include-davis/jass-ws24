@@ -20,10 +20,6 @@ export default function Components() {
   
   
 =======
-        <Newsletter/>
-        <EventsSlider/>
-        <Footer/>
       </>
     );
  }
->>>>>>> ec3d2b4512c7a4809c6245bf188c6c820e754de0
