@@ -24,10 +24,8 @@ export function Contact() {
                 <div className={styles.contactContainer}>
                     <div className={styles.leftSection}>
                         <div id="contact-us">
-                            <h1 className={styles.contactTitle}>Get In Touch With Us!</h1>
-                            <p className={styles.contactText}>Lorem ipsum dolor sit amet consectetur<br />
-                                adipiscing elit, sed do eiusmod tempor<br />
-                                incididunt ut labore et dolore magna aliqua.</p>
+                            <h1 className={styles.contactTitle}>{textContent.title}</h1>
+                            <p className={styles.contactText}>{textContent.description}</p>
                         </div>
                     </div>
 
