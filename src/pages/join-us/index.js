@@ -1,7 +1,3 @@
 export default function JoinUs() {
-  return (
-    <div> 
-      join us page
-    </div>
-  );
+    return <h1>join us</h1>;
 }
