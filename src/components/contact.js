@@ -17,7 +17,7 @@ const textContent = {
     }
 
 }
-export function Contact() {
+export function ContactComp() {
     return (
         <>
             <div className={styles.main}>
