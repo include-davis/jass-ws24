@@ -15,8 +15,8 @@ export default function Header() {
             <nav className="font">
                 <a href="/">Home</a>
                 <a href="/calendar">Calendar</a>
-                <a href="/meetus">Meet Us</a>
-                <a href="/joinourcabinet">Join Our Cabinet</a>
+                <a href="/meet-us">Meet Us</a>
+                <a href="/join-us">Join Our Cabinet</a>
                 <a href="/contact">Contact</a>
                 <button
                     type="button"
