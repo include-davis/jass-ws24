@@ -1,0 +1,101 @@
+@use "src/styles/mixins.scss";
+@import url('https://fonts.googleapis.com/css2?family=Gaegu&display=swap');
+
+.container {
+    display: flex;
+    padding: 71.5px 112px; 
+    width: 1440px;
+    height: 371px;
+    background: #F47F8F;
+}
+
+.seccontainer {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 605px;
+    height: 228px;
+}
+
+.form {
+    display: flex;
+    align-items: flex-start;
+}
+
+.text {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 10px;
+    width: 606px;
+    height: 130px;
+    font-family: 'Gaegu', cursive;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 54px;
+    line-height: 120%;
+    color: #FFFFFF;
+}
+
+.button {
+    margin-top: 40px;
+    background-color: #022751;
+    color: white;
+    border: none;
+    border-radius: 70px; 
+    cursor: pointer;
+    font-family: 'Gaegu';
+    width: 116px;
+    height: 58px;
+    font-size: 24px;
+}
+
+.button:hover {
+    background-color: #ffc107;
+}
+.form {
+    display: flex;
+    align-items: center;
+}
+
+.input {
+    font-family: 'Gaegu';
+    font-size: 24px;
+    padding-left: 24px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin-top: 40px;
+    margin-right: 24px;
+    color: black;
+    border: 0px solid #ccc;
+    border-radius: 70px;
+    width: 460px;
+    height: 58px;
+}
+
+.input:hover {
+    background-color: #ffc107;
+}
+
+.gaegu-regular {
+    font-family: "Gaegu", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.imagecontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 0px;
+    margin-left: 40px;
+    gap: 40px;
+    width: 568px;
+    height: 195px;
+}
+
+.image {
+    width: 160px;
+    height: 160px;
+    border-radius: 0px;
+}
