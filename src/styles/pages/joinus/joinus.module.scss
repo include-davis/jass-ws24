@@ -68,3 +68,22 @@
     font-size: 24px;
     text-align: left;
   }
+
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.topMargin {
+  width: 100%;
+  height: 30px; /* Adjust the height as needed */
+  background-color: #F47F8F; /* Top margin color */
+}
+
+.bottomMargin {
+  width: 100%;
+  height: 20px; /* Adjust the height as needed */
+  background-color: #022751; /* Bottom margin color */
+  margin-top: auto; /* Pushes the bottom margin to the bottom of the page */
+}
