@@ -7,20 +7,21 @@ const content = {
 };
 
 const boardMembers = [
-    { name: 'First Last', position: 'Position', major: 'Major', year: 'Year' },
-    { name: 'Second Last', position: 'Position', major: 'Major', year: 'Year' },
-    { name: 'Third Last', position: 'Position', major: 'Major', year: 'Year' },
-    { name: 'Fourth Last', position: 'Position', major: 'Major', year: 'Year' },
-    { name: 'Fifth Last', position: 'Position', major: 'Major', year: 'Year' },
-    { name: 'Sixth Last', position: 'Position', major: 'Major', year: 'Year' },
+    { name: 'First Last', pronouns: 'pronouns/pronouns', position: 'Position', major: 'Major', year: 'Year' },
+    { name: 'Second Last', pronouns: 'pronouns/pronouns', position: 'Position', major: 'Major', year: 'Year' },
+    { name: 'Third Last', pronouns: 'pronouns/pronouns', position: 'Position', major: 'Major', year: 'Year' },
+    { name: 'Fourth Last', pronouns: 'pronouns/pronouns', position: 'Position', major: 'Major', year: 'Year' },
+    { name: 'Fifth Last', pronouns: 'pronouns/pronouns', position: 'Position', major: 'Major', year: 'Year' },
+    { name: 'Sixth Last', pronouns: 'pronouns/pronouns', position: 'Position', major: 'Major', year: 'Year' },
     {
         name: 'Seventh Last',
+        pronouns: 'pronouns/pronouns',
         position: 'Position',
         major: 'Major',
         year: 'Year',
     },
-    { name: 'Eighth Last', position: 'Position', major: 'Major', year: 'Year' },
-    { name: 'Nineth Last', position: 'Position', major: 'Major', year: 'Year' },
+    { name: 'Eighth Last', pronouns: 'pronouns/pronouns', position: 'Position', major: 'Major', year: 'Year' },
+    { name: 'Nineth Last', pronouns: 'pronouns/pronouns', position: 'Position', major: 'Major', year: 'Year' },
     // Add more board members as needed
 ];
 
@@ -40,6 +41,7 @@ export default function MeetUs() {
                         <MeetUsCard
                             key={index}
                             name={member.name}
+                            pronouns={member.pronouns}
                             position={member.position}
                             major={member.major}
                             year={member.year}
