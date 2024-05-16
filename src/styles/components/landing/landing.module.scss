@@ -1,0 +1,45 @@
+@use "src/styles/mixins.scss";
+
+.landing_body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 80px;
+    align-content: space-around;
+    img{
+        width: 96%;
+        // height: 10%;
+        position: relative;
+        overflow: hidden;
+        object-fit: cover;
+        border-radius: 15px;
+        object-position: 100% 80%;
+    }
+    button {
+        border-radius: 70px;
+        border: none;
+        padding: 12px;
+        padding-left: 19px;
+        padding-right: 19px;
+        color: #1b044e;
+        background-color: #F47F8F;
+        font-size: medium;
+    }
+    button:hover{
+        background-color: #E6BF1D;
+    }
+}
+.landing_center {
+    margin-top: 80px;
+    // align-items: center;
+    text-align: center;
+}
+.gaegu_regular {
+    font-family: "Gaegu", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    p{
+        font-size:large;
+    }
+  }

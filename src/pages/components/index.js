@@ -1,6 +1,8 @@
-/*import styles from '@/styles/pages/meetus/meetus.module.scss';*/
-/*import MeetUs from '@/components/meet-us.js';*/
+import { Footer } from '@/components/footer';
+import { EventsSlider } from "@/components/eventsSlider";
+import {Newsletter} from '@/components/newsletter'
 
 export default function Components() {
-    return <></>;
+    return <h1>components</h1>;
 }
+
