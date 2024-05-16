@@ -3,38 +3,46 @@ import { MeetUsCard } from '@/components/meetUsCard';
 
 const content = {
     description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        'Get to know our 2023-2024 Cabinet Members!',
 };
 
 const boardMembers = [
-    { name: 'First Last', pronouns: 'pronouns/pronouns', position: 'Position', major: 'Major', year: 'Year' },
-    { name: 'Second Last', pronouns: 'pronouns/pronouns', position: 'Position', major: 'Major', year: 'Year' },
-    { name: 'Third Last', pronouns: 'pronouns/pronouns', position: 'Position', major: 'Major', year: 'Year' },
-    { name: 'Fourth Last', pronouns: 'pronouns/pronouns', position: 'Position', major: 'Major', year: 'Year' },
-    { name: 'Fifth Last', pronouns: 'pronouns/pronouns', position: 'Position', major: 'Major', year: 'Year' },
-    { name: 'Sixth Last', pronouns: 'pronouns/pronouns', position: 'Position', major: 'Major', year: 'Year' },
+    { name: 'First Last', pronouns: 'pronouns/pronouns', position: 'Position', major: 'X major', year: 'X year' },
+    { name: 'Second Last', pronouns: 'pronouns/pronouns', position: 'Position', major: 'X major', year: 'X year' },
+    { name: 'Third Last', pronouns: 'pronouns/pronouns', position: 'Position', major: 'X major', year: 'X year' },
+    { name: 'Fourth Last', pronouns: 'pronouns/pronouns', position: 'Position', major: 'X major', year: 'X year' },
+    { name: 'Fifth Last', pronouns: 'pronouns/pronouns', position: 'Position', major: 'X major', year: 'X year' },
+    { name: 'Sixth Last', pronouns: 'pronouns/pronouns', position: 'Position', major: 'X major', year: 'X year' },
     {
         name: 'Seventh Last',
         pronouns: 'pronouns/pronouns',
         position: 'Position',
-        major: 'Major',
-        year: 'Year',
+        major: 'x major',
+        year: 'x year',
     },
-    { name: 'Eighth Last', pronouns: 'pronouns/pronouns', position: 'Position', major: 'Major', year: 'Year' },
-    { name: 'Nineth Last', pronouns: 'pronouns/pronouns', position: 'Position', major: 'Major', year: 'Year' },
+    { name: 'Eighth Last', pronouns: 'pronouns/pronouns', position: 'Position', major: 'X major', year: 'X year' },
+    { name: 'Nineth Last', pronouns: 'pronouns/pronouns', position: 'Position', major: 'X major', year: 'X year' },
+    { name: 'Tenth Last', pronouns: 'pronouns/pronouns', position: 'Position', major: 'X major', year: 'X year' },
+    { name: 'Eleventh Last', pronouns: 'pronouns/pronouns', position: 'Position', major: 'X major', year: 'X year' },
+    { name: 'Twelveth Last', pronouns: 'pronouns/pronouns', position: 'Position', major: 'X major', year: 'X year' },
     // Add more board members as needed
 ];
 
 export default function MeetUs() {
     return (
         <div>
-            <div className={styles.intro}>
-                <h1>Meet Us!</h1>
-                <p>{content.description}</p>
-            </div>
 
             <div className={styles.board}>
-                <h1> Meet our Board Members </h1>
+
+                <div className={styles.intro}>
+                    <div>
+                        <p> insert image here</p>
+                        <img/>
+                    </div>
+                </div>
+
+                <h1> Meet Us </h1>
+                <p>{content.description}</p>
 
                 <div className={styles.parent}>
                     {boardMembers.map((member, index) => (
