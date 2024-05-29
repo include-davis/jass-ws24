@@ -2,7 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Gaegu&display=swap');
 
-#contact-us{
+/*#contact-us{
     display: flex;
     
     
@@ -147,7 +147,7 @@
 
 
 }
-
+*/
 @media screen and (max-width: 768px) {
     .nameInput,
     .emailInput {
@@ -156,7 +156,7 @@
         margin-right: 0;
     }
 }
-
+/*
 .subjectInput {
     width: 97%;
     padding: 10px;
@@ -165,7 +165,7 @@
     border: 1px solid #afafaf;
     height: 20px;
 }
-
+*/
 @media screen and (max-width: 768px) {
     .subjectInput{
         width: calc(100% - 22px);
@@ -213,6 +213,7 @@
         
     }
 }
+/*
 .submitButton{
     display: inline-block;
     justify-content: right;
@@ -229,7 +230,7 @@
     font-size: 19px;
 }
 
-
+*/
 //viewport sizes for ipad/tablet landscape and normal
 
 @media all and (min-width: 768px) and (max-width: 1024px) { }
@@ -259,4 +260,11 @@
 @media only screen { } /* Define mobile styles - Mobile First */
  
 @media only screen and (max-width: 40em) { } /* max-width 640px, mobile-only styles, use when QAing mobile issues */
+
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
  
