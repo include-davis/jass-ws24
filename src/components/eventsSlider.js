@@ -18,31 +18,35 @@ const content = {
 }
 
 export function EventsSlider() {
-  return (
-    <div className={styles.container}>
-      <div className={styles.cardContainer}>
-        <p className={styles.title}>Join us for our...</p>
+    return (
+      <div className={styles.pageContainer}>
+        <div className={styles.topMargin}></div>
+        <div className={styles.container}>
+          <div className={styles.cardContainer}>
+            <p className={styles.title}>Join us for our...</p>
+          </div>
+          <div className={styles.cardContainer}>
+            <div className={styles.cardWrapper}>
+              <EventsCard
+                title= {content.card1.title}
+                description= {content.card1.description}
+              />
+            </div>
+            <div className={styles.cardWrapper}>
+              <EventsCard
+                title = {content.card2.title}
+                description= {content.card2.description}
+              />
+            </div>
+            <div className={styles.cardWrapper}>
+              <EventsCard
+                title= {content.card3.title}
+                description= {content.card3.description}
+              />
+            </div>
+          </div>
+        </div>
+        <div className={styles.bottomMargin}></div>
       </div>
-      <div className={styles.cardContainer}>
-        <div className={styles.cardWrapper}>
-          <EventsCard
-            title= {content.card1.title}
-            description= {content.card1.description}
-          />
-        </div>
-        <div className={styles.cardWrapper}>
-          <EventsCard
-            title = {content.card2.title}
-            description= {content.card2.description}
-          />
-        </div>
-        <div className={styles.cardWrapper}>
-          <EventsCard
-            title= {content.card3.title}
-            description= {content.card3.description}
-          />
-        </div>
-      </div>
-    </div>
-  );
-}
+    );
+  }
