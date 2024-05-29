@@ -74,6 +74,15 @@ import { useState } from 'react';
 // }
 
 //}
+
+//const variables for texts
+
+const textContent = {
+    text1: {
+        title: "Get In Touch With Us",
+        description: "Have questions or comments for JASS? Please fill out this form and <br/>we'll get back to you as soon as possible"
+    }
+}
 export function Contact() {
     return (
         <>
