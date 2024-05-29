@@ -9,8 +9,8 @@ export const MeetUsCard = ({ name, pronouns, position, major, year }) => {
             </div>
             <div className={styles.childbottom}>
                 <h2>{name}</h2>
-                <p> {pronouns} </p>
-                <p>{year}, {major}</p>
+                {/* <p> {pronouns} </p>
+                <p>{year}, {major}</p> */}
             </div>
         </div>
     );
