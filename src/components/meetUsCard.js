@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '@/styles/pages/meetus/meetus.module.scss';
 
-export const MeetUsCard = ({ name, position, major, year }) => {
+export const MeetUsCard = ({ name, pronouns, position, major, year }) => {
     return (
         <div className={styles.child}>
             <div className={styles.childtop}>
@@ -9,7 +9,8 @@ export const MeetUsCard = ({ name, position, major, year }) => {
             </div>
             <div className={styles.childbottom}>
                 <h2>{name}</h2>
-                <p>{position} | {major}, {year}</p>
+                {/* <p> {pronouns} </p>
+                <p>{year}, {major}</p> */}
             </div>
         </div>
     );
