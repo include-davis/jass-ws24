@@ -1,5 +1,7 @@
 import styles from '@/styles/pages/meetus/meetus.module.scss';
 import { MeetUsCard } from '@/components/meetUsCard';
+import { Header } from '@/components/header'
+import { Footer } from '@/components/footer'
 
 const content = {
     description:
@@ -31,6 +33,7 @@ const boardMembers = [
 export default function MeetUs() {
     return (
         <div>
+            <Header />
 
             <div className={styles.board}>
 
@@ -57,6 +60,7 @@ export default function MeetUs() {
                     ))}
                 </div>
             </div>
+            <Footer />
         </div>
     );
 }

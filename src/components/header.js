@@ -6,7 +6,7 @@ const container = {
     message: 'Join JASS',
 };
 
-export default function Header() {
+export function Header() {
     return (
         <div
             className={`${styles.header} ${styles.globalstyles} ${styles.font} ${styles.nav}`}
