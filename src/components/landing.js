@@ -9,7 +9,7 @@ const content = {
     header: 'JASS @ UC Davis',
     paragraph: 'Meet friendly and open people through events, games, and more!',
 };
-export default function Landing() {
+export function Landing() {
     function handleClick() {
         // TODO: add router redirect
         console.log('Redirect to join us');
