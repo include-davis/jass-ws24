@@ -1,5 +1,6 @@
-import { CalendarComp } from '@/components/calendar';
-
 export default function Calendar() {
-    return <CalendarComp />;
-}
+    return (
+      <h1>calendar</h1>
+    );
+  }
+  

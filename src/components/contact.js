@@ -1,5 +1,6 @@
-import styles from '@/styles/pages/contact/contact.module.scss';
-import { useState } from 'react';
+import styles from "@/styles/pages/contact/contact.module.scss"
+import { useState } from 'react'
+
 
 // //i can create my own styles for the submit button 
 // //I need to also add colors it doesnt matter too much

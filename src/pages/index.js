@@ -1,13 +1,7 @@
-import { Footer } from '@/components/footer';
-import { EventsSlider } from "@/components/eventsSlider";
-import {Newsletter} from '@/components/newsletter'
+import { Component } from "react";
 
 export default function Home() {
-    return (
-        <div>
-            <Newsletter/>
-            <EventsSlider/>
-            <Footer/>
-        </div>
-    );
+  return (
+    <h1>Hello World</h1>
+  );
 }
