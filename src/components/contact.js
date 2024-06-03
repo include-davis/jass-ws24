@@ -83,14 +83,14 @@ const textContent = {
         description: "Have questions or comments for JASS? Please fill out this form and <br/>we'll get back to you as soon as possible"
     }
 }
-export function Contact() {
+export function ContactComp() {
     return (
         <>
         <div className={styles.main}></div>
             <div id="contact-us">
                 <h1 className={styles.contactTitle}>Contact Us</h1>
                     <p className={styles.contactText}>Have questions or comments for JASS? Please fill out this form and <br/>we'll get back to you as soon as possible</p>
-                <h2 className={styles.contactField}>* = required field</h2>
+                <p1 className={styles.contactField}>* = required field</p1>
 
 
                 <div id="form">

@@ -148,7 +148,7 @@
 
 }
 */
-@media screen and (max-width: 768px) {
+/*@media screen and (max-width: 768px) {
     .nameInput,
     .emailInput {
         width: calc(100% - 22px);
@@ -156,6 +156,7 @@
         margin-right: 0;
     }
 }
+*/
 /*
 .subjectInput {
     width: 97%;
@@ -166,13 +167,15 @@
     height: 20px;
 }
 */
+/*
 @media screen and (max-width: 768px) {
     .subjectInput{
         width: calc(100% - 22px);
         border-radius: 15px;
     }
 }
-
+*/
+/*
 .textbookInput{
     display: flex;
     align-items: flex-start;
@@ -187,7 +190,9 @@
 
 }
 
+*/
 
+/*
 @media screen and (max-height: 390px) {
     .textbookInput {
         height: 100%;
@@ -261,10 +266,8 @@
  
 @media only screen and (max-width: 40em) { } /* max-width 640px, mobile-only styles, use when QAing mobile issues */
 
-.main{
+
+.contactTitle{
     display: flex;
-    justify-content: center;
     align-items: center;
-    
 }
- 
