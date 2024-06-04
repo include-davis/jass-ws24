@@ -13,11 +13,26 @@
         color:#2C3868;
         font-weight: bolder;
     }
+    button{
+        border: none;
+        text-decoration: none;
+        background: none;
+        float:right;
+    }
+}
+
+.bullets{
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color:#404447;
 }
 
 .cabinetRow{
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .cabinet_body {
