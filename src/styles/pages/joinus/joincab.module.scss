@@ -1,5 +1,12 @@
 @use "src/styles/mixins.scss";
 
+.compactedCard{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+}
+
 .card{
     padding:17px;
     background-color:white;
@@ -9,6 +16,11 @@
     margin-left:50px;
     margin-top:10px;
     margin-bottom:10px;
+    // display: flex;
+    // justify-content: space-between;
+    // align-items: center;
+    text-align: left;
+    flex-direction: column;
     p{
         color:#2C3868;
         font-weight: bolder;
