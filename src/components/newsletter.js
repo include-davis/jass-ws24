@@ -19,7 +19,10 @@ export function Newsletter(){
         <section className={styles.container}>
             <div className={styles.seccontainer}>
                 <h1 className={styles.text}>Sign up for our newsletter & stay connected!</h1>
-          
+                <div className={styles.imagecontainermobile}>
+                    <img src={images.image1} alt="Image 1" className={styles.image} />
+                    <img src={images.image2} alt="Image 2" className={styles.image} />
+                </div>
                 <form className={styles.form} onSubmit={handleSubmit}>
                     <input
                         type="email"
