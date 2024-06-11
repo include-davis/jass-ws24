@@ -9,7 +9,7 @@ const textContent = {
         description: "Have questions or comments for JASS? Please fill out this form and we'll get back to you as soon as possible"
     }
 }
-export function Contact() {
+export function ContactComp() {
     const [name, setName] = useState('');
     const [email,setEmail] = useState('');
     const [subject, setSubject] = useState('');
