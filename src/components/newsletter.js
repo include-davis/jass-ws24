@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import styles from "@/styles/components/newsletter/newsletter.module.scss"
-import Image from 'next/image'
+import styles from '@/styles/components/newsletter/newsletter.module.scss';
+import Image from 'next/image';
 
 const images = {
     image1: '/images/JASSsocial1.jpeg',
@@ -8,7 +8,7 @@ const images = {
     image3: '/images/JASSsocial3.jpeg',
 };
 
-export function Newsletter(){
+export function Newsletter() {
     const [email, setEmail] = useState('');
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -19,8 +19,10 @@ export function Newsletter(){
     return (
         <section className={styles.container}>
             <div className={styles.seccontainer}>
-                <h1 className={styles.text}>Sign up for our newsletter & stay connected!</h1>
-          
+                <h1 className={styles.text}>
+                    Sign up for our newsletter & stay connected!
+                </h1>
+
                 <form className={styles.form} onSubmit={handleSubmit}>
                     <input
                         type="email"
@@ -30,19 +32,32 @@ export function Newsletter(){
                         placeholder="Enter email"
                         required
                     />
-                    
-                    <button type="submit" className={styles.button}>Submit</button>
-                    
+
+                    <button type="submit" className={styles.button}>
+                        Submit
+                    </button>
                 </form>
             </div>
 
             <div className={styles.imagecontainer}>
-                <img src={images.image1} alt="Image 1" className={styles.image} />
-                <img src={images.image2} alt="Image 2" className={styles.image} />
-                <img src={images.image3} alt="Image 3" className={styles.image} />
+                <img
+                    src={images.image1}
+                    alt="Image 1"
+                    className={styles.image}
+                />
+                <img
+                    src={images.image2}
+                    alt="Image 2"
+                    className={styles.image}
+                />
+                <img
+                    src={images.image3}
+                    alt="Image 3"
+                    className={styles.image}
+                />
             </div>
         </section>
     );
-};
+}
 
 export default Newsletter;
