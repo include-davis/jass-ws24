@@ -84,7 +84,7 @@ const card_content = {
 };
 export function JoinCabinet() {
     const positions = Object.values(card_content);
-    console.log(positions);
+    // console.log(positions);
 
     positions.map((obj) => console.log(obj));
 
