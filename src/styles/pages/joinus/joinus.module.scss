@@ -4,6 +4,7 @@
 
 .container {
   text-align: center;
+  margin: 3%;
 }
 
 .title {
@@ -11,9 +12,10 @@
   font-weight: bold;
   font-family: 'Gaegu', cursive;
   text-align: left;
-  margin-right: 820px;
-  margin-bottom: 25px;
+  margin: 5px;
   color: #022751;
+  display: inline;
+  width: 100%;
 }
 
 .cardContainer {
@@ -46,28 +48,29 @@
 }
 
 .cardContent {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: 16px;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 16px;
+}
 
 .cardTitle {
-    color: #022751;
-    font-size: 32px;
-    font-family: 'Gaegu', cursive;
-    font-weight: bold;
-    text-align: left;
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
+  color: #022751;
+  font-size: 32px;
+  font-family: 'Gaegu', cursive;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
   
-  .cardDescription {
-    color: #022751;
-    font-family: 'Gaegu', cursive;
-    font-size: 24px;
-    text-align: left;
-  }
+.cardDescription {
+  color: #022751;
+  font-family: 'Gaegu', cursive;
+  font-size: 24px;
+  text-align: left;
+  width: 100%;
+}
 
 .pageContainer {
   display: flex;

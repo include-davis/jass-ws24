@@ -1,24 +1,61 @@
 @use "src/styles/mixins.scss";
+@import 'mixins';
 @import url('https://fonts.googleapis.com/css2?family=Gaegu&display=swap');
 
 .container {
     display: flex;
     padding: 71.5px 112px; 
-    width: 1440px;
+    width: 100%;
     height: 371px;
     background: #F47F8F;
+    @include phone {
+        padding: 48px 16px;
+        width: 100%;
+        height: 678px;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    @include tablet {
+        padding: 48px 16px;
+        width: 100%;
+        height: 678px;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
 }
 
 .seccontainer {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     width: 605px;
     height: 228px;
+    @include mixins.phone{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        // width: 358px;
+        height: 582px;
+    }
+    @include tablet {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        // width: 358px;
+        height: 582px;
+    }
 }
 
 .form {
     display: flex;
     align-items: flex-start;
+    @include mixins.phone{
+        flex-direction: column;
+    }
+    @include mixins.tablet {
+        flex-direction: column;
+    }
 }
 
 .text {
@@ -34,6 +71,22 @@
     font-size: 54px;
     line-height: 120%;
     color: #FFFFFF;
+    @include mixins.phone{
+        justify-content: center;
+        align-items: center;
+        font-size: 32px;
+        width: 320px;
+        height: 120px;
+        text-align: center;
+    }
+    @include mixins.tablet {
+        justify-content: center;
+        align-items: center;
+        font-size: 32px;
+        width: 320px;
+        height: 120px;
+        text-align: center;
+    }
 }
 
 .button {
@@ -47,6 +100,16 @@
     width: 116px;
     height: 58px;
     font-size: 24px;
+    @include mixins.phone{
+        width: 305px;
+        height: 58px;
+        font-size: 24px;
+    }
+    @include mixins.tablet {
+        width: 305px;
+        height: 58px;
+        font-size: 24px;
+    }
 }
 
 .button:hover {
@@ -66,10 +129,24 @@
     margin-top: 40px;
     margin-right: 24px;
     color: black;
-    border: 0px solid #ccc;
-    border-radius: 70px;
+    border: 1px solid #6E757B;
+    border-radius: 15px;
     width: 460px;
     height: 58px;
+    @include mixins.phone{
+        margin-right: 0px;
+        width: 358px;
+        height: 56px;
+        font-size: 24px;
+        
+    }
+    @include mixins.tablet {
+        margin-right: 0px;
+        width: 358px;
+        height: 56px;
+        font-size: 24px;
+
+    }
 }
 
 .input:hover {
@@ -86,16 +163,48 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    align-items: flex-end;
-    padding: 0px;
+    align-items: center;
     margin-left: 40px;
     gap: 40px;
     width: 568px;
-    height: 195px;
+    height: 228px;
+    @include mixins.phone{
+        display:none;
+        
+    }
+    @include mixins.tablet {
+        display: none;
+
+    }
 }
 
 .image {
-    width: 160px;
-    height: 160px;
+    width: 161.02px;
+    height: 228px;
     border-radius: 0px;
+}
+
+.imagecontainermobile {
+    display: none;
+    @include mixins.phone{
+        display: flex;
+        gap: 36px;
+        margin-top: 40px;
+        width: 358.03px;
+        height: 228px;
+        
+        justify-content: center;
+        align-items: center;
+        
+    }
+    @include mixins.tablet {
+        display: flex;
+        gap: 36px;
+        margin-top: 40px;
+        width: 358.03px;
+        height: 228px;
+
+        justify-content: center;
+        align-items: center;
+    }
 }

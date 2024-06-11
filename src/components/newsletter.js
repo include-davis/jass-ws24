@@ -3,9 +3,8 @@ import styles from '@/styles/components/newsletter/newsletter.module.scss';
 import Image from 'next/image';
 
 const images = {
-    image1: '/images/JASSsocial1.jpeg',
-    image2: '/images/JASSsocial2.jpeg',
-    image3: '/images/JASSsocial3.jpeg',
+    image1: '/images/JASSNewsletter1.png',
+    image2: '/images/JASSNewsletter2.png',
 };
 
 export function Newsletter() {
@@ -22,7 +21,18 @@ export function Newsletter() {
                 <h1 className={styles.text}>
                     Sign up for our newsletter & stay connected!
                 </h1>
-
+                <div className={styles.imagecontainermobile}>
+                    <img
+                        src={images.image1}
+                        alt="Image 1"
+                        className={styles.image}
+                    />
+                    <img
+                        src={images.image2}
+                        alt="Image 2"
+                        className={styles.image}
+                    />
+                </div>
                 <form className={styles.form} onSubmit={handleSubmit}>
                     <input
                         type="email"
@@ -48,11 +58,6 @@ export function Newsletter() {
                 <img
                     src={images.image2}
                     alt="Image 2"
-                    className={styles.image}
-                />
-                <img
-                    src={images.image3}
-                    alt="Image 3"
                     className={styles.image}
                 />
             </div>
