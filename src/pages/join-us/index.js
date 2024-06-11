@@ -1,6 +1,13 @@
+import { Header } from '@/components/header';
+import { Footer } from '@/components/footer';
+import { JoinCabinet } from '@/components/joinCabinet';
+
 export default function JoinUs() {
     return (
-      <h1>join us</h1>
+        <div>
+            <Header />
+            <JoinCabinet />
+            <Footer />
+        </div>
     );
-  }
-  
+}

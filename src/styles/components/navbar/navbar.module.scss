@@ -1,1 +1,57 @@
 @use "src/styles/mixins.scss";
+@import url('https://fonts.googleapis.com/css2?family=Gaegu&display=swap');
+
+.font {
+    font-family: 'Gaegu';
+    font-size: 32px;
+    font-weight: 400;
+    font-style: normal;  
+}
+
+.header {
+    display: flex; 
+    padding-right: 2rem;
+    padding-left: 1rem;
+    align-items: center;
+    justify-content:space-between;
+    height: 120px;
+    background-color: #022751;
+}
+
+.global-styles {
+    box-sizing: border-box;
+}
+
+.button:hover {
+    background-color: #E6BF1D;
+}
+
+.button {
+    position: static; 
+    background-color: #F47F8F;
+    color:  #022751;
+    border-radius: 70px;
+    border: none;
+    font-family: 'Gaegu';
+    font-size: 24px;
+    font-weight: 600;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+}
+
+.logo {
+    text-align: left;
+    align-items: left;
+    width: 86px;
+    height: auto;
+}
+
+.nav {
+    a {
+        margin-right: 70px;
+        color: #FDFDFD;
+        text-decoration: none;
+    }
+}
