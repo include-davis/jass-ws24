@@ -20,7 +20,7 @@ export function Landing() {
                 <Image
                     src={images.jass_gp}
                     alt="jass_group"
-                    width="1216"
+                    width="1220"
                     height="400"
                 />
                 <div className={styles.landing_center}>
