@@ -1,15 +1,24 @@
 @use "src/styles/mixins.scss";
+@import 'mixins';
 @import url('https://fonts.googleapis.com/css2?family=Gaegu&display=swap');
 
 .container {
     display: flex;
     padding: 71.5px 112px; 
-    width: 1440px;
+    width: 100%;
     height: 371px;
     background: #F47F8F;
-    @include mixins.phone{
+    @include phone {
         padding: 48px 16px;
-        width: 390px;
+        width: 100%;
+        height: 678px;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    @include tablet {
+        padding: 48px 16px;
+        width: 100%;
         height: 678px;
         align-items: center;
         justify-content: center;
@@ -24,7 +33,16 @@
     height: 228px;
     @include mixins.phone{
         display: flex;
-        width: 358px;
+        flex-wrap: wrap;
+        flex-direction: column;
+        // width: 358px;
+        height: 582px;
+    }
+    @include tablet {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        // width: 358px;
         height: 582px;
     }
 }
@@ -33,6 +51,9 @@
     display: flex;
     align-items: flex-start;
     @include mixins.phone{
+        flex-direction: column;
+    }
+    @include mixins.tablet {
         flex-direction: column;
     }
 }
@@ -58,6 +79,14 @@
         height: 120px;
         text-align: center;
     }
+    @include mixins.tablet {
+        justify-content: center;
+        align-items: center;
+        font-size: 32px;
+        width: 320px;
+        height: 120px;
+        text-align: center;
+    }
 }
 
 .button {
@@ -72,6 +101,11 @@
     height: 58px;
     font-size: 24px;
     @include mixins.phone{
+        width: 305px;
+        height: 58px;
+        font-size: 24px;
+    }
+    @include mixins.tablet {
         width: 305px;
         height: 58px;
         font-size: 24px;
@@ -106,6 +140,13 @@
         font-size: 24px;
         
     }
+    @include mixins.tablet {
+        margin-right: 0px;
+        width: 358px;
+        height: 56px;
+        font-size: 24px;
+
+    }
 }
 
 .input:hover {
@@ -131,6 +172,10 @@
         display:none;
         
     }
+    @include mixins.tablet {
+        display: none;
+
+    }
 }
 
 .image {
@@ -151,5 +196,15 @@
         justify-content: center;
         align-items: center;
         
+    }
+    @include mixins.tablet {
+        display: flex;
+        gap: 36px;
+        margin-top: 40px;
+        width: 358.03px;
+        height: 228px;
+
+        justify-content: center;
+        align-items: center;
     }
 }
