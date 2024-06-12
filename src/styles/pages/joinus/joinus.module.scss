@@ -1,4 +1,5 @@
 @use "src/styles/mixins.scss";
+@import 'mixins';
 
 @import url('https://fonts.googleapis.com/css2?family=Gaegu&display=swap');
 
@@ -37,6 +38,10 @@
   border-radius: 16px;
   background-color: white;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+  @include phone {
+    width: 289px;
+    height: 432px;
+  }
 }
 
 .innerBox {
@@ -45,6 +50,10 @@
   border-radius: 16px;
   background-color: #C4C4C4;
   margin: 16px auto 0;
+  @include phone {
+    width: 265px;
+    height: 265px;
+  }
 }
 
 .cardContent {
@@ -62,6 +71,9 @@
   text-align: left;
   margin-top: 0px;
   margin-bottom: 0px;
+  @include phone {
+    font-size: 24px;
+  }
 }
   
 .cardDescription {
@@ -70,6 +82,9 @@
   font-size: 24px;
   text-align: left;
   width: 100%;
+  @include phone {
+    font-size: 18px;
+  }
 }
 
 .pageContainer {

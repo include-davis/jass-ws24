@@ -1,5 +1,5 @@
 @use "src/styles/mixins.scss";
-@import '../../mixins';
+@import 'mixins';
 @import url('https://fonts.googleapis.com/css2?family=Gaegu&display=swap');
 
 .container {
@@ -11,7 +11,7 @@
     @include phone {
         padding: 48px 16px;
         width: 100%;
-        height: 678px;
+        height: fit-content;
         align-items: center;
         justify-content: center;
         flex-direction: column;
@@ -19,7 +19,7 @@
     @include tablet {
         padding: 48px 16px;
         width: 100%;
-        height: 678px;
+        height: fit-content;
         align-items: center;
         justify-content: center;
         flex-direction: column;
@@ -188,6 +188,7 @@
     display: none;
     @include mixins.phone{
         display: flex;
+        // flex-direction: column;
         gap: 36px;
         margin-top: 40px;
         width: 358.03px;
@@ -199,6 +200,7 @@
     }
     @include mixins.tablet {
         display: flex;
+        // flex-direction: column;
         gap: 36px;
         margin-top: 40px;
         width: 358.03px;
