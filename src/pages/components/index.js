@@ -1,7 +1,4 @@
-import { Footer } from '@/components/footer';
-import { EventsSlider } from '@/components/eventsSlider';
-import { Newsletter } from '@/components/newsletter';
-
+// import React from "react"
 export default function Components() {
-    return <h1>components</h1>;
+    return <></>;
 }
