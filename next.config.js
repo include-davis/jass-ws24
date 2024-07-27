@@ -13,6 +13,11 @@ module.exports = {
                 destination: '/join-us',
                 permanent: true,
             },
+            {
+                source: '/home',
+                destination: '/',
+                permanent: true,
+            },
         ];
     },
     sassOptions: {
