@@ -13,6 +13,7 @@ export function Header() {
     const handleClick = () => {
         router.push('/join-us');
     };
+
     return (
         <div
             className={`${styles.header} ${styles.globalstyles} ${styles.font} ${styles.nav}`}

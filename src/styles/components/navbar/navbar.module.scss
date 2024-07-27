@@ -3,9 +3,11 @@
 
 .font {
   font-family: "Gaegu";
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 400;
   font-style: normal;
+  display: flex;
+  flex-wrap: nowrap;
 }
 
 .header {
@@ -47,12 +49,16 @@
   align-items: left;
   width: 86px;
   height: auto;
+  margin-right: 3%;
 }
 
 .nav {
   a {
-    margin-right: 70px;
+    margin-right: 45px;
     color: #fdfdfd;
     text-decoration: none;
+    @include mixins.phone {
+      font-size: 16px;
+    }
   }
 }

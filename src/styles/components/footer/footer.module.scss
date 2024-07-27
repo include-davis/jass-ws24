@@ -22,22 +22,25 @@
     color: white;
   }
   position: relative;
+    @include mixins.phone {
+      height: auto;
+    }
 }
 
 .footerContent {
-  position: absolute;
-  left: 3%;
-  top: 8%;
-
-  // display: flex; //test if its doing anything
-  // gap: 68px; //same here
+  display: flex;
+  justify-content: space-between;
+  padding: 2%;
+    @include mixins.phone {
+      flex-direction: column;
+      align-items: center;
+    }
 }
 
 //contact
 
 .contact {
   display: flex;
-  position: absolute;
   flex-direction: column;
   // gap: 30%;
 }
@@ -55,36 +58,28 @@
 }
 
 // links
-.linksOuterFrame {
-  // display: flex;
-  // flex-direction: column;
-
-  position: relative;
-  left: 292px;
-  @include sm-desktop {
-    left: 235px;
-  }
-}
 
 .linksInnerFrame {
   display: flex;
-  position: absolute;
+  // position: absolute;
   font-size: 24px;
   // line-height: 100%;
+  @include mixins.phone {padding-top: 10%;}
 }
 
 .linksRight {
   display: flex;
   flex-direction: column;
 
-  position: absolute;
+  // position: absolute;
   // gap: 14px;
-  left: 225px;
-  width: 150px;
+  // left: 225px;
+  width: 165px;
   height: auto;
-  @include sm-desktop {
-    left: 205px;
-  }
+  // @include sm-desktop {
+  //   // left: 205px;
+  // }
+    padding-left: 7%;
 }
 
 .linksLeft {
@@ -94,117 +89,27 @@
   // gap: 14px;
   width: 165px;
   height: auto; //not needed curerntly
+  @include mixins.phone {
+      padding-left: 7%;
+  }
 }
 
 .link {
   margin-bottom: 20px;
+  color: white;
+  font-weight: lighter;
+    @include mixins.phone {font-size: 16px;}
 }
 
-//newsletter
-.newsletter {
-  display: flex;
-  position: relative;
-  // top: 49px;
-  left: 759px;
-
-  flex-direction: column;
-  gap: 40px;
-  text-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  width: 65%;
-  @include sm-desktop {
-    left: 650px;
-    width: 45%;
-    gap: 20px;
-  }
-}
-
-.title {
-  line-height: 100%;
-  font-weight: bold;
-  font-size: 48px;
-  text-align: center;
-  // text-wrap: wrap;
-  @include sm-desktop {
-    font-size: 28px;
-  }
-}
-
-.interactive {
-  display: flex;
-  gap: 2%;
-}
-
-.submitButton {
-  color: rgb(2, 39, 81);
-
-  background-color: rgb(244, 127, 143);
-  border-radius: 70px;
-  border: none;
-
-  padding: 12px 24px;
-  width: auto; //needs to be auto
-  height: auto; //needs to be auto
-
-  font-size: 18px;
-  line-height: 100%;
-}
-
-.submitButton:hover {
-  background-color: gold;
-}
-
-.inputWrapper {
-  display: flex;
-  position: relative;
-  padding: 12px 320px 24px 12px;
-  background-color: white;
-  border-radius: 70px;
-  border: none;
-  height: 100%;
-  width: 35%;
-  @include sm-desktop {
-    padding: 12px 200px 24px 12px;
-    gap: 20px;
-  }
-}
-
-.input {
-  display: flex;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-
-  padding-left: 24px;
-
-  width: 100%;
-  height: 100%;
-  color: rgb(2, 39, 81);
-  background: none;
-  border-radius: 70px;
-  border: none;
-
-  outline: none;
-
-  font-size: 24px;
-  line-height: 140%;
-
-  &::placeholder {
-    color: rgb(2, 39, 81);
-    opacity: 1;
-  }
-
-  &:hover {
-    background-color: goldenrod;
-  }
-}
 
 //credit
 .footerBottom {
   background-color: rgb(244, 127, 143);
   width: 100%;
-  height: 64px;
+  height: 67px;
+  @include mixins.phone {
+      height: fit-content;
+  }
 }
 
 .creditText {
@@ -213,4 +118,8 @@
   padding: 20px;
   padding-left: 40px;
   line-height: 150%;
+    @include mixins.phone {
+      font-size: 16px;
+      padding: 3%;
+    }
 }
