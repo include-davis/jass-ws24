@@ -6,7 +6,7 @@ export const MeetUsCard = ({ name }) => {
     return (
         <div className={styles.child}>
             <div className={styles.childtop}>
-                <Image src="../../Images/placeholder.jpg" />
+                <img src="../../Images/placeholder.jpg" />
             </div>
             <div className={styles.childbottom}>
                 <h2>{name}</h2>

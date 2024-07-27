@@ -31,7 +31,10 @@ export function Footer({ data }) {
                                 height="24.52px"
                                 alt="emailLogo"
                             />
-                            <a href="mailto:jassofficers@ucdavis.edu">
+                            <a
+                                href="mailto:jassofficers@ucdavis.edu"
+                                id="email"
+                            >
                                 jassofficers@ucdavis.edu
                             </a>
                         </div>
