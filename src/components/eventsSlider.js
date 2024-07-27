@@ -20,31 +20,22 @@ const content = {
     },
 };
 
-export function EventsSlider() {
+export function EventsSlider({ data }) {
+    console.log(data);
     return (
         <div className={styles.pageContainer}>
             {/* <div className={styles.topMargin}></div> */}
             <div className={styles.container}>
                 <p className={styles.title}>Join us for our...</p>
                 <div className={styles.cardContainer}>
-                    <div className={styles.cardWrapper}>
-                        <EventsCard
-                            title={content.card1.title}
-                            description={content.card1.description}
-                        />
-                    </div>
-                    <div className={styles.cardWrapper}>
-                        <EventsCard
-                            title={content.card2.title}
-                            description={content.card2.description}
-                        />
-                    </div>
-                    <div className={styles.cardWrapper}>
-                        <EventsCard
-                            title={content.card3.title}
-                            description={content.card3.description}
-                        />
-                    </div>
+                    {data.map((event) => (
+                        <div key={event.id} className={styles.cardWrapper}>
+                            <EventsCard
+                                title={event.event_title}
+                                description={event.event_description}
+                            />
+                        </div>
+                    ))}
                 </div>
             </div>
             {/* <div className={styles.bottomMargin}></div> */}

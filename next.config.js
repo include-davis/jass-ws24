@@ -10,7 +10,7 @@ module.exports = {
             },
             {
                 source: '/joinus',
-                destination: '/meet-us',
+                destination: '/join-us',
                 permanent: true,
             },
         ];

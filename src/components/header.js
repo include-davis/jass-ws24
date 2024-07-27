@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from '@/styles/components/navbar/navbar.module.scss';
+import { useRouter } from 'next/router';
 
 const container = {
     logo: '/images/JASS_LOGO.jpeg',
@@ -7,6 +8,11 @@ const container = {
 };
 
 export function Header() {
+    const router = useRouter();
+
+    const handleClick = () => {
+        router.push('/join-us');
+    };
     return (
         <div
             className={`${styles.header} ${styles.globalstyles} ${styles.font} ${styles.nav}`}
@@ -21,7 +27,7 @@ export function Header() {
                 <button
                     type="button"
                     className={`${styles.buttonhover} ${styles.button}`}
-                    href="/joinourcabinet"
+                    onClick={handleClick}
                 >
                     {container.message}
                 </button>

@@ -2,89 +2,30 @@ import styles from '@/styles/pages/joinus/joincab.module.scss';
 import Image from 'next/image';
 import { CabinetCard } from './cabinetCard';
 
+export async function getStaticProps() {
+    console.log(`${process.env.NEXT_PUBLIC_CMS_URL}/api/homepage?populate=*`);
+    const ucd_res = await fetch(
+        `${process.env.NEXT_PUBLIC_CMS_URL}/api/homepage?populate=*`
+    );
+    const ucd_json = await ucd_res.json();
+
+    return {
+        props: {
+            ucd_json: ucd_json.data,
+        },
+    };
+}
+
 const images = {
     jass_gp: `/images/JASS_cabinet.jpg`,
 };
-const content = {
-    header: 'Join Our Cabinet',
-    paragraph1:
-        'Interested in running for cabinet next year and want to know about specific positions? ',
-    paragraph2:
-        'Here you can learn about general responsibilities for each position! ',
-};
-const card_content = {
-    social: {
-        title: 'Social Chairs (2)',
-        description: [
-            'Organize large socials like Ski & Beach Trip',
-            'Involved in long-term event planning',
-            'Work with Treasurer to decide budgets',
-            'Ideal for those who enjoy proactive planning and creating memorable events',
-        ],
-    },
-    service: {
-        title: 'Service Chairs (2)',
-        description: [
-            'Plan volunteer events and collaborate with Japanese American Citizen’s League',
-            'Lead events such as Relay for Life, Remembrance Day, and Picnic Day',
-            'Ideal for those interested in community service',
-        ],
-    },
-    family: {
-        title: 'Family Coordinators (2)',
-        description: [
-            'Manage the Family & Big/Little Program',
-            'Organize family events and competitions (e.g., Reveal Night, Family Picnics)',
-            'Ideal for those with a welcoming nature and who enjoy fostering new friendships',
-        ],
-    },
-    sports: {
-        title: 'Sports Coordinator',
-        description: [
-            'Plan active events and manage IM sports teams through the Davis IM system',
-            'Responsible for sports equipment and maintaining sports-related social media',
-            'Best for those interested in sports and athletics',
-        ],
-    },
-    historian: {
-        title: 'Historian',
-        description: [
-            'Capture memories through photography and videography at events',
-            'Organize the end-of-year Banquet event',
-            'Suited for those interested in photography and documenting memorable moments',
-        ],
-    },
-    publicity: {
-        title: 'Publicity',
-        description: [
-            'Publicize JASS on campus and at events',
-            'Manage advertising materials and tabling',
-            'First point of contact for prospective members',
-            'Ideal for those passionate about marketing and promoting JASS',
-        ],
-    },
-    treasurer: {
-        title: 'Treasurer',
-        description: [
-            'Manage all financial aspects of JASS',
-            'Advise on budgeting for events',
-            'Handle reimbursements and payments',
-            'Suitable for those interested in economics or financial management',
-        ],
-    },
-    secretary: {
-        title: 'Secretary',
-        description: [
-            'Key communicator for cabinet and members',
-            'Write weekly newsletters and manage website',
-            'Take meeting minutes ',
-            'Ideal for those who are detail-oriented and interested in administrative roles',
-        ],
-    },
-};
+
+const positions = [];
+
 export function JoinCabinet() {
-    const positions = Object.values(card_content);
+    // const positions = Object.values(card_content);
     // console.log(positions);
+    const content = '';
 
     positions.map((obj) => console.log(obj));
 
