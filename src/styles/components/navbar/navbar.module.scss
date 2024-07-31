@@ -1,4 +1,6 @@
+/* src/styles/components/navbar/navbar.module.scss */
 @use "src/styles/mixins.scss";
+@import 'mixins';
 @import url('https://fonts.googleapis.com/css2?family=Gaegu&display=swap');
 
 .font {
@@ -6,6 +8,10 @@
     font-size: 32px;
     font-weight: 400;
     font-style: normal;  
+    @include mixins.phone
+    {
+        font-size: 24px;
+    }
 }
 
 .header {
@@ -13,13 +19,14 @@
     padding-right: 2rem;
     padding-left: 1rem;
     align-items: center;
-    justify-content:space-between;
+    justify-content: space-between;
     height: 120px;
     width: 100%;
-    background-color: #022751;
+    background-color: #2C3868;
+    position: relative; 
 }
 
-.global-styles {
+.globalstyles {
     box-sizing: border-box;
 }
 
@@ -28,9 +35,8 @@
 }
 
 .button {
-    position: static; 
     background-color: #F47F8F;
-    color:  #022751;
+    color: #022751;
     border-radius: 70px;
     border: none;
     font-family: 'Gaegu';
@@ -40,6 +46,7 @@
     padding-right: 24px;
     padding-top: 14px;
     padding-bottom: 14px;
+    margin-right: 24px; /* Space between button and hamburger */
 }
 
 .logo {
@@ -50,9 +57,74 @@
 }
 
 .nav {
-    a {
-        margin-right: 70px;
-        color: #FDFDFD;
-        text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav a {
+    margin-right: 70px;
+    color: #FDFDFD;
+    text-decoration: none;
+    font-family: 'Gaegu'; /* Ensure the font is applied */
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger .bar {
+    width: 38.57px;
+    height: 3px;
+    background-color: #F47F8F;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0 1rem;
+    @include mixins.phone
+    {
+        margin: 1rem;
+    }
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+    
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: calc(100vh - 120px); 
+        position: absolute;
+        top: 120px; 
+        left: 0;
+        background-color: #2C3868;
+        padding: 1rem 0;
+        z-index: 10; 
+    }
+    
+    .nav-links.open {
+        display: flex;
+    }
+    
+    .nav-links li {
+        margin: 1rem;
+        text-align: center;
     }
 }
