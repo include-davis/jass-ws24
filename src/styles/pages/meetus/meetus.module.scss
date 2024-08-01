@@ -21,7 +21,7 @@
 }
 
 .board {
-  padding: 10%;
+  margin: 7%;
   font-family: "Gaegu";
 
   h1 {
@@ -54,6 +54,15 @@
     font-size: 24px;
     padding-bottom: 5px;
     color: #2c3868;
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .hero_image {
+      margin: 3%;
+    }
   }
 
   img {

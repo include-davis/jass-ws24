@@ -3,16 +3,23 @@ import styles from '@/styles/pages/joinus/joincab.module.scss';
 import Image from 'next/image';
 import { useState } from 'react';
 
-export function CabinetCard({ position, description }) {
+export function CabinetCard({ position, description, key }) {
     const [isOpened, setIsOpened] = useState(false);
     function handleClick() {
         setIsOpened(!isOpened);
     }
     const plusOrMinus = isOpened ? '/images/plus.png' : '/images/minus.png';
-    const heightStyle = { height: isOpened ? '190px' : '55px' };
+    const heightStyle = { height: isOpened ? 'fit-content' : '55px' };
+
+    let descriptionArr = description.split('\n');
 
     return (
-        <div className={styles.card} onClick={handleClick} style={heightStyle}>
+        <div
+            className={styles.card}
+            onClick={handleClick}
+            style={heightStyle}
+            key={key}
+        >
             <div className={styles.compactedCard}>
                 <p>{position}</p>
                 <button>
@@ -28,7 +35,7 @@ export function CabinetCard({ position, description }) {
             {isOpened && (
                 <div>
                     <ul className={styles.bullets}>
-                        {description.map((bullet, index) => (
+                        {descriptionArr.map((bullet, index) => (
                             <li key={index}> {bullet} </li>
                         ))}
                     </ul>

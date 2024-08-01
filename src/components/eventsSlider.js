@@ -2,6 +2,8 @@ import React from 'react';
 import styles from '@/styles/pages/joinus/joinus.module.scss';
 import { EventsCard } from '@/components/eventsCard';
 
+// TODO: get photos for events
+
 export function EventsSlider({ data }) {
     // console.log(data);
     return (

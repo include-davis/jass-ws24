@@ -2,54 +2,33 @@ import styles from '@/styles/pages/joinus/joincab.module.scss';
 import Image from 'next/image';
 import { CabinetCard } from './cabinetCard';
 
-export async function getStaticProps() {
-    console.log(`${process.env.NEXT_PUBLIC_CMS_URL}/api/homepage?populate=*`);
-    const ucd_res = await fetch(
-        `${process.env.NEXT_PUBLIC_CMS_URL}/api/homepage?populate=*`
-    );
-    const ucd_json = await ucd_res.json();
+export function JoinCabinet({ header, positions }) {
+    const PContent = positions[0].attributes.roles;
+    console.log(PContent);
 
-    return {
-        props: {
-            ucd_json: ucd_json.data,
-        },
-    };
-}
-
-const images = {
-    jass_gp: `/images/JASS_cabinet.jpg`,
-};
-
-const positions = [];
-
-export function JoinCabinet() {
-    // const positions = Object.values(card_content);
-    // console.log(positions);
-    const content = '';
-
-    positions.map((obj) => console.log(obj));
+    const HContent = header.attributes;
+    // console.log(HContent);
 
     return (
         <div className={styles.gaegu_regular}>
             <div className={styles.cabinet_body}>
                 <Image
-                    src={images.jass_gp}
+                    src={HContent.hero_image.data.attributes.formats.large.url}
                     alt="jass_group"
                     width="1220"
                     height="400"
                 />
                 <div className={styles.cabinet_center}>
-                    <h1>{content.header}</h1>
+                    <h1>{HContent.header}</h1>
                     <br />
-                    <p>{content.paragraph1}</p>
-                    <p>{content.paragraph2}</p>
+                    <p>{HContent.description}</p>
                 </div>
                 <div className={styles.cabinetRow}>
-                    {positions.map((obj, index) => (
+                    {PContent.map((obj, index) => (
                         <CabinetCard
-                            position={obj.title}
+                            position={obj.position_title}
                             description={obj.description}
-                            key={index}
+                            key={obj.id}
                         />
                     ))}
                 </div>

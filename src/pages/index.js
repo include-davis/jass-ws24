@@ -49,6 +49,7 @@ export default function Home({ landing, events, footer }) {
 
     const event_slider = events[0].attributes.events;
     // console.log(event_slider);
+    // TODO: figure out how to get all images
 
     const links = footer.attributes;
 

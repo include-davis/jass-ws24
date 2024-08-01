@@ -2,6 +2,7 @@ import React from 'react';
 import styles from '@/styles/pages/meetus/meetus.module.scss';
 import Image from 'next/image';
 
+// TODO: add props for cab member pics
 export const MeetUsCard = ({ name }) => {
     return (
         <div className={styles.child}>

@@ -25,6 +25,8 @@ export async function getStaticProps() {
     };
 }
 
+// TODO: add the cab member profile picture
+
 export default function MeetUs({ meet_us, meet_cab }) {
     const meetus = meet_us.attributes;
     const meetcab = meet_cab[0].attributes.roles;
@@ -34,16 +36,16 @@ export default function MeetUs({ meet_us, meet_cab }) {
             <Header />
 
             <div className={styles.board}>
-                <div className={styles.intro}>
+                <div className={styles.header}>
                     <img
+                        className="hero_image"
                         src={
                             meetus.hero_image.data.attributes.formats.large.url
                         }
                     />
+                    <h1> Meet Us </h1>
+                    <p>{meetus.description}</p>
                 </div>
-
-                <h1> Meet Us </h1>
-                <p>{meetus.description}</p>
 
                 <div className={styles.parent}>
                     {meetcab.map((member) => (
