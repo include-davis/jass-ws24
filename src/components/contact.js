@@ -1,5 +1,5 @@
 import styles from '@/styles/pages/contact/contact.module.scss';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 // const textContent = {
 //     text1: {
@@ -9,10 +9,44 @@ import { useState } from 'react';
 //     },
 // };
 export function ContactComp() {
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [subject, setSubject] = useState('');
-    const [message, setMessage] = useState('');
+    const [mailStatus, setMailStatus] = useState('');
+    const [pending, setPending] = useState(false);
+    const formRef = useRef(null);
+
+    const resetState = () => {
+        setPending(false);
+        setMailStatus('');
+    };
+
+    const formHandler = async (e) => {
+        setPending(true);
+        e.preventDefault();
+
+        const data = new FormData(e.target);
+        // console.log(data);
+        const values = Object.fromEntries(data.entries());
+        console.log(values);
+
+        try {
+            const res = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'applications/json',
+                },
+                body: JSON.stringify(values),
+            });
+            const resData = await res.json();
+            if (!resData.ok) {
+                throw new Error(resData.error);
+            }
+            setMailStatus('success');
+        } catch (e) {
+            setMailStatus('failed');
+        }
+
+        setPending(false);
+        formRef.current.reset();
+    };
 
     return (
         <>
@@ -28,7 +62,7 @@ export function ContactComp() {
                     field
                 </h2>
 
-                <div id="form">
+                <form ref={formRef} onSubmit={formHandler}>
                     <div className={styles.goSide}>
                         <div className={styles.goUnder}>
                             <label htmlFor="name" className={styles.label}>
@@ -40,9 +74,8 @@ export function ContactComp() {
                                 id="name"
                                 name="name"
                                 className={`${styles.inputText} ${styles.inputCentered} ${styles.nameInput}`}
-                                value={name}
-                                onChange={(e) => setName(e.target.value)}
                                 placeholder="Full Name"
+                                required
                             />
                         </div>
 
@@ -58,9 +91,8 @@ export function ContactComp() {
                                 id="email"
                                 name="email"
                                 className={`${styles.inputText} ${styles.inputCentered} ${styles.emailInput}`}
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
                                 placeholder="Email"
+                                required
                             />
                         </div>
                     </div>
@@ -75,8 +107,6 @@ export function ContactComp() {
                             id="subject"
                             name="subject"
                             className={`${styles.inputText} ${styles.inputCentered}${styles.subjectInput}`}
-                            value={subject}
-                            onChange={(e) => setSubject(e.target.value)}
                             placeholder="I have a question or comment about..."
                         />
                     </div>
@@ -91,8 +121,6 @@ export function ContactComp() {
                             id="message"
                             name="message"
                             className={`${styles.inputText} ${styles.inputCentered} ${styles.messageInput}`}
-                            value={message}
-                            onChange={(e) => setMessage(e.target.value)}
                             placeholder="I want to know more about..."
                         />
                     </div>
@@ -102,13 +130,13 @@ export function ContactComp() {
                     <div className={styles.submitButtonContainer}>
                         <button
                             type="submit"
+                            href="/contact"
                             className={styles.submitButton}
-                            onSubmit={(e) => e.preventDefault()}
                         >
                             Submit
                         </button>
                     </div>
-                </div>
+                </form>
             </div>
         </>
     );

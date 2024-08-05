@@ -12,7 +12,7 @@ export async function getStaticProps() {
     // console.log(meetus_json);
 
     const meetcab_res = await fetch(
-        `${process.env.NEXT_PUBLIC_CMS_URL}/api/cabinets?populate=*`
+        `${process.env.NEXT_PUBLIC_CMS_URL}/api/cabinets?populate[0]=roles&populate[1]=roles.bio_pic`
     );
     const meetcab_json = await meetcab_res.json();
     // console.log(meetcab_json);
@@ -30,7 +30,7 @@ export async function getStaticProps() {
 export default function MeetUs({ meet_us, meet_cab }) {
     const meetus = meet_us.attributes;
     const meetcab = meet_cab[0].attributes.roles;
-    // console.log(meetcab);
+    console.log(meetcab);
     return (
         <div>
             <Header />
@@ -56,6 +56,9 @@ export default function MeetUs({ meet_us, meet_cab }) {
                             position={member.role_title}
                             major={member.major}
                             year={member.year}
+                            photo={
+                                member.bio_pic.data.attributes.formats.large.url
+                            }
                         />
                     ))}
                 </div>
