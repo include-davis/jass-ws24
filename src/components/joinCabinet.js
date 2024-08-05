@@ -4,7 +4,7 @@ import { CabinetCard } from './cabinetCard';
 
 export function JoinCabinet({ header, positions }) {
     const PContent = positions[0].attributes.roles;
-    console.log(PContent);
+    // console.log(PContent);
 
     const HContent = header.attributes;
     // console.log(HContent);
@@ -24,7 +24,7 @@ export function JoinCabinet({ header, positions }) {
                     <p>{HContent.description}</p>
                 </div>
                 <div className={styles.cabinetRow}>
-                    {PContent.map((obj, index) => (
+                    {PContent.map((obj) => (
                         <CabinetCard
                             position={obj.position_title}
                             description={obj.description}

@@ -12,7 +12,7 @@ export async function getStaticProps() {
     // console.log('API response:', landing_json); // Log the API response
 
     const event_res = await fetch(
-        `${process.env.NEXT_PUBLIC_CMS_URL}/api/event-sliders?populate=*`
+        `${process.env.NEXT_PUBLIC_CMS_URL}/api/event-sliders?populate[0]=events&populate[1]=events.event_image`
     );
     const event_json = await event_res.json();
     // console.log(event_json);

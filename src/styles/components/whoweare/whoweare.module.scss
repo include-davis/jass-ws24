@@ -29,9 +29,12 @@
 .title {
   text-align: center;
   font-weight: bold;
-  font-size: 54px;
+  font-size: fit-content;
   color: #022751;
-  padding: 50px;
+  padding: 5%;
+  @include phone {
+    font-size: xx-large;
+  }
 }
 
 .paragraphscontainer {
@@ -41,11 +44,17 @@
   margin: 0 auto;
   font-size: 20px;
   color: #404447;
+  @include phone {
+    flex-direction: column;
+  }
 }
 
 .paragraphbox {
   flex: 1;
   padding: 10px;
+  @include phone {
+    font-size: medium;
+  }
 }
 
 .button {
@@ -60,6 +69,10 @@
   font-size: 24px;
   color: #022751;
   border: 0px;
+  @include phone {
+    width: 90%;
+    height: fit-content;
+  }
 }
 
 .button:hover {

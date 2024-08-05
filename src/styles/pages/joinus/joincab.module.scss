@@ -46,8 +46,9 @@
 .cabinetRow {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
   align-items: center;
+  justify-content: space-evenly;
+  max-width: 900px;
 }
 
 .cabinet_body {

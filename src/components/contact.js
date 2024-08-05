@@ -12,8 +12,7 @@ export function ContactComp() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [subject, setSubject] = useState('');
-    setEmail('');
-    setSubject('');
+    const [message, setMessage] = useState('');
 
     return (
         <>
@@ -22,8 +21,7 @@ export function ContactComp() {
                 <h1 className={styles.contactTitle}>Contact Us</h1>
                 <p className={styles.contactText}>
                     Have questions or comments for JASS? Please fill out this
-                    form and <br />
-                    we'll get back to you as soon as possible
+                    form and we'll get back to you as soon as possible.
                 </p>
                 <h2 className={styles.contactField}>
                     <span className={styles.asterickRed}>*</span> = required
@@ -61,7 +59,7 @@ export function ContactComp() {
                                 name="email"
                                 className={`${styles.inputText} ${styles.inputCentered} ${styles.emailInput}`}
                                 value={email}
-                                onChange={(e) => setName(e.target.value)}
+                                onChange={(e) => setEmail(e.target.value)}
                                 placeholder="Email"
                             />
                         </div>
@@ -78,7 +76,7 @@ export function ContactComp() {
                             name="subject"
                             className={`${styles.inputText} ${styles.inputCentered}${styles.subjectInput}`}
                             value={subject}
-                            onChange={(e) => setName(e.target.value)}
+                            onChange={(e) => setSubject(e.target.value)}
                             placeholder="I have a question or comment about..."
                         />
                     </div>
@@ -93,13 +91,20 @@ export function ContactComp() {
                             id="message"
                             name="message"
                             className={`${styles.inputText} ${styles.inputCentered} ${styles.messageInput}`}
+                            value={message}
+                            onChange={(e) => setMessage(e.target.value)}
+                            placeholder="I want to know more about..."
                         />
                     </div>
 
                     <br></br>
 
                     <div className={styles.submitButtonContainer}>
-                        <button type="submit" className={styles.submitButton}>
+                        <button
+                            type="submit"
+                            className={styles.submitButton}
+                            onSubmit={(e) => e.preventDefault()}
+                        >
                             Submit
                         </button>
                     </div>
