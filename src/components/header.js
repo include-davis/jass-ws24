@@ -37,7 +37,7 @@ export function Header() {
             <nav ref={navRef} className={styles.nav}>
                 <button
                     type="button"
-                    className={`${styles.buttonmobile} ${styles.button}`}
+                    className={`${styles.buttonmobile}`}
                     onClick={() => window.location.href = '/joinourcabinet'}
                 >
                     {container.message}
@@ -57,6 +57,13 @@ export function Header() {
                     <li><a href="/join-us" className={styles.font} onClick={handleLinkClick}>Join Our Cabinet</a></li>
                     <li><a href="/contact" className={styles.font} onClick={handleLinkClick}>Contact</a></li>
                 </ul>
+                <button
+                    type="button"
+                    className={`${styles.button}`}
+                    onClick={() => window.location.href = '/joinourcabinet'}
+                >
+                    {container.message}
+                </button>
             </nav>
         </header>
     );
