@@ -1,4 +1,5 @@
 import styles from '@/styles/components/footer/footer.module.scss';
+import { useRouter } from 'next/router';
 
 const images = {
     discLogo: '/images/discordIcon.png',
@@ -8,7 +9,8 @@ const images = {
     jassLogo: '/images/JASS_LOGO.jpeg',
 };
 
-export function Footer() {
+export function Footer({ data }) {
+    const router = useRouter();
     return (
         <div className={styles.footer}>
             <div className={styles.footerTop}>
@@ -29,7 +31,10 @@ export function Footer() {
                                 height="24.52px"
                                 alt="emailLogo"
                             />
-                            <a href="mailto:jassofficers@ucdavis.edu">
+                            <a
+                                href="mailto:jassofficers@ucdavis.edu"
+                                id="email"
+                            >
                                 jassofficers@ucdavis.edu
                             </a>
                         </div>
@@ -39,54 +44,106 @@ export function Footer() {
                                 src={images.instaLogo}
                                 height="24.52px"
                                 alt="instalogo"
+                                onClick={() => {
+                                    window.open(
+                                        `${data.instagram_link}`,
+                                        '_blank'
+                                    );
+                                }}
                             />
                             <img
                                 className={styles.image}
                                 src={images.fbLogo}
                                 height="24.52"
                                 alt="fblogo"
+                                onClick={() => {
+                                    window.open(
+                                        `${data.facebook_link}`,
+                                        '_blank'
+                                    );
+                                }}
                             />
                             <img
                                 className={styles.image}
                                 src={images.discLogo}
                                 height="24.52"
                                 alt="disclogo"
+                                onClick={() => {
+                                    window.open(
+                                        `${data.discord_link}`,
+                                        '_blank'
+                                    );
+                                }}
                             />
                         </div>
-
-                        {/* Add social media icons here */}
                     </div>
-                    <div className={styles.linksOuterFrame}>
-                        <div className={styles.linksInnerFrame}>
-                            <div className={styles.linksLeft}>
-                                <p className={styles.link}>Home</p>
-                                <p className={styles.link}>Calendar</p>
-                                <p className={styles.link}>Meet Us</p>
-                                <p className={styles.link}>Join Our Cabinet</p>
-                            </div>
-                            <div className={styles.linksRight}>
-                                <p className={styles.link}>Media</p>
-                                <p className={styles.link}>Youtube</p>
-                                <p className={styles.link}>Google Photos</p>
-                            </div>
+                    <div className={styles.linksInnerFrame}>
+                        <div className={styles.linksLeft}>
+                            <p
+                                className={styles.link}
+                                style={{ fontWeight: '900' }}
+                                onClick={() => {
+                                    router.push('/');
+                                }}
+                            >
+                                Home
+                            </p>
+                            <p
+                                className={styles.link}
+                                onClick={() => {
+                                    router.push('/calendar');
+                                }}
+                            >
+                                Calendar
+                            </p>
+                            <p
+                                className={styles.link}
+                                onClick={() => {
+                                    router.push('/meet-us');
+                                }}
+                            >
+                                Meet Us
+                            </p>
+                            <p
+                                className={styles.link}
+                                onClick={() => {
+                                    router.push('/join-us');
+                                }}
+                            >
+                                Join Our Cabinet
+                            </p>
                         </div>
-                    </div>
-
-                    <div className={styles.newsletter}>
-                        <p className={styles.title}>
-                            Sign up for our newsletter & stay connected!
-                        </p>
-                        <div className={styles.interactive}>
-                            <div className={styles.inputWrapper}>
-                                <input
-                                    className={styles.input}
-                                    type="email"
-                                    placeholder="Enter email"
-                                />
-                            </div>
-                            <button className={styles.submitButton}>
-                                Submit
-                            </button>
+                        <div className={styles.linksRight}>
+                            <p
+                                className={styles.link}
+                                style={{ fontWeight: '900' }}
+                            >
+                                Media
+                            </p>
+                            <p className={styles.link}>
+                                <a
+                                    href={
+                                        data?.youtube_link ||
+                                        'https://www.youtube.com/channel/UCoS3lPl549qRKaRcUC_TP3w'
+                                    }
+                                    target="_blank"
+                                    style={{ textDecoration: 'none' }}
+                                >
+                                    Youtube
+                                </a>
+                            </p>
+                            <p className={styles.link}>
+                                <a
+                                    href={
+                                        data?.gphotos_link ||
+                                        'https://photos.app.goo.gl/Cj5QHG2k3EkVacES8'
+                                    }
+                                    target="_blank"
+                                    style={{ textDecoration: 'none' }}
+                                >
+                                    Google Photos
+                                </a>
+                            </p>
                         </div>
                     </div>
                 </div>

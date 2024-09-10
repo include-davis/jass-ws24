@@ -1,212 +1,207 @@
 @use "src/styles/mixins.scss";
-@import 'mixins';
-@import url('https://fonts.googleapis.com/css2?family=Gaegu&display=swap');
+@import "mixins";
+@import url("https://fonts.googleapis.com/css2?family=Gaegu&display=swap");
 
 .container {
-    display: flex;
-    padding: 71.5px 112px; 
+  display: flex;
+  padding: 71.5px 112px;
+  width: 100%;
+  height: 371px;
+  background: #f47f8f;
+  @include phone {
+    padding: 48px 16px;
     width: 100%;
-    height: 371px;
-    background: #F47F8F;
-    @include phone {
-        padding: 48px 16px;
-        width: 100%;
-        height: fit-content;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-    }
-    @include tablet {
-        padding: 48px 16px;
-        width: 100%;
-        height: fit-content;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-    }
+    height: fit-content;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  @include tablet {
+    padding: 48px 16px;
+    width: 100%;
+    height: fit-content;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
 }
 
 .seccontainer {
+  flex-direction: column;
+  align-items: center;
+  width: 605px;
+  height: 228px;
+  @include mixins.phone {
+    display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
-    align-items: center;
-    width: 605px;
-    height: 228px;
-    @include mixins.phone{
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        // width: 358px;
-        height: 582px;
-    }
-    @include tablet {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        // width: 358px;
-        height: 582px;
-    }
+    // width: 358px;
+    height: 582px;
+  }
+  @include tablet {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    // width: 358px;
+    height: 582px;
+  }
 }
 
 .form {
-    display: flex;
-    align-items: flex-start;
-    @include mixins.phone{
-        flex-direction: column;
-    }
-    @include mixins.tablet {
-        flex-direction: column;
-    }
+  display: flex;
+  align-items: flex-start;
+  @include mixins.phone {
+    flex-direction: column;
+  }
+  @include mixins.tablet {
+    flex-direction: column;
+  }
 }
 
 .text {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 10px;
-    width: 606px;
-    height: 130px;
-    font-family: 'Gaegu', cursive;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 54px;
-    line-height: 120%;
-    color: #FFFFFF;
-    @include mixins.phone{
-        justify-content: center;
-        align-items: center;
-        font-size: 32px;
-        width: 320px;
-        height: 120px;
-        text-align: center;
-    }
-    @include mixins.tablet {
-        justify-content: center;
-        align-items: center;
-        font-size: 32px;
-        width: 320px;
-        height: 120px;
-        text-align: center;
-    }
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+  width: 606px;
+  height: 130px;
+  font-family: "Gaegu", cursive;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 54px;
+  line-height: 120%;
+  color: #ffffff;
+  @include mixins.phone {
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    width: 320px;
+    height: 120px;
+    text-align: center;
+  }
+  @include mixins.tablet {
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    width: 320px;
+    height: 120px;
+    text-align: center;
+  }
 }
 
 .button {
-    margin-top: 40px;
-    background-color: #022751;
-    color: white;
-    border: none;
-    border-radius: 70px; 
-    cursor: pointer;
-    font-family: 'Gaegu';
-    width: 116px;
+  margin-top: 40px;
+  background-color: #022751;
+  color: white;
+  border: none;
+  border-radius: 70px;
+  cursor: pointer;
+  font-family: "Gaegu";
+  width: 116px;
+  height: 58px;
+  font-size: 24px;
+  @include mixins.phone {
+    width: 305px;
     height: 58px;
     font-size: 24px;
-    @include mixins.phone{
-        width: 305px;
-        height: 58px;
-        font-size: 24px;
-    }
-    @include mixins.tablet {
-        width: 305px;
-        height: 58px;
-        font-size: 24px;
-    }
+  }
+  @include mixins.tablet {
+    width: 305px;
+    height: 58px;
+    font-size: 24px;
+  }
 }
 
 .button:hover {
-    background-color: #ffc107;
+  background-color: #ffc107;
 }
 .form {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .input {
-    font-family: 'Gaegu';
+  font-family: "Gaegu";
+  font-size: 24px;
+  padding-left: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  margin-top: 40px;
+  margin-right: 24px;
+  color: black;
+  border: 1px solid #6e757b;
+  border-radius: 15px;
+  width: 460px;
+  height: 58px;
+  @include mixins.phone {
+    margin-right: 0px;
+    width: 358px;
+    height: 56px;
     font-size: 24px;
-    padding-left: 24px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    margin-top: 40px;
-    margin-right: 24px;
-    color: black;
-    border: 1px solid #6E757B;
-    border-radius: 15px;
-    width: 460px;
-    height: 58px;
-    @include mixins.phone{
-        margin-right: 0px;
-        width: 358px;
-        height: 56px;
-        font-size: 24px;
-        
-    }
-    @include mixins.tablet {
-        margin-right: 0px;
-        width: 358px;
-        height: 56px;
-        font-size: 24px;
-
-    }
+  }
+  @include mixins.tablet {
+    margin-right: 0px;
+    width: 358px;
+    height: 56px;
+    font-size: 24px;
+  }
 }
 
 .input:hover {
-    background-color: #ffc107;
+  background-color: #ffc107;
 }
 
 .gaegu-regular {
-    font-family: "Gaegu", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+  font-family: "Gaegu", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .imagecontainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    margin-left: 40px;
-    gap: 40px;
-    width: 568px;
-    height: 228px;
-    @include mixins.phone{
-        display:none;
-        
-    }
-    @include mixins.tablet {
-        display: none;
-
-    }
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin-left: 40px;
+  gap: 40px;
+  width: 568px;
+  height: 228px;
+  @include mixins.phone {
+    display: none;
+  }
+  @include mixins.tablet {
+    display: none;
+  }
 }
 
 .image {
-    width: 161.02px;
-    height: 228px;
-    border-radius: 0px;
+  width: 161.02px;
+  height: 228px;
+  border-radius: 0px;
 }
 
 .imagecontainermobile {
-    display: none;
-    @include mixins.phone{
-        display: flex;
-        // flex-direction: column;
-        gap: 36px;
-        margin-top: 40px;
-        width: 358.03px;
-        height: 228px;
-        
-        justify-content: center;
-        align-items: center;
-        
-    }
-    @include mixins.tablet {
-        display: flex;
-        // flex-direction: column;
-        gap: 36px;
-        margin-top: 40px;
-        width: 358.03px;
-        height: 228px;
+  display: none;
+  @include mixins.phone {
+    display: flex;
+    // flex-direction: column;
+    gap: 36px;
+    margin-top: 40px;
+    width: 358.03px;
+    height: 228px;
 
-        justify-content: center;
-        align-items: center;
-    }
+    justify-content: center;
+    align-items: center;
+  }
+  @include mixins.tablet {
+    display: flex;
+    // flex-direction: column;
+    gap: 36px;
+    margin-top: 40px;
+    width: 358.03px;
+    height: 228px;
+
+    justify-content: center;
+    align-items: center;
+  }
 }

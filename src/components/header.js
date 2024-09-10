@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styles from '@/styles/components/navbar/navbar.module.scss';
+import { useRouter } from 'next/router';
 
 const container = {
     logo: '/images/JASS Logo Circle.jpg',

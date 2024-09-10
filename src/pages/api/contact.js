@@ -7,7 +7,7 @@ const targetEmail = process.env.TARGET_EMAIL;
 export default async function contactFormMailer(req, res) {
     if (req.method === 'POST') {
         try {
-            const { name, email, type, question } = JSON.parse(req.body);
+            const { name, email, subject, message } = JSON.parse(req.body);
 
             const transporter = nodemailer.createTransport({
                 service: 'gmail',
@@ -19,8 +19,9 @@ export default async function contactFormMailer(req, res) {
 
             const msg = `
       <div class="mail-container">
-        <h4>${name} sent you a question about:<br/>${type}.</h4>
-        <p>${question}</p><br/>
+        <h4>${name} would like to get in contact with you.</h4>
+        <h4>Subject: ${subject}</h4>
+        <p>${message}</p><br/>
         <p>By hitting the reply button, it will direct you to reply to the sender: ${email}</p>
       </div>
       <style>
@@ -34,7 +35,7 @@ export default async function contactFormMailer(req, res) {
             const mailOptions = {
                 from: `${name} <${senderEmail}>`,
                 to: targetEmail,
-                subject: `Contact Form - ${name} has a question/comment: : ${question.substr(0, 10)}...`,
+                subject: `Contact Form - ${name} has a question/comment: : ${message.substr(0, 10)}...`,
                 replyTo: email,
                 html: msg,
             };

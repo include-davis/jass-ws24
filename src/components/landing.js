@@ -1,35 +1,30 @@
 import styles from '@/styles/components/landing/landing.module.scss';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
-const images = {
-    jass_gp: `/images/JASS_GROUP.jpeg`,
-};
-const content = {
-    join_button: 'Join JASS',
-    header: 'JASS @ UC Davis',
-    paragraph: 'Meet friendly and open people through events, games, and more!',
-};
-export function Landing() {
-    function handleClick() {
-        // TODO: add router redirect
-        console.log('Redirect to join us');
-    }
+export function Landing({ data }) {
+    const router = useRouter();
+
+    const handleClick = () => {
+        router.push('/join-us');
+    };
+
     return (
         <div className={styles.gaegu_regular}>
             <div className={styles.landing_body}>
                 <Image
-                    src={images.jass_gp}
+                    src={data.hero}
                     alt="jass_group"
                     width="1220"
                     height="400"
                 />
                 <div className={styles.landing_center}>
-                    <h1>{content.header}</h1>
+                    <h1>{data.header}</h1>
                     <br />
-                    <p>{content.paragraph}</p>
+                    <p>{data.description}</p>
                     <br />
                     <button onClick={handleClick} style={{ marginTop: '20px' }}>
-                        {content.join_button}
+                        Join JASS
                     </button>
                 </div>
             </div>

@@ -1,61 +1,64 @@
 import styles from '@/styles/pages/meetus/meetus.module.scss';
 import { MeetUsCard } from '@/components/meetUsCard';
-import { Header } from '@/components/header'
-import { Footer } from '@/components/footer'
+import { Header } from '@/components/header';
+import { Footer } from '@/components/footer';
+// import Image from 'next/image';
 
-const content = {
-    description:
-        'Get to know our 2023-2024 Cabinet Members!',
-};
+export async function getStaticProps() {
+    const meet_res = await fetch(
+        `${process.env.NEXT_PUBLIC_CMS_URL}/api/meet-us?populate=*`
+    );
+    const meetus_json = await meet_res.json();
+    // console.log(meetus_json);
 
-const boardMembers = [
-    { name: 'First Last', pronouns: 'pronouns/pronouns', position: 'Position', major: 'X major', year: 'X year' },
-    { name: 'Second Last', pronouns: 'pronouns/pronouns', position: 'Position', major: 'X major', year: 'X year' },
-    { name: 'Third Last', pronouns: 'pronouns/pronouns', position: 'Position', major: 'X major', year: 'X year' },
-    { name: 'Fourth Last', pronouns: 'pronouns/pronouns', position: 'Position', major: 'X major', year: 'X year' },
-    { name: 'Fifth Last', pronouns: 'pronouns/pronouns', position: 'Position', major: 'X major', year: 'X year' },
-    { name: 'Sixth Last', pronouns: 'pronouns/pronouns', position: 'Position', major: 'X major', year: 'X year' },
-    {
-        name: 'Seventh Last',
-        pronouns: 'pronouns/pronouns',
-        position: 'Position',
-        major: 'x major',
-        year: 'x year',
-    },
-    { name: 'Eighth Last', pronouns: 'pronouns/pronouns', position: 'Position', major: 'X major', year: 'X year' },
-    { name: 'Nineth Last', pronouns: 'pronouns/pronouns', position: 'Position', major: 'X major', year: 'X year' },
-    { name: 'Tenth Last', pronouns: 'pronouns/pronouns', position: 'Position', major: 'X major', year: 'X year' },
-    { name: 'Eleventh Last', pronouns: 'pronouns/pronouns', position: 'Position', major: 'X major', year: 'X year' },
-    { name: 'Twelveth Last', pronouns: 'pronouns/pronouns', position: 'Position', major: 'X major', year: 'X year' },
-    // Add more board members as needed
-];
+    const meetcab_res = await fetch(
+        `${process.env.NEXT_PUBLIC_CMS_URL}/api/cabinets?populate[0]=roles&populate[1]=roles.bio_pic`
+    );
+    const meetcab_json = await meetcab_res.json();
+    // console.log(meetcab_json);
 
-export default function MeetUs() {
+    return {
+        props: {
+            meet_us: meetus_json.data,
+            meet_cab: meetcab_json.data,
+        },
+    };
+}
+
+// TODO: add the cab member profile picture
+
+export default function MeetUs({ meet_us, meet_cab }) {
+    const meetus = meet_us.attributes;
+    const meetcab = meet_cab[0].attributes.roles;
+    console.log(meetcab);
     return (
         <div>
             <Header />
 
             <div className={styles.board}>
-
-                <div className={styles.intro}>
-                    <div>
-                        <p> insert image here</p>
-                        <img/>
-                    </div>
+                <div className={styles.header}>
+                    <img
+                        className="hero_image"
+                        src={
+                            meetus.hero_image.data.attributes.formats.large.url
+                        }
+                    />
+                    <h1> Meet Us </h1>
+                    <p>{meetus.description}</p>
                 </div>
 
-                <h1> Meet Us </h1>
-                <p>{content.description}</p>
-
                 <div className={styles.parent}>
-                    {boardMembers.map((member, index) => (
+                    {meetcab.map((member) => (
                         <MeetUsCard
-                            key={index}
-                            name={member.name}
+                            key={member.id}
+                            name={member.officer_name}
                             pronouns={member.pronouns}
-                            position={member.position}
+                            position={member.role_title}
                             major={member.major}
                             year={member.year}
+                            photo={
+                                member.bio_pic.data.attributes.formats.large.url
+                            }
                         />
                     ))}
                 </div>
