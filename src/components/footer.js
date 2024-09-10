@@ -1,5 +1,6 @@
 import styles from '@/styles/components/footer/footer.module.scss';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 
 const images = {
     discLogo: '/images/discordIcon.png',
@@ -16,19 +17,20 @@ export function Footer({ data }) {
             <div className={styles.footerTop}>
                 <div className={styles.footerContent}>
                     <div className={styles.contact}>
-                        <img
+                        <Image
                             className={styles.image}
                             src={images.jassLogo}
-                            height="124px"
-                            width="124px"
+                            height="124"
+                            width="124"
                             alt="logo"
                         />
                         <p>JASS at UC Davis</p>
                         <div className={styles.emailFrame}>
-                            <img
+                            <Image
                                 className={styles.image}
                                 src={images.emailLogo}
-                                height="24.52px"
+                                width={24.52}
+                                height={24.52}
                                 alt="emailLogo"
                             />
                             <a
@@ -39,10 +41,11 @@ export function Footer({ data }) {
                             </a>
                         </div>
                         <div className={styles.icons}>
-                            <img
+                            <Image
                                 className={styles.image}
                                 src={images.instaLogo}
-                                height="24.52px"
+                                width={24.52}
+                                height={24.52}
                                 alt="instalogo"
                                 onClick={() => {
                                     window.open(
@@ -51,10 +54,11 @@ export function Footer({ data }) {
                                     );
                                 }}
                             />
-                            <img
+                            <Image
                                 className={styles.image}
                                 src={images.fbLogo}
-                                height="24.52"
+                                width={24.52}
+                                height={24.52}
                                 alt="fblogo"
                                 onClick={() => {
                                     window.open(
@@ -63,10 +67,11 @@ export function Footer({ data }) {
                                     );
                                 }}
                             />
-                            <img
+                            <Image
                                 className={styles.image}
                                 src={images.discLogo}
-                                height="24.52"
+                                width={24.52}
+                                height={24.52}
                                 alt="disclogo"
                                 onClick={() => {
                                     window.open(

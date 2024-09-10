@@ -5,7 +5,7 @@ const button = {
     message: 'Download our Constitution',
 };
 
-export default function WhoWeAre({ data }) {
+export function WhoWeAre({ data }) {
     console.log();
     const handleClick = () => {
         window.open(`${data.link}`, '_blank');

@@ -5,17 +5,143 @@ import { Footer } from '@/components/footer';
 // import Image from 'next/image';
 
 export async function getStaticProps() {
-    const meet_res = await fetch(
-        `${process.env.NEXT_PUBLIC_CMS_URL}/api/meet-us?populate=*`
-    );
-    const meetus_json = await meet_res.json();
-    // console.log(meetus_json);
+    // const meet_res = await fetch(
+    //     `${process.env.NEXT_PUBLIC_CMS_URL}/api/meet-us?populate=*`
+    // );
+    // const meetus_json = await meet_res.json();
+    // // console.log(meetus_json);
 
-    const meetcab_res = await fetch(
-        `${process.env.NEXT_PUBLIC_CMS_URL}/api/cabinets?populate[0]=roles&populate[1]=roles.bio_pic`
-    );
-    const meetcab_json = await meetcab_res.json();
-    // console.log(meetcab_json);
+    // const meetcab_res = await fetch(
+    //     `${process.env.NEXT_PUBLIC_CMS_URL}/api/cabinets?populate[0]=roles&populate[1]=roles.bio_pic`
+    // );
+    // const meetcab_json = await meetcab_res.json();
+    // // console.log(meetcab_json);
+
+    const meetus_json = {
+        data: {
+            attributes: {
+                hero_image: {
+                    data: {
+                        attributes: {
+                            formats: {
+                                large: {
+                                    url: '/images/JASS_GROUP.jpeg',
+                                },
+                            },
+                        },
+                    },
+                },
+                description:
+                    'Meet the team that makes JASS at UC Davis possible!',
+            },
+        },
+    };
+
+    const meetcab_json = {
+        data: [
+            {
+                attributes: {
+                    roles: [
+                        {
+                            id: 1,
+                            officer_name: 'Thing',
+                            pronouns: 'she/her',
+                            role_title: 'President',
+                            major: 'Computer Science',
+                            year: '3rd Year',
+                            bio_pic: {
+                                data: {
+                                    attributes: {
+                                        formats: {
+                                            large: {
+                                                url: '/images/JASS_cabinet.jpg',
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                        {
+                            id: 2,
+                            officer_name: 'Thing',
+                            pronouns: 'she/her',
+                            role_title: 'President',
+                            major: 'Computer Science',
+                            year: '3rd Year',
+                            bio_pic: {
+                                data: {
+                                    attributes: {
+                                        formats: {
+                                            large: {
+                                                url: '/images/JASS_cabinet.jpg',
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                        {
+                            id: 3,
+                            officer_name: 'Thing',
+                            pronouns: 'she/her',
+                            role_title: 'President',
+                            major: 'Computer Science',
+                            year: '3rd Year',
+                            bio_pic: {
+                                data: {
+                                    attributes: {
+                                        formats: {
+                                            large: {
+                                                url: '/images/JASS_cabinet.jpg',
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                        {
+                            id: 4,
+                            officer_name: 'Thing',
+                            pronouns: 'she/her',
+                            role_title: 'President',
+                            major: 'Computer Science',
+                            year: '3rd Year',
+                            bio_pic: {
+                                data: {
+                                    attributes: {
+                                        formats: {
+                                            large: {
+                                                url: '/images/JASS_cabinet.jpg',
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                        {
+                            id: 5,
+                            officer_name: 'Thing',
+                            pronouns: 'she/her',
+                            role_title: 'President',
+                            major: 'Computer Science',
+                            year: '3rd Year',
+                            bio_pic: {
+                                data: {
+                                    attributes: {
+                                        formats: {
+                                            large: {
+                                                url: '/images/JASS_cabinet.jpg',
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    ],
+                },
+            },
+        ],
+    };
 
     return {
         props: {
@@ -42,6 +168,7 @@ export default function MeetUs({ meet_us, meet_cab }) {
                         src={
                             meetus.hero_image.data.attributes.formats.large.url
                         }
+                        alt="Meet Us"
                     />
                     <h1> Meet Us </h1>
                     <p>{meetus.description}</p>
