@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styles from '@/styles/components/navbar/navbar.module.scss';
-import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 const container = {
     logo: '/images/JASS Logo Circle.jpg',
@@ -39,7 +39,7 @@ export function Header() {
                 <button
                     type="button"
                     className={`${styles.buttonmobile}`}
-                    onClick={() => window.location.href = '/joinourcabinet'}
+                    onClick={() => (window.location.href = '/join-us')}
                 >
                     {container.message}
                 </button>
@@ -51,17 +51,59 @@ export function Header() {
                     <div className={styles.bar}></div>
                     <div className={styles.bar}></div>
                 </div>
-                <ul className={`${styles['nav-links']} ${isOpen ? styles.open : ''}`}>
-                    <li><a href="/" className={styles.font} onClick={handleLinkClick}>Home</a></li>
-                    <li><a href="/calendar" className={styles.font} onClick={handleLinkClick}>Calendar</a></li>
-                    <li><a href="/meet-us" className={styles.font} onClick={handleLinkClick}>Meet Us</a></li>
-                    <li><a href="/join-us" className={styles.font} onClick={handleLinkClick}>Join Our Cabinet</a></li>
-                    <li><a href="/contact" className={styles.font} onClick={handleLinkClick}>Contact</a></li>
+                <ul
+                    className={`${styles['nav-links']} ${isOpen ? styles.open : ''}`}
+                >
+                    <li>
+                        <Link
+                            href="/"
+                            className={styles.font}
+                            onClick={handleLinkClick}
+                        >
+                            Home
+                        </Link>
+                    </li>
+                    <li>
+                        <Link
+                            href="/calendar"
+                            className={styles.font}
+                            onClick={handleLinkClick}
+                        >
+                            Calendar
+                        </Link>
+                    </li>
+                    <li>
+                        <Link
+                            href="/meet-us"
+                            className={styles.font}
+                            onClick={handleLinkClick}
+                        >
+                            Meet Us
+                        </Link>
+                    </li>
+                    <li>
+                        <Link
+                            href="/join-us"
+                            className={styles.font}
+                            onClick={handleLinkClick}
+                        >
+                            Join Our Cabinet
+                        </Link>
+                    </li>
+                    <li>
+                        <Link
+                            href="/contact"
+                            className={styles.font}
+                            onClick={handleLinkClick}
+                        >
+                            Contact
+                        </Link>
+                    </li>
                 </ul>
                 <button
                     type="button"
                     className={`${styles.button}`}
-                    onClick={() => window.location.href = '/joinourcabinet'}
+                    onClick={() => (window.location.href = '/join-us')}
                 >
                     {container.message}
                 </button>

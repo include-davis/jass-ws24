@@ -6,16 +6,20 @@
     font-family: 'Gaegu';
     font-size: 32px;
     font-weight: 400;
-    font-style: normal;  
-    @include mixins.phone {
+    font-style: normal;
+    
+    @include mixins.tablet {
         font-size: 24px;
+    }
+
+    @include mixins.phone {
+        font-size: 16px;
     }
 }
 
 .header {
     display: flex; 
-    padding-right: 2rem;
-    padding-left: 1rem;
+    padding: 24px;
     align-items: center;
     justify-content: space-between;
     height: 120px;
@@ -42,7 +46,6 @@
 .buttonmobile {
     display:none;
     @include mixins.phone{
-        margin-left: 60px;
         display:flex;
         background-color: #F47F8F;
         height: 58px;
@@ -53,8 +56,10 @@
         font-family: 'Gaegu';
         font-size: 24px;
         font-weight: 600;
-        padding: 14px 24px;
-        margin-right: 24px;
+        padding: 8px 16px;
+        justify-content: center;
+        align-items: center;
+        margin-right: 16px;
     }
 }
     
@@ -69,8 +74,12 @@
     font-size: 24px;
     font-weight: 600;
     padding: 14px 24px;
+
+    @include mixins.tablet {
+        padding: 8px 16px;
+    }
     
-    @include mixins.phone{
+    @include mixins.phone {
         display:none;
     }
 }
@@ -79,7 +88,7 @@
     align-items: left;
     width: 86px;
     height: auto;
-    margin-right: 230px;
+    // margin-right: 230px;
     @include mixins.phone{
         margin-right: 0px;
     }
@@ -88,14 +97,22 @@
 .nav {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
+    gap: 32px;
     width: 100%;
+
+    @include mixins.tablet {
+        gap: 16px;
+    }
+
     @include mixins.phone {
         flex-direction: row; 
+        gap: 0;
     }
 }
 
 .nav a {
-    margin-right: 32px;
+    // margin-right: 32px;
     color: #FDFDFD;
     text-decoration: none;
     font-family: 'Gaegu';
@@ -135,11 +152,18 @@
     display: flex;
     list-style: none;
     flex-direction: row;
+    gap: 32px;
+
+    @include mixins.tablet {
+        gap: 16px;
+    }
+
     @include mixins.phone {
-        display: none; 
+        display: none;
+        gap: 0; 
         flex-direction: column;
         width: 100%;
-        height: calc(100vh - 120px); 
+        height: calc(100vh - 135px + 3rem);
         position: absolute;
         top: 100px; 
         left: 0;
@@ -151,7 +175,10 @@
 }
 
 .nav-links li {
-    margin: 0 1rem;
+    // margin: 0 1rem;
+    display: flex;
+    align-items: center;
+
     @include mixins.phone {
         margin: 1rem 0; 
         width: 100%;
@@ -173,10 +200,5 @@
 
     .nav-links.open {
         display: flex;
-    }
-
-    .nav-links li:first-child {
-        border-top: 2px solid #F47F8F;
-        padding-top: 24px;
     }
 }
