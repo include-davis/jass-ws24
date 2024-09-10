@@ -48,8 +48,6 @@
     @include mixins.phone{
         display:flex;
         background-color: #F47F8F;
-        height: 58px;
-        width: 141px;
         color: #022751;
         border-radius: 70px;
         border: none;
@@ -65,8 +63,6 @@
     
 .button{
     background-color: #F47F8F;
-    height: 58px;
-    width: 141px;
     color: #022751;
     border-radius: 70px;
     border: none;
@@ -153,6 +149,7 @@
     list-style: none;
     flex-direction: row;
     gap: 32px;
+    transition: 0.4s ease-in-out;
 
     @include mixins.tablet {
         gap: 16px;

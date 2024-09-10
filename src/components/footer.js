@@ -24,62 +24,66 @@ export function Footer({ data }) {
                             width="124"
                             alt="logo"
                         />
-                        <p>JASS at UC Davis</p>
-                        <div className={styles.emailFrame}>
-                            <Image
-                                className={styles.image}
-                                src={images.emailLogo}
-                                width={24.52}
-                                height={24.52}
-                                alt="emailLogo"
-                            />
-                            <a
-                                href="mailto:jassofficers@ucdavis.edu"
-                                id="email"
-                            >
-                                jassofficers@ucdavis.edu
-                            </a>
-                        </div>
-                        <div className={styles.icons}>
-                            <Image
-                                className={styles.image}
-                                src={images.instaLogo}
-                                width={24.52}
-                                height={24.52}
-                                alt="instalogo"
-                                onClick={() => {
-                                    window.open(
-                                        `${data.instagram_link}`,
-                                        '_blank'
-                                    );
-                                }}
-                            />
-                            <Image
-                                className={styles.image}
-                                src={images.fbLogo}
-                                width={24.52}
-                                height={24.52}
-                                alt="fblogo"
-                                onClick={() => {
-                                    window.open(
-                                        `${data.facebook_link}`,
-                                        '_blank'
-                                    );
-                                }}
-                            />
-                            <Image
-                                className={styles.image}
-                                src={images.discLogo}
-                                width={24.52}
-                                height={24.52}
-                                alt="disclogo"
-                                onClick={() => {
-                                    window.open(
-                                        `${data.discord_link}`,
-                                        '_blank'
-                                    );
-                                }}
-                            />
+                        <div className={styles.contactInfo}>
+                            <p className={styles.contactHeader}>
+                                JASS at UC Davis
+                            </p>
+                            <div className={styles.emailFrame}>
+                                <Image
+                                    className={styles.image}
+                                    src={images.emailLogo}
+                                    width={24.52}
+                                    height={24.52}
+                                    alt="emailLogo"
+                                />
+                                <a
+                                    href="mailto:jassofficers@ucdavis.edu"
+                                    id="email"
+                                >
+                                    jassofficers@ucdavis.edu
+                                </a>
+                            </div>
+                            <div className={styles.icons}>
+                                <Image
+                                    className={styles.image}
+                                    src={images.instaLogo}
+                                    width={24.52}
+                                    height={24.52}
+                                    alt="instalogo"
+                                    onClick={() => {
+                                        window.open(
+                                            `${data.instagram_link}`,
+                                            '_blank'
+                                        );
+                                    }}
+                                />
+                                <Image
+                                    className={styles.image}
+                                    src={images.fbLogo}
+                                    width={24.52}
+                                    height={24.52}
+                                    alt="fblogo"
+                                    onClick={() => {
+                                        window.open(
+                                            `${data.facebook_link}`,
+                                            '_blank'
+                                        );
+                                    }}
+                                />
+                                <Image
+                                    className={styles.image}
+                                    src={images.discLogo}
+                                    width={24.52}
+                                    height={24.52}
+                                    alt="disclogo"
+                                    onClick={() => {
+                                        window.open(
+                                            `${data.discord_link}`,
+                                            '_blank'
+                                        );
+                                    }}
+                                />
+                            </div>
                         </div>
                     </div>
                     <div className={styles.linksInnerFrame}>
@@ -125,8 +129,9 @@ export function Footer({ data }) {
                             >
                                 Media
                             </p>
-                            <p className={styles.link}>
+                            <p>
                                 <a
+                                    className={styles.link}
                                     href={
                                         data?.youtube_link ||
                                         'https://www.youtube.com/channel/UCoS3lPl549qRKaRcUC_TP3w'
@@ -137,8 +142,9 @@ export function Footer({ data }) {
                                     Youtube
                                 </a>
                             </p>
-                            <p className={styles.link}>
+                            <p>
                                 <a
+                                    className={styles.link}
                                     href={
                                         data?.gphotos_link ||
                                         'https://photos.app.goo.gl/Cj5QHG2k3EkVacES8'
