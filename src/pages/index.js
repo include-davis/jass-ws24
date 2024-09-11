@@ -1,6 +1,4 @@
-import { Footer } from '@/components/footer';
 import { EventsSlider } from '@/components/eventsSlider';
-import { Header } from '@/components/header';
 import { Landing } from '@/components/landing';
 import { WhoWeAre } from '@/components/whoWeAre';
 
@@ -106,10 +104,8 @@ export async function getStaticProps() {
     };
 }
 
-export default function Home({ landing, events, footer }) {
+export default function Home({ landing, events }) {
     const data = landing.attributes;
-    console.log(landing.attributes);
-    console.log("gottem");
 
     const welcome = {
         hero: data.hero_image.data.attributes.formats.large.url,
@@ -126,15 +122,11 @@ export default function Home({ landing, events, footer }) {
     // console.log(event_slider);
     // TODO: figure out how to get all images
 
-    const links = footer.attributes;
-
     return (
-        <div>
-            <Header />
+        <>
             <Landing data={welcome} />
             <WhoWeAre data={who} />
             <EventsSlider data={event_slider} />
-            <Footer data={links} />
-        </div>
+        </>
     );
 }

@@ -13,6 +13,7 @@ export function JoinCabinet({ header, positions }) {
         <div className={styles.gaegu_regular}>
             <div className={styles.cabinet_body}>
                 <Image
+                    className={styles.cabinet_image}
                     src={HContent.hero_image.data.attributes.formats.large.url}
                     alt="jass_group"
                     width="1220"

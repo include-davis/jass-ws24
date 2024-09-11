@@ -1,6 +1,5 @@
-import { Header } from '@/components/header';
-import { Footer } from '@/components/footer';
 import { JoinCabinet } from '@/components/joinCabinet';
+
 export async function getStaticProps() {
     // const join_res = await fetch(
     //     `${process.env.NEXT_PUBLIC_CMS_URL}/api/join-us?populate=*`
@@ -64,6 +63,30 @@ export async function getStaticProps() {
                                 "The Treasurer is responsible for managing the organization's finances, including the organization's budget, the organization's financial statements, and the organization's financial transactions. The Treasurer is responsible for ensuring that the organization's finances are accurate and up-to-date, and for ensuring that the organization's finances are in compliance with all applicable laws and regulations. The Treasurer is also responsible for ensuring that the organization's financial management practices are in accordance with best practices in nonprofit management.",
                             id: 3,
                         },
+                        {
+                            position_title: 'Family Coordinator (2)',
+                            description:
+                                "The Director of Communications is responsible for managing the organization's communications, including the organization's website, social media, and other communications channels. The Director of Communications is responsible for developing and implementing the organization's communications strategy, and for ensuring that the organization's communications are accurate, timely, and effective. The Director of Communications is also responsible for managing the organization's relationships with the media, and for ensuring that the organization's communications are in compliance with all applicable laws and regulations.",
+                            id: 4,
+                        },
+                        {
+                            position_title: 'Director of Development',
+                            description:
+                                "The Director of Development is responsible for managing the organization's fundraising efforts, including the organization's grant writing, donor cultivation, and special events. The Director of Development is responsible for developing and implementing the organization's fundraising strategy, and for ensuring that the organization's fundraising efforts are effective and sustainable. The Director of Development is also responsible for managing the organization's relationships with funders, donors, and other stakeholders, and for ensuring that the organization's fundraising efforts are in compliance with all applicable laws and regulations.",
+                            id: 5,
+                        },
+                        {
+                            position_title: 'Director of Programs',
+                            description:
+                                "The Director of Programs is responsible for managing the organization's programmatic work, including the organization's research, advocacy, and capacity-building activities. The Director of Programs is responsible for developing and implementing the organization's programmatic strategy, and for ensuring that the organization's programmatic work is effective and sustainable. The Director of Programs is also responsible for managing the organization's relationships with partners, stakeholders, and other organizations, and for ensuring that the organization's programmatic work is in compliance with all applicable laws and regulations.",
+                            id: 6,
+                        },
+                        {
+                            position_title: 'Director of Operations',
+                            description:
+                                "The Director of Operations is responsible for managing the organization's day-to-day operations, including the organization's human resources, finance, and administration. The Director of Operations is responsible for developing and implementing the organization's operational strategy, and for ensuring that the organization's operations are efficient and effective. The Director of Operations is also responsible for managing the organization's relationships with vendors, contractors, and other service providers, and for ensuring that the organization's operations are in compliance with all applicable laws and regulations.",
+                            id: 7,
+                        },
                     ],
                 },
             },
@@ -80,10 +103,8 @@ export async function getStaticProps() {
 
 export default function JoinUs({ header, positions }) {
     return (
-        <div>
-            <Header />
+        <>
             <JoinCabinet header={header} positions={positions} />
-            <Footer />
-        </div>
+        </>
     );
 }

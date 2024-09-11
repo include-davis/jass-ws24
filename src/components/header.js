@@ -7,7 +7,7 @@ const container = {
     message: 'Join JASS',
 };
 
-export function Header() {
+export default function Header() {
     const [isOpen, setIsOpen] = useState(false);
     const navRef = useRef(null);
 
@@ -100,13 +100,11 @@ export function Header() {
                         </Link>
                     </li>
                 </ul>
-                <button
-                    type="button"
-                    className={`${styles.button}`}
-                    onClick={() => (window.location.href = '/join-us')}
-                >
-                    {container.message}
-                </button>
+                <Link href="/join-us">
+                    <button type="button" className={`${styles.button}`}>
+                        {container.message}
+                    </button>
+                </Link>
             </nav>
         </header>
     );

@@ -1,8 +1,5 @@
 import styles from '@/styles/pages/meetus/meetus.module.scss';
 import { MeetUsCard } from '@/components/meetUsCard';
-import { Header } from '@/components/header';
-import { Footer } from '@/components/footer';
-// import Image from 'next/image';
 
 export async function getStaticProps() {
     // const meet_res = await fetch(
@@ -156,11 +153,8 @@ export async function getStaticProps() {
 export default function MeetUs({ meet_us, meet_cab }) {
     const meetus = meet_us.attributes;
     const meetcab = meet_cab[0].attributes.roles;
-    console.log(meetcab);
     return (
-        <div>
-            <Header />
-
+        <>
             <div className={styles.board}>
                 <div className={styles.header}>
                     <img
@@ -190,7 +184,6 @@ export default function MeetUs({ meet_us, meet_cab }) {
                     ))}
                 </div>
             </div>
-            <Footer />
-        </div>
+        </>
     );
 }

@@ -1,6 +1,7 @@
 import styles from '@/styles/components/footer/footer.module.scss';
-import { useRouter } from 'next/router';
 import Image from 'next/image';
+import Link from 'next/link';
+import data from '@/data/footer/links.json';
 
 const images = {
     discLogo: '/images/discordIcon.png',
@@ -10,8 +11,7 @@ const images = {
     jassLogo: '/images/JASS_LOGO.jpeg',
 };
 
-export function Footer({ data }) {
-    const router = useRouter();
+export default function Footer() {
     return (
         <div className={styles.footer}>
             <div className={styles.footerTop}>
@@ -37,90 +37,71 @@ export function Footer({ data }) {
                                     alt="emailLogo"
                                 />
                                 <a
-                                    href="mailto:jassofficers@ucdavis.edu"
+                                    href={`mailto:${data.jass_email}`}
                                     id="email"
                                 >
-                                    jassofficers@ucdavis.edu
+                                    {data.jass_email}
                                 </a>
                             </div>
                             <div className={styles.icons}>
-                                <Image
-                                    className={styles.image}
-                                    src={images.instaLogo}
-                                    width={24.52}
-                                    height={24.52}
-                                    alt="instalogo"
-                                    onClick={() => {
-                                        window.open(
-                                            `${data.instagram_link}`,
-                                            '_blank'
-                                        );
-                                    }}
-                                />
-                                <Image
-                                    className={styles.image}
-                                    src={images.fbLogo}
-                                    width={24.52}
-                                    height={24.52}
-                                    alt="fblogo"
-                                    onClick={() => {
-                                        window.open(
-                                            `${data.facebook_link}`,
-                                            '_blank'
-                                        );
-                                    }}
-                                />
-                                <Image
-                                    className={styles.image}
-                                    src={images.discLogo}
-                                    width={24.52}
-                                    height={24.52}
-                                    alt="disclogo"
-                                    onClick={() => {
-                                        window.open(
-                                            `${data.discord_link}`,
-                                            '_blank'
-                                        );
-                                    }}
-                                />
+                                <a
+                                    href={`${data.instagram_link}`}
+                                    target="_blank"
+                                >
+                                    <Image
+                                        className={styles.image}
+                                        src={images.instaLogo}
+                                        width={24.52}
+                                        height={24.52}
+                                        alt="instalogo"
+                                    />
+                                </a>
+                                <a
+                                    href={`${data.facebook_link}`}
+                                    target="_blank"
+                                >
+                                    <Image
+                                        className={styles.image}
+                                        src={images.fbLogo}
+                                        width={24.52}
+                                        height={24.52}
+                                        alt="fblogo"
+                                    />
+                                </a>
+                                <a
+                                    href={`${data.discord_link}`}
+                                    target="_blank"
+                                >
+                                    <Image
+                                        className={styles.image}
+                                        src={images.discLogo}
+                                        width={24.52}
+                                        height={24.52}
+                                        alt="disclogo"
+                                    />
+                                </a>
                             </div>
                         </div>
                     </div>
                     <div className={styles.linksInnerFrame}>
                         <div className={styles.linksLeft}>
-                            <p
+                            <Link
+                                href="/"
                                 className={styles.link}
                                 style={{ fontWeight: '900' }}
-                                onClick={() => {
-                                    router.push('/');
-                                }}
                             >
+                                {' '}
                                 Home
-                            </p>
-                            <p
-                                className={styles.link}
-                                onClick={() => {
-                                    router.push('/calendar');
-                                }}
-                            >
+                            </Link>
+                            <Link href="/calendar" className={styles.link}>
                                 Calendar
-                            </p>
-                            <p
-                                className={styles.link}
-                                onClick={() => {
-                                    router.push('/meet-us');
-                                }}
-                            >
+                            </Link>
+                            <Link href="/meet-us" className={styles.link}>
                                 Meet Us
-                            </p>
-                            <p
-                                className={styles.link}
-                                onClick={() => {
-                                    router.push('/join-us');
-                                }}
-                            >
+                            </Link>
+                            <Link href="/join-us" className={styles.link}>
                                 Join Our Cabinet
-                            </p>
+                            </Link>
                         </div>
                         <div className={styles.linksRight}>
                             <p

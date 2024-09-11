@@ -8,7 +8,7 @@ export function CabinetCard({ position, description, key }) {
     function handleClick() {
         setIsOpened(!isOpened);
     }
-    const plusOrMinus = isOpened ? '/images/plus.png' : '/images/minus.png';
+    const plusOrMinus = isOpened ? '/images/minus.png' : '/images/plus.png';
     const heightStyle = { height: isOpened ? 'fit-content' : '55px' };
 
     let descriptionArr = description.split('\n');
@@ -24,6 +24,7 @@ export function CabinetCard({ position, description, key }) {
                 <p>{position}</p>
                 <button>
                     <Image
+                        className={styles.cardButton}
                         src={plusOrMinus}
                         alt="plusminus"
                         width={50}
