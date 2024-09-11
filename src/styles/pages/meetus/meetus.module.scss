@@ -1,15 +1,13 @@
-@use "src/styles/mixins.scss";
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Gaegu&display=swap");
+@use 'src/styles/mixins.scss';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gaegu&display=swap');
 @import 'mixins';
 
 .intro {
   background-color: #f8f8f9;
-  font-family: "Inter", sans-serif;
-  // padding: 10%;
-  // padding-bottom: 20%;
+  font-family: 'Inter', sans-serif;
 
-  div {
+  > div {
     padding: 15%;
     height: 100px;
     align-items: center;
@@ -22,92 +20,161 @@
 }
 
 .board {
-  margin: 7%;
-  font-family: "Gaegu";
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  padding: 48px 104px 104px 104px;
+  font-family: 'Gaegu';
 
-  h1 {
+  > h1 {
     color: #2c3868;
     font-size: 72px;
     text-align: center;
     padding-bottom: 15px;
   }
 
-  p {
+  > p {
     text-align: center;
     font-size: 24px;
   }
 
-  .parent {
-    text-align: center;
-    padding-top: 5%;
-    padding-bottom: 5%;
-  }
-
-  /* .child {
-        display: inline-block;
-        width: 20%;
-        border-radius: 20px;
-        margin: 2%;
-        font-size: 18px;
-    } */
-
-  .board h2 {
+  > h2 {
     font-size: 24px;
     padding-bottom: 5px;
     color: #2c3868;
   }
 
-  .header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    .hero_image {
-      margin: 3%;
-    }
+  @include mixins.tablet {
+    padding: 24px 24px 104px 24px;
   }
 
-  img {
-    max-width: 100%;
-    border-radius: 4%;
+  @include mixins.phone {
+    gap: 46px;
+    padding: 24px;
   }
+}
 
-  .childtop {
-    // padding: 30%;
-    width: 100%;
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px;
-    img {
-      width: 240px;
-      height: 240px;
-    }
+.heroImg {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 4%;
+
+  @include mixins.sm-phone {
+    min-height: 120px;
   }
+}
 
-  .childbottom {
-    // padding: 10%;
-    // width: fit-content;
-    // border-bottom-right-radius: 20px;
-    // border-bottom-left-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    h2 {
-      font-size: larger;
-    }
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 72px;
+
+  @include mixins.phone {
+    gap: 40px;
   }
+}
 
-  .child {
-    display: inline-block;
-    border-radius: 20px;
-    margin: 2%;
-    font-size: 18px;
-    width: 25%;
-    height: fit-content;
+.headerInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+
+  > h1 {
+    font-size: 4.5rem;
+
     @include mixins.phone {
-      width: 90%;
-      height: 100%;
+      font-size: 4rem;
     }
   }
-  
 
+  > p {
+    font-size: 1.5rem;
 
+    @include mixins.phone {
+      font-size: 1.125rem;
+    }
+  }
+}
+
+.memberCards {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+
+  @include mixins.tablet {
+    gap: 40px;
+  }
+
+  @include mixins.phone {
+    gap: 64px;
+  }
+}
+
+.memberCardRow,
+.memberCardGroup {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 60px;
+
+  @include mixins.tablet {
+    gap: 40px;
+  }
+
+  @include mixins.phone {
+    gap: 20px;
+  }
+}
+
+.memberCardGroup {
+  @include mixins.phone {
+    flex-direction: column;
+    gap: 64px;
+  }
+}
+
+.leftGroup {
+  justify-content: flex-end;
+}
+
+.rightGroup {
+  justify-content: flex-start;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.cardImg {
+  width: 240px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
+
+  @include mixins.tablet {
+    width: 140px;
+  }
+
+  @include mixins.phone {
+    width: 240px;
+  }
+
+  @include mixins.sm-phone {
+    width: 140px;
+  }
+}
+
+.cardInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h2 {
+    font-size: 1.5rem;
+  }
 }
