@@ -1,121 +1,113 @@
-@use "src/styles/mixins.scss";
-@import url("https://fonts.googleapis.com/css2?family=Gaegu&display=swap");
+@use 'src/styles/mixins.scss';
+@import url('https://fonts.googleapis.com/css2?family=Gaegu&display=swap');
 
-.container {
-  text-align: center;
-}
-
-.title {
-  font-size: 54px;
-  font-weight: bold;
-  font-family: "Gaegu", cursive;
-  text-align: left;
-  margin: 5px;
-  color: #022751;
-  display: inline;
-  width: 100%;
-  @include mixins.phone {
-    font-size: xx-large;
-  }
-}
-
-.cardContainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 32px;
-  text-align: right;
-  @include mixins.sm-desktop {
-    max-width: 100%;
-  }
-}
-
-.cardWrapper {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.card {
-  width: 384px;
-  height: 574px;
-  border-radius: 16px;
-  background-color: white;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  @include mixins.sm-desktop {
-    width: 384px;
-    height: 574px;
-  }
-  @include mixins.phone {
-    @include mixins.sm-phone {
-      width: 305px;
-      height: fit-content;
-    }
-  }
-}
-
-.innerBox {
-  width: 352px;
-  height: 352px;
-  border-radius: 16px;
-  background-color: #c4c4c4;
-  margin: 16px auto 0;
-  img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 16px
-  }
-  @include mixins.phone {
-    width: 265px;
-    height: 265px;
-  }
-}
-
-.cardContent {
+// eventSlider
+.joinUs {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  gap: 40px;
+  font-family: 'Gaegu', cursive;
+
+  width: 100%;
+
+  @include mixins.phone {
+    align-items: center;
+    gap: 32px;
+  }
+}
+
+.header {
+  font-size: 3.375rem;
+  @include mixins.phone {
+    font-size: 2.625rem;
+  }
+}
+
+.eventContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  width: 100%;
+
+  @include mixins.phone {
+    gap: 20px;
+  }
+}
+
+.eventCards {
+  width: 100%;
+  display: flex;
+  gap: 32px;
+  overflow-x: scroll;
+  scrollbar-width: none;
+
+  scroll-snap-type: x mandatory;
+
+  @include mixins.phone {
+    gap: 20px;
+  }
+}
+
+.eventCards::-webkit-scrollbar {
+  width: 0;
+}
+
+// eventsCard
+.card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  min-width: 318px;
+  min-height: 550px;
+
+  background: white;
+  border-radius: 15px;
   padding: 16px;
+
+  scroll-snap-align: center;
+
+  @include mixins.phone {
+    min-width: 100%;
+  }
+}
+
+.cardImg {
+  width: 100%;
+  height: auto;
+  max-height: 350px;
+  display: flex;
+  justify-content: center;
+
+  > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.cardInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .cardTitle {
-  color: #022751;
-  font-size: 32px;
-  font-family: "Gaegu", cursive;
-  font-weight: bold;
-  text-align: left;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  @include mixins.phone {
-    font-size: 24px;
-  }
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* 38.4px */
+  color: #2c3868;
 }
 
 .cardDescription {
-  color: #022751;
-  font-family: "Gaegu", cursive;
-  font-size: 24px;
-  text-align: left;
-  width: 100%;
-  @include mixins.phone {
-    font-size: 18px;
-  }
-}
-
-.pageContainer {
-  display: flex;
-  flex-direction: column;
-}
-
-.topMargin {
-  width: 100%;
-  height: 30px; /* Adjust the height as needed */
-  background-color: #f47f8f; /* Top margin color */
-}
-
-.bottomMargin {
-  width: 100%;
-  height: 20px; /* Adjust the height as needed */
-  background-color: #022751; /* Bottom margin color */
-  margin-top: auto; /* Pushes the bottom margin to the bottom of the page */
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 125%; /* 30px */
+  color: #404447;
 }

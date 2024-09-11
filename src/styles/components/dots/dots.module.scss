@@ -1,0 +1,21 @@
+@use 'src/styles/mixins.scss';
+
+.dots {
+  display: none;
+
+  @include mixins.phone {
+    display: flex;
+    gap: 8px;
+  }
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #c9c9c9;
+}
+
+.dot.active {
+  background-color: black;
+}

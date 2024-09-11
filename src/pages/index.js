@@ -75,6 +75,21 @@ export async function getStaticProps() {
                                 },
                             },
                         },
+                        {
+                            event_title: 'Event 3',
+                            event_description: 'Event 3 description',
+                            event_image: {
+                                data: {
+                                    attributes: {
+                                        formats: {
+                                            large: {
+                                                url: '/images/JASS_LOGO.jpeg',
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
                     ],
                 },
             },
@@ -104,8 +119,6 @@ export default function Home({ landing, events }) {
     };
 
     const event_slider = events[0].attributes.events;
-    // console.log(event_slider);
-    // TODO: figure out how to get all images
 
     return (
         <div className={styles.home}>

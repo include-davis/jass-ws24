@@ -1,20 +1,41 @@
-import React from 'react';
 import styles from '@/styles/pages/joinus/joinus.module.scss';
 import { EventsCard } from '@/components/eventsCard';
+import { useState, useRef } from 'react';
+import { Dots } from './dots';
 
 // TODO: get photos for events
 
+// data -> event
+// event.id
+// event.event_title
+// event.event_description
+// event.event_image.data.attributes.formats.large.url
+
 export function EventsSlider({ data }) {
-    console.log(data);
+    const [eventIndex, setEventIndex] = useState(0);
+    const eventRef = useRef(null);
+
+    const handleScroll = () => {
+        if (eventRef.current) {
+            const { scrollLeft, offsetWidth } = eventRef.current;
+            const curEventIndex = Math.round(scrollLeft / offsetWidth);
+            setEventIndex(curEventIndex);
+        }
+    };
+
     return (
-        <div className={styles.pageContainer}>
-            {/* <div className={styles.topMargin}></div> */}
-            <div className={styles.container}>
-                <h1 className={styles.title}>Join us for our...</h1>
-                <div className={styles.cardContainer}>
-                    {data.map((event) => (
-                        <div key={event.id} className={styles.cardWrapper}>
+        <div className={styles.joinUs}>
+            <h1 className={styles.header}>Join us for our...</h1>
+            <div className={styles.eventContainer}>
+                <div
+                    className={styles.eventCards}
+                    ref={eventRef}
+                    onScroll={handleScroll}
+                >
+                    {data.map((event) => {
+                        return (
                             <EventsCard
+                                key={event.id}
                                 title={event.event_title}
                                 description={event.event_description}
                                 photo={
@@ -22,11 +43,11 @@ export function EventsSlider({ data }) {
                                         .large.url
                                 }
                             />
-                        </div>
-                    ))}
+                        );
+                    })}
                 </div>
+                <Dots numDots={data.length} curCard={eventIndex} />
             </div>
-            {/* <div className={styles.bottomMargin}></div> */}
         </div>
     );
 }

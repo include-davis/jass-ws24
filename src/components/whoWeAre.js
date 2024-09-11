@@ -1,5 +1,6 @@
 import styles from '@/styles/components/whoweare/whoweare.module.scss';
 import { useState, useRef } from 'react';
+import { Dots as CardDots } from './dots';
 
 const button = {
     message: 'Download our Constitution',
@@ -9,21 +10,6 @@ export function InfoCard({ text }) {
     return (
         <div className={styles.card}>
             <p className={styles.cardText}>{text}</p>
-        </div>
-    );
-}
-
-export function CardDots({ numDots, curCard }) {
-    return (
-        <div className={styles.dots}>
-            {[...Array(numDots)].map((_, i) => (
-                <div
-                    key={`dot ${i}`}
-                    className={`${styles.dot} ${
-                        i === curCard ? styles.active : ''
-                    }`}
-                ></div>
-            ))}
         </div>
     );
 }
@@ -41,10 +27,6 @@ export function ConstitutionButton(link) {
         </>
     );
 }
-
-// create inside section
-// create dots for outside
-// create button for inside and outside
 
 export function WhoWeAre({ data }) {
     const [curCard, setCurCard] = useState(0);
