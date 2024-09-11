@@ -1,5 +1,6 @@
 import styles from '@/styles/pages/meetus/meetus.module.scss';
 import { MeetUsCard } from '@/components/meetUsCard';
+import Image from 'next/image';
 
 export async function getStaticProps() {
     // const meet_res = await fetch(
@@ -364,8 +365,10 @@ export default function MeetUs({ meet_us, meet_cab }) {
         <>
             <div className={styles.board}>
                 <div className={styles.header}>
-                    <img
+                    <Image
                         className={styles.heroImg}
+                        width={500}
+                        height={500}
                         src={
                             meetus.hero_image.data.attributes.formats.large.url
                         }

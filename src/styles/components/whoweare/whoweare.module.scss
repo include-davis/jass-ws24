@@ -1,81 +1,173 @@
-@import url("https://fonts.googleapis.com/css2?family=Gaegu&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Oswald:wght@200..700&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-@import "mixins";
+@use 'src/styles/mixins.scss';
+@import url('https://fonts.googleapis.com/css2?family=Gaegu&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Oswald:wght@200..700&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 .intro {
-  height: 100%;
-  width: 100%;
-}
-
-.body {
-  margin: 5%;
-  padding: 0;
+  font-family: 'Gaegu', sans-serif;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  // min-height: 100vh;
-  font-family: "Gaegu", sans-serif;
+  justify-content: center;
+
+  max-width: 1200px;
 }
 
-.box {
-  width: 85%;
-  height: auto;
-  background-color: #ffffff;
-  /* border: 2px solid #333; */
-  margin: 0 auto;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-}
-
-.title {
-  text-align: center;
-  font-weight: bold;
-  font-size: fit-content;
-  color: #022751;
-  padding: 5%;
-  @include phone {
-    font-size: xx-large;
-  }
-}
-
-.paragraphscontainer {
+.infoBoard {
   display: flex;
-  width: 90%;
-  height: auto;
-  margin: 0 auto;
-  font-size: 20px;
-  color: #404447;
-  @include phone {
-    flex-direction: column;
+  flex-direction: column;
+  align-items: center;
+  background-color: white; // turn off on mobile
+
+  padding: 40px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+
+  gap: 24px;
+
+  @include mixins.phone {
+    background-color: #f8f8f8;
   }
 }
 
-.paragraphbox {
-  flex: 1;
-  padding: 10px;
-  @include phone {
-    font-size: medium;
+.infoHeader {
+  width: 100%;
+  background-color: white;
+  text-align: center;
+
+  padding-top: 40px;
+  padding-bottom: 24px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+
+  @include mixins.phone {
+    background-color: #f8f8f8;
+    padding-top: 0;
+  }
+}
+
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  gap: 20px;
+
+  @include mixins.phone {
+    background-color: #f8f8f8;
+  }
+}
+
+.infoCards {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 48px;
+  background-color: white;
+  overflow-x: scroll;
+  scrollbar-width: none;
+
+  scroll-snap-type: x mandatory;
+
+  @include mixins.tablet {
+    gap: 0;
+  }
+}
+
+.infoCards::-webkit-scrollbar {
+  width: 0;
+}
+
+.card {
+  width: 50%;
+  min-width: 358px;
+  padding: 40px;
+  background-color: white;
+  overflow: hidden;
+
+  scroll-snap-align: start;
+
+  @include mixins.phone {
+    min-height: 497px;
+    min-width: 100%;
+  }
+}
+
+.cardText {
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 125%; /* 30px */
+
+  @include mixins.tablet {
+    font-size: 1.1rem;
   }
 }
 
 .button {
-  width: 305px;
-  height: 58px;
-  background-color: #f47f8f;
+  width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin: 2% auto;
-  border-radius: 29px;
-  font-size: 24px;
-  color: #022751;
-  border: 0px;
-  @include phone {
-    width: 90%;
-    height: fit-content;
+  background-color: white;
+  padding-top: 24px;
+  padding-bottom: 40px;
+
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+
+  @include mixins.phone {
+    display: none;
   }
 }
 
-.button:hover {
-  background-color: #e6bf1d;
-  transition: 0.2s;
+.constitutionButton {
+  text-decoration: none;
+
+  > button {
+    width: fit-content;
+    display: flex;
+    padding: 12px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    border: none;
+    border-radius: 70px;
+    background-color: #f47f8f;
+
+    color: #022751;
+    font-family: Gaegu;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 33.6px */
+  }
+}
+
+.dots {
+  display: none;
+
+  @include mixins.phone {
+    display: flex;
+    gap: 8px;
+  }
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #c9c9c9;
+}
+
+.dot.active {
+  background-color: black;
+}
+
+.mobile {
+  display: none;
+  background-color: #f8f8f8;
+
+  @include mixins.phone {
+    display: flex;
+    padding-top: 32px;
+  }
 }

@@ -1,0 +1,13 @@
+@use 'src/styles/mixins.scss';
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+  padding: 48px 104px;
+
+  @include mixins.tablet {
+    padding: 24px;
+  }
+}

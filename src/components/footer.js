@@ -102,6 +102,9 @@ export default function Footer() {
                             <Link href="/join-us" className={styles.link}>
                                 Join Our Cabinet
                             </Link>
+                            <Link href="/contact" className={styles.link}>
+                                Contact
+                            </Link>
                         </div>
                         <div className={styles.linksRight}>
                             <p

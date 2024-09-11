@@ -1,3 +1,4 @@
+import styles from '@/styles/pages/home/home.module.scss';
 import { EventsSlider } from '@/components/eventsSlider';
 import { Landing } from '@/components/landing';
 import { WhoWeAre } from '@/components/whoWeAre';
@@ -23,7 +24,7 @@ export async function getStaticProps() {
                         attributes: {
                             formats: {
                                 large: {
-                                    url: '/images/JASS_LOGO.jpeg',
+                                    url: '/images/JASS_GROUP.jpeg',
                                 },
                             },
                         },
@@ -31,8 +32,10 @@ export async function getStaticProps() {
                 },
                 welcome_text: 'Welcome to JASS',
                 welcome_description: 'Join us for our next event',
-                whoweare_english: 'We are JASS',
-                whoweare_japanese: '私たちはJASSです',
+                whoweare_english:
+                    'The Japanese American Student Society or JASS (est. 1982) is a student organization at the University of California, Davis with an eye to service, social, and cultural happenings. We deal primarily with the Japanese American community, but that doesn’t mean you have to be Japanese to join; anyone with an interest in Japanese culture and community can join our group! Everyone is welcome! Check us out at our general meetings every Thursday at 7pm to find out about upcoming events, partake in fun activities, and meet new people!',
+                whoweare_japanese:
+                    '私たち Japanese American Student Society (通称 JASS) は1982年に設立された、日系コミュニティーを中心に活動する生徒達の集まりです。日本人、日系人、日本の文化等に興味のある方、どんな方でも大歓迎です!是非ミーティングやイベントに足を運んでみてください​!',
                 constitution_link: 'https://www.google.com',
             },
         },
@@ -105,10 +108,10 @@ export default function Home({ landing, events }) {
     // TODO: figure out how to get all images
 
     return (
-        <>
+        <div className={styles.home}>
             <Landing data={welcome} />
             <WhoWeAre data={who} />
             <EventsSlider data={event_slider} />
-        </>
+        </div>
     );
 }
