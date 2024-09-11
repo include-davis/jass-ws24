@@ -13,10 +13,10 @@ export function ContactComp() {
     const [pending, setPending] = useState(false);
     const formRef = useRef(null);
 
-    const resetState = () => {
-        setPending(false);
-        setMailStatus('');
-    };
+    // const resetState = () => {
+    //     setPending(false);
+    //     setMailStatus('');
+    // };
 
     const formHandler = async (e) => {
         setPending(true);
@@ -52,19 +52,27 @@ export function ContactComp() {
         <>
             <div className={styles.main}></div>
             <div id="contact-us" className={styles.contactContainer}>
-                <h1 className={styles.contactTitle}>Contact Us</h1>
-                <p className={styles.contactText}>
-                    Have questions or comments for JASS? Please fill out this
-                    form and we'll get back to you as soon as possible.
-                </p>
-                <h2 className={styles.contactField}>
-                    <span className={styles.asterickRed}>*</span> = required
-                    field
-                </h2>
+                <div className={styles.contactHeader}>
+                    <h1 className={styles.contactTitle}>Contact Us</h1>
+                    <p className={styles.contactText}>
+                        Have questions or comments for JASS? Please fill out
+                        this form and we'll get back to you as soon as possible.
+                    </p>
+                    <h2 className={styles.contactField}>
+                        <span className={styles.asteriskRed}>*</span> = required
+                        field
+                    </h2>
+                </div>
 
-                <form ref={formRef} onSubmit={formHandler}>
+                <form
+                    ref={formRef}
+                    onSubmit={formHandler}
+                    style={{ width: '100%' }}
+                >
                     <div className={styles.goSide}>
-                        <div className={styles.goUnder}>
+                        <div
+                            className={`${styles.goUnder} ${styles.nameInput}`}
+                        >
                             <label htmlFor="name" className={styles.label}>
                                 Name{' '}
                                 <span className={styles.asteriskRed}>*</span>
@@ -73,14 +81,14 @@ export function ContactComp() {
                                 type="text"
                                 id="name"
                                 name="name"
-                                className={`${styles.inputText} ${styles.inputCentered} ${styles.nameInput}`}
+                                className={`${styles.inputText} ${styles.inputCentered}`}
                                 placeholder="Full Name"
                                 required
                             />
                         </div>
 
                         <div
-                            className={`${styles.goUnder} ${styles.spacingBetweenFields}`}
+                            className={`${styles.goUnder} ${styles.spacingBetweenFields} ${styles.emailInput}`}
                         >
                             <label htmlFor="email" className={styles.label}>
                                 Email Address{' '}
@@ -90,7 +98,7 @@ export function ContactComp() {
                                 type="text"
                                 id="email"
                                 name="email"
-                                className={`${styles.inputText} ${styles.inputCentered} ${styles.emailInput}`}
+                                className={`${styles.inputText} ${styles.inputCentered}`}
                                 placeholder="Email"
                                 required
                             />
@@ -121,7 +129,6 @@ export function ContactComp() {
                             id="message"
                             name="message"
                             className={`${styles.inputText} ${styles.inputCentered} ${styles.messageInput}`}
-                            placeholder="I want to know more about..."
                         />
                     </div>
 

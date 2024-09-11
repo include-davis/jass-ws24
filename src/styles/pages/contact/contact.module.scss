@@ -1,10 +1,10 @@
-@use "src/styles/mixins.scss";
+@use 'src/styles/mixins.scss';
 
-@import url("https://fonts.googleapis.com/css2?family=Gaegu&display=swap");
-@import "mixins";
+@import url('https://fonts.googleapis.com/css2?family=Gaegu&display=swap');
+@import 'mixins';
 
 .main {
-  font-family: "gaegu";
+  font-family: 'gaegu';
   color: #f8f8f9 !important;
   background-color: #f8f8f9 !important;
 }
@@ -13,59 +13,79 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 64px;
   vertical-align: top;
   text-align: center;
-  margin: 3%;
+  padding: 24px 88px 88px 88px;
+
+  @include mixins.phone {
+    gap: 32px;
+    padding: 16px;
+  }
+}
+
+.contactHeader {
+  display: flex;
+  flex-direction: column;
 }
 
 .contactTitle {
-  font-family: "Gaegu";
+  font-family: 'Gaegu';
   color: #2c3868;
-  font-size: 4.5em;
+  font-size: 4.2rem;
   margin-bottom: 7px;
   padding: 5%;
   @include mixins.phone {
-      font-size: xx-large;
+    font-size: 4rem;
   }
 }
 
 .contactText {
-  font-family: "Gaegu";
-  font-size: 1.5em;
+  font-family: 'Gaegu';
+  font-size: 1.5rem;
   color: #404447;
-  margin-bottom: 7px;
+  margin-bottom: 24px;
   @include mixins.phone {
-      font-size: small;
+    font-size: 1.125rem;
   }
 }
 
 .contactField {
-  font-family: "Gaegu";
-  font-size: 1.5em;
+  font-family: 'Gaegu';
+  font-size: 1.5rem;
   color: #e40000;
   margin-bottom: 7px;
   @include mixins.phone {
-      font-size: small;
+    font-size: 1.125rem;
   }
 }
 
 .label {
-  font-family: "Gaegu";
-  font-size: 1.5em;
+  font-family: 'Gaegu';
+  font-size: 1.5rem;
+  font-weight: bold;
   text-align: left;
   @include mixins.phone {
-    font-size: small;
+    font-size: 18px;
   }
 }
 
 .goUnder {
   display: flex;
   flex-direction: column;
+  gap: 8px;
   margin-bottom: 7px;
 }
 .goSide {
   display: flex;
   flex-direction: row;
+  gap: 24px;
+  // justify-content: space-between;
+
+  @include mixins.phone {
+    flex-direction: column;
+    gap: 8px;
+  }
 }
 
 .inputText {
@@ -79,34 +99,34 @@
   background-color: white !important;
 
   word-wrap: break-word;
+  font-size: 1.25rem;
   vertical-align: top;
   &::placeholder {
-    font-family: "Gaegu";
+    font-family: 'Gaegu';
   }
 }
+
+.nameInput,
+.emailInput {
+  // display: flex;
+  // flex-direction: column;
+  width: calc(50% - 12px);
+
+  @include mixins.phone {
+    width: 100%;
+  }
+}
+
 .spacingBetweenFields {
   margin-bottom: 20px;
-  margin-left: 20px;
-}
-
-.inputCentered {
-  width: 492px;
-  margin: 0 auto;
-  @include mixins.phone {
-    width: 170px;
-  }
-
-  @include mixins.sm-phone {
-    width: 142px;
-  }
 }
 
 .subjectInput {
   display: flex;
-  width: 1008px;
+  width: 100%;
   height: 79px;
   @include mixins.sm-phone {
-      width: 305px;
+    width: 305px;
   }
   @include mixins.phone {
     width: 348px;
@@ -115,15 +135,9 @@
 .messageInput {
   display: inline-block;
   justify-content: top;
-  width: 1008px;
+  width: 100%;
   height: 222px;
   vertical-align: top !important;
-  @include mixins.phone {
-    width: 348px;
-  }
-  @include mixins.sm-phone {
-    width: 305px;
-  }
 }
 
 .submitButtonContainer {
@@ -131,17 +145,27 @@
   justify-content: flex-start;
   width: 100%;
   margin-top: 20px;
+
+  @include mixins.phone {
+    justify-content: center;
+  }
 }
 
 .submitButton {
+  border: none;
   padding: 10px 20px;
-  font-family: "Gaegu";
-  font-size: 1.2em;
+  font-family: 'Gaegu';
+  font-size: 1.2rem;
+  font-weight: bold;
   cursor: pointer;
   border-radius: 20px;
   background-color: #f47f8f;
   color: #2c3868;
   border-color: #f47f8f;
+
+  @include mixins.phone {
+    width: 80%;
+  }
 }
 .asteriskRed {
   color: #e40000;

@@ -15,12 +15,6 @@ export async function getStaticProps() {
     // const event_json = await event_res.json();
     // // console.log(event_json);
 
-    // const footer_res = await fetch(
-    //     `${process.env.NEXT_PUBLIC_CMS_URL}/api/footer?populate=*`
-    // );
-    // const footer_json = await footer_res.json();
-    // // console.log(footer_json);
-
     const landing_json = {
         data: {
             attributes: {
@@ -83,23 +77,11 @@ export async function getStaticProps() {
             },
         ],
     };
-    const footer_json = {
-        data: {
-            attributes: {
-                facebook_link: 'https://www.facebook.com',
-                instagram_link: 'https://www.instagram.com',
-                discord_link: 'https://www.discord.com',
-                youtube_link: 'https://www.youtube.com',
-                gphotos_link: 'https://www.google.com',
-            },
-        },
-    };
 
     return {
         props: {
             landing: landing_json.data,
             events: event_json.data,
-            footer: footer_json.data,
         },
     };
 }
