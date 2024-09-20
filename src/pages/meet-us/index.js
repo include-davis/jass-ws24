@@ -298,90 +298,39 @@ export async function getStaticProps() {
 //     />
 // ))}
 
-function groupMembers(memberGroups) {
-    const memberCards = [];
-
-    for (let i = 0; i < memberGroups.length; i = i + 2) {
-        const memberCard = (
-            <div className={styles.memberCardRow}>
-                <div
-                    className={`${styles.memberCardGroup} ${styles.leftGroup}`}
-                >
-                    {memberGroups[i].map((member) => (
-                        <MeetUsCard
-                            key={member.id}
-                            name={member.officer_name}
-                            pronouns={member.pronouns}
-                            position={member.role_title}
-                            major={member.major}
-                            year={member.year}
-                            photo={
-                                member.bio_pic.data.attributes.formats.large.url
-                            }
-                        />
-                    ))}
-                </div>
-                <div
-                    className={`${styles.memberCardGroup} ${styles.rightGroup}`}
-                >
-                    {memberGroups[i + 1].map((member) => (
-                        <MeetUsCard
-                            key={member.id}
-                            name={member.officer_name}
-                            pronouns={member.pronouns}
-                            position={member.role_title}
-                            major={member.major}
-                            year={member.year}
-                            photo={
-                                member.bio_pic.data.attributes.formats.large.url
-                            }
-                        />
-                    ))}
-                </div>
-            </div>
-        );
-        memberCards.push(memberCard);
-    }
-    return memberCards;
-}
-
 export default function MeetUs({ meet_us, meet_cab }) {
     const meetus = meet_us.attributes;
     const meetcab = meet_cab[0].attributes.roles;
 
-    // 6 groups of 2 members each
-    const memberGroups = [
-        meetcab.slice(0, 2),
-        meetcab.slice(2, 4),
-        meetcab.slice(4, 6),
-        meetcab.slice(6, 8),
-        meetcab.slice(8, 10),
-        meetcab.slice(10, 12),
-    ];
-
-    const memberCards = groupMembers(memberGroups);
-
     return (
-        <>
-            <div className={styles.board}>
-                <div className={styles.header}>
-                    <Image
-                        className={styles.heroImg}
-                        width={500}
-                        height={500}
-                        src={
-                            meetus.hero_image.data.attributes.formats.large.url
-                        }
-                        alt="Meet Us"
-                    />
-                    <div className={styles.headerInfo}>
-                        <h1> Meet Us </h1>
-                        <p>{meetus.description}</p>
-                    </div>
+        <div className={styles.board}>
+            <div className={styles.header}>
+                <Image
+                    className={styles.heroImg}
+                    width={500}
+                    height={500}
+                    src={meetus.hero_image.data.attributes.formats.large.url}
+                    alt="Meet Us"
+                />
+                <div className={styles.headerInfo}>
+                    <h1> Meet Us </h1>
+                    <p>{meetus.description}</p>
                 </div>
-
-                <div className={styles.memberCards}>{memberCards}</div>
             </div>
-        </>
+
+            <div className={styles.memberCards}>
+                {meetcab.map((member) => (
+                    <MeetUsCard
+                        key={member.id}
+                        name={member.officer_name}
+                        pronouns={member.pronouns}
+                        position={member.role_title}
+                        major={member.major}
+                        year={member.year}
+                        photo={member.bio_pic.data.attributes.formats.large.url}
+                    />
+                ))}
+            </div>
+        </div>
     );
 }
