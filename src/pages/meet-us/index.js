@@ -1,6 +1,7 @@
 import styles from '@/styles/pages/meetus/meetus.module.scss';
 import { MeetUsCard } from '@/components/meetUsCard';
 import Image from 'next/image';
+import Footer from '@/components/footer';
 
 export async function getStaticProps() {
     const cabinet_res = await fetch(
@@ -13,15 +14,21 @@ export async function getStaticProps() {
     );
     const meet_us_json = await meet_us_res.json();
 
+    const external_links_res = await fetch(
+        `${process.env.HEARTH_CONNECTION_STRING}/external-links?_published=true`
+    );
+    const external_links_data = await external_links_res.json();
+
     return {
         props: {
             cabinet: cabinet_json,
             meet_us: meet_us_json,
+            external_links: external_links_data.body || [],
         },
     };
 }
 
-export default function MeetUs({ cabinet, meet_us }) {
+export default function MeetUs({ cabinet, meet_us, external_links }) {
     cabinet = cabinet?.body.map((member) => {
         return {
             ...member,
@@ -33,31 +40,34 @@ export default function MeetUs({ cabinet, meet_us }) {
     cabinet = cabinet.sort((a, b) => a.display_order - b.display_order);
 
     return (
-        <div className={styles.board}>
-            <div className={styles.header}>
-                <div className={styles.image_container}>
-                    <Image
-                        className={styles.heroImg}
-                        src={meet_us?.body[0].meet_us_hero_image[0].src}
-                        alt="Meet Us"
-                        fill
-                    />
+        <>
+            <div className={styles.board}>
+                <div className={styles.header}>
+                    <div className={styles.image_container}>
+                        <Image
+                            className={styles.heroImg}
+                            src={meet_us?.body[0].meet_us_hero_image[0].src}
+                            alt="Meet Us"
+                            fill
+                        />
+                    </div>
+                    <div className={styles.headerInfo}>
+                        <h1>{meet_us?.body[0].meet_us_hero_title}</h1>
+                        <p>{meet_us?.body[0].meet_us_hero_description}</p>
+                    </div>
                 </div>
-                <div className={styles.headerInfo}>
-                    <h1>{meet_us?.body[0].meet_us_hero_title}</h1>
-                    <p>{meet_us?.body[0].meet_us_hero_description}</p>
-                </div>
-            </div>
 
-            <div className={styles.memberCards}>
-                {cabinet.map((member) => (
-                    <MeetUsCard
-                        key={member._id}
-                        name={member.cabinet_member_name}
-                        photo={member.cabinet_member_image[0].src}
-                    />
-                ))}
+                <div className={styles.memberCards}>
+                    {cabinet.map((member) => (
+                        <MeetUsCard
+                            key={member._id}
+                            name={member.cabinet_member_name}
+                            photo={member.cabinet_member_image[0].src}
+                        />
+                    ))}
+                </div>
             </div>
-        </div>
+            <Footer links={external_links} />
+        </>
     );
 }

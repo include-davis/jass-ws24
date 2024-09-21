@@ -2,6 +2,7 @@ import styles from '@/styles/pages/joinus/joincab.module.scss';
 import Image from 'next/image';
 import { CabinetCard } from '@/components/cabinetCard';
 import { Fragment } from 'react';
+import Footer from '@/components/footer';
 
 export async function getStaticProps() {
     const join_us_res = await fetch(
@@ -14,15 +15,21 @@ export async function getStaticProps() {
     );
     const cabinet_positions_json = await cabinet_positions_res.json();
 
+    const external_links_res = await fetch(
+        `${process.env.HEARTH_CONNECTION_STRING}/external-links?_published=true`
+    );
+    const external_links_data = await external_links_res.json();
+
     return {
         props: {
             join_us: join_us_json.body?.[0] || null,
             cabinet_positions: cabinet_positions_json.body || [],
+            external_links: external_links_data.body || [],
         },
     };
 }
 
-export default function JoinUs({ join_us, cabinet_positions }) {
+export default function JoinUs({ join_us, cabinet_positions, external_links }) {
     cabinet_positions = cabinet_positions.map((position) => {
         return {
             ...position,
@@ -36,35 +43,38 @@ export default function JoinUs({ join_us, cabinet_positions }) {
     );
 
     return (
-        <div className={styles.gaegu_regular}>
-            <div className={styles.cabinet_body}>
-                <div className={styles.image_container}>
-                    <Image
-                        className={styles.cabinet_image}
-                        src={join_us?.join_us_hero_image?.[0]?.src}
-                        alt="jass_group"
-                        fill
-                    />
-                </div>
-                <div className={styles.cabinet_center}>
-                    <h1>{join_us?.join_us_hero_title}</h1>
-                    <br />
-                    <p>{join_us?.join_us_hero_description}</p>
-                </div>
-                <div className={styles.cabinetRow}>
-                    {cabinet_positions.map((position, index) => (
-                        <Fragment key={position.id}>
-                            <CabinetCard
-                                position={position.position_title}
-                                description={position.position_description}
-                            />
-                            {index % 2 === 0 && (
-                                <div className={styles.filler}></div>
-                            )}
-                        </Fragment>
-                    ))}
+        <>
+            <div className={styles.gaegu_regular}>
+                <div className={styles.cabinet_body}>
+                    <div className={styles.image_container}>
+                        <Image
+                            className={styles.cabinet_image}
+                            src={join_us?.join_us_hero_image?.[0]?.src}
+                            alt="jass_group"
+                            fill
+                        />
+                    </div>
+                    <div className={styles.cabinet_center}>
+                        <h1>{join_us?.join_us_hero_title}</h1>
+                        <br />
+                        <p>{join_us?.join_us_hero_description}</p>
+                    </div>
+                    <div className={styles.cabinetRow}>
+                        {cabinet_positions.map((position, index) => (
+                            <Fragment key={position.id}>
+                                <CabinetCard
+                                    position={position.position_title}
+                                    description={position.position_description}
+                                />
+                                {index % 2 === 0 && (
+                                    <div className={styles.filler}></div>
+                                )}
+                            </Fragment>
+                        ))}
+                    </div>
                 </div>
             </div>
-        </div>
+            <Footer links={external_links} />
+        </>
     );
 }

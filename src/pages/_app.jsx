@@ -1,7 +1,6 @@
 import '../styles/globals.scss';
 import Head from 'next/head';
 import Navbar from '../components/header';
-import Footer from '../components/footer';
 import { Gaegu } from 'next/font/google';
 
 const gaegu = Gaegu({
@@ -27,7 +26,6 @@ export default function MyApp({ Component, pageProps }) {
             <main className={gaegu.className}>
                 <Navbar />
                 <Component {...pageProps} />
-                <Footer />
             </main>
         </>
     );
