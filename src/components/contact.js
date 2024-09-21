@@ -1,5 +1,6 @@
 import styles from '@/styles/pages/contact/contact.module.scss';
 import { useState, useRef } from 'react';
+import ConfirmationModal from './confirmationModal';
 
 // const textContent = {
 //     text1: {
@@ -13,10 +14,10 @@ export function ContactComp() {
     const [pending, setPending] = useState(false);
     const formRef = useRef(null);
 
-    // const resetState = () => {
-    //     setPending(false);
-    //     setMailStatus('');
-    // };
+    const resetState = () => {
+        setPending(false);
+        setMailStatus('');
+    };
 
     const formHandler = async (e) => {
         setPending(true);
@@ -114,7 +115,7 @@ export function ContactComp() {
                             type="text"
                             id="subject"
                             name="subject"
-                            className={`${styles.inputText} ${styles.inputCentered}${styles.subjectInput}`}
+                            className={`${styles.inputText} ${styles.subjectInput}`}
                             placeholder="I have a question or comment about..."
                         />
                     </div>
@@ -124,11 +125,10 @@ export function ContactComp() {
                             Your Message{' '}
                             <span className={styles.asteriskRed}>*</span>
                         </label>
-                        <input
-                            type="textarea"
+                        <textarea
                             id="message"
                             name="message"
-                            className={`${styles.inputText} ${styles.inputCentered} ${styles.messageInput}`}
+                            className={`${styles.inputText} ${styles.messageInput}`}
                         />
                     </div>
 
@@ -145,6 +145,11 @@ export function ContactComp() {
                     </div>
                 </form>
             </div>
+            <ConfirmationModal
+                pending={pending}
+                mailStatus={mailStatus}
+                handleClose={resetState}
+            />
         </>
     );
 }
