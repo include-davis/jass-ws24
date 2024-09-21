@@ -35,13 +35,14 @@ export default function MeetUs({ cabinet, meet_us }) {
     return (
         <div className={styles.board}>
             <div className={styles.header}>
-                <Image
-                    className={styles.heroImg}
-                    width={500}
-                    height={500}
-                    src={meet_us?.body[0].meet_us_hero_image[0].src}
-                    alt="Meet Us"
-                />
+                <div className={styles.image_container}>
+                    <Image
+                        className={styles.heroImg}
+                        src={meet_us?.body[0].meet_us_hero_image[0].src}
+                        alt="Meet Us"
+                        fill
+                    />
+                </div>
                 <div className={styles.headerInfo}>
                     <h1>{meet_us?.body[0].meet_us_hero_title}</h1>
                     <p>{meet_us?.body[0].meet_us_hero_description}</p>

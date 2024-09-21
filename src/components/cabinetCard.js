@@ -11,8 +11,6 @@ export function CabinetCard({ position, description, key }) {
     const plusOrMinus = isOpened ? '/images/minus.png' : '/images/plus.png';
     const heightStyle = { height: isOpened ? 'fit-content' : '55px' };
 
-    let descriptionArr = description.split('\n');
-
     return (
         <div
             className={styles.card}
@@ -22,25 +20,17 @@ export function CabinetCard({ position, description, key }) {
         >
             <div className={styles.compactedCard}>
                 <p>{position}</p>
-                <button>
-                    <Image
-                        className={styles.cardButton}
-                        src={plusOrMinus}
-                        alt="plusminus"
-                        width={50}
-                        height={50}
-                    />
-                </button>
+                <Image
+                    className={styles.cardButton}
+                    src={plusOrMinus}
+                    alt="plusminus"
+                    width={50}
+                    height={50}
+                />
             </div>
 
             {isOpened && (
-                <div>
-                    <ul className={styles.bullets}>
-                        {descriptionArr.map((bullet, index) => (
-                            <li key={index}> {bullet} </li>
-                        ))}
-                    </ul>
-                </div>
+                <div dangerouslySetInnerHTML={{ __html: description }}></div>
             )}
         </div>
     );

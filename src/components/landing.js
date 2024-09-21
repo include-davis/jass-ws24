@@ -5,13 +5,14 @@ import Link from 'next/link';
 export function Landing({ data }) {
     return (
         <div className={styles.landing}>
-            <Image
-                className={styles.landingImage}
-                src={data.hero}
-                alt="jass_group"
-                width="1220"
-                height="400"
-            />
+            <div className={styles.image_container}>
+                <Image
+                    className={styles.landingImage}
+                    src={data.hero}
+                    alt="jass_group"
+                    fill
+                />
+            </div>
             <div className={styles.landingInfo}>
                 <div className={styles.landingHeader}>
                     <h1>{data.title}</h1>

@@ -6,6 +6,10 @@
   align-items: center;
   gap: 80px;
   padding: 48px 104px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 1400px;
 
   @include mixins.tablet {
     padding: 24px;
