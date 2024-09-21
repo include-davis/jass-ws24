@@ -30,7 +30,7 @@ export default function JoinUs({ join_us, cabinet_positions }) {
         };
     });
 
-    // put cabinent members in order from 1-12
+    // put cabinent positions in order from 1-8
     cabinet_positions = cabinet_positions.sort(
         (a, b) => +a.display_order - +b.display_order
     );
