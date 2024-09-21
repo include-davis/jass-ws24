@@ -2,6 +2,7 @@ import styles from '@/styles/pages/home/home.module.scss';
 import { EventsSlider } from '@/components/eventsSlider';
 import { Landing } from '@/components/landing';
 import { WhoWeAre } from '@/components/whoWeAre';
+import Footer from '@/components/footer';
 
 export async function getStaticProps() {
     const home_res = await fetch(
@@ -14,15 +15,21 @@ export async function getStaticProps() {
     );
     const event_json = await event_res.json();
 
+    const external_links_res = await fetch(
+        `${process.env.HEARTH_CONNECTION_STRING}/external-links?_published=true`
+    );
+    const external_links_data = await external_links_res.json();
+
     return {
         props: {
             home: home_json,
             events: event_json,
+            external_links: external_links_data.body || [],
         },
     };
 }
 
-export default function Home({ home, events }) {
+export default function Home({ home, events, external_links }) {
     const landingData = {
         hero: home.body[0]?.home_hero_image[0].src,
         title: home.body[0]?.home_hero_title,
@@ -38,10 +45,13 @@ export default function Home({ home, events }) {
     const eventsData = events?.body;
 
     return (
-        <div className={styles.home}>
-            <Landing data={landingData} />
-            <WhoWeAre data={whoWeAreData} />
-            <EventsSlider events={eventsData} />
-        </div>
+        <>
+            <div className={styles.home}>
+                <Landing data={landingData} />
+                <WhoWeAre data={whoWeAreData} />
+                <EventsSlider events={eventsData} />
+            </div>
+            <Footer links={external_links} />
+        </>
     );
 }

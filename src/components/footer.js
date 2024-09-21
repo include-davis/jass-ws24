@@ -1,7 +1,6 @@
 import styles from '@/styles/components/footer/footer.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
-import data from '@/data/footer/links.json';
 
 const images = {
     discLogo: '/images/discordIcon.png',
@@ -11,7 +10,11 @@ const images = {
     jassLogo: '/images/JASS_LOGO.jpeg',
 };
 
-export default function Footer() {
+export default function Footer({ links }) {
+    const formattedLinks = Object.fromEntries(
+        links.map((link) => [link.for, link.url])
+    );
+
     return (
         <div className={styles.footer}>
             <div className={styles.footerTop}>
@@ -37,15 +40,15 @@ export default function Footer() {
                                     alt="emailLogo"
                                 />
                                 <a
-                                    href={`mailto:${data.jass_email}`}
+                                    href={`mailto:${formattedLinks['Email']}`}
                                     id="email"
                                 >
-                                    {data.jass_email}
+                                    {formattedLinks['Email']}
                                 </a>
                             </div>
                             <div className={styles.icons}>
                                 <a
-                                    href={`${data.instagram_link}`}
+                                    href={`${formattedLinks['Instagram']}`}
                                     target="_blank"
                                 >
                                     <Image
@@ -57,7 +60,7 @@ export default function Footer() {
                                     />
                                 </a>
                                 <a
-                                    href={`${data.facebook_link}`}
+                                    href={`${formattedLinks['Facebook']}`}
                                     target="_blank"
                                 >
                                     <Image
@@ -69,7 +72,7 @@ export default function Footer() {
                                     />
                                 </a>
                                 <a
-                                    href={`${data.discord_link}`}
+                                    href={`${formattedLinks['Discord']}`}
                                     target="_blank"
                                 >
                                     <Image
@@ -116,10 +119,7 @@ export default function Footer() {
                             <p>
                                 <a
                                     className={styles.link}
-                                    href={
-                                        data?.youtube_link ||
-                                        'https://www.youtube.com/channel/UCoS3lPl549qRKaRcUC_TP3w'
-                                    }
+                                    href={formattedLinks['YouTube']}
                                     target="_blank"
                                     style={{ textDecoration: 'none' }}
                                 >
@@ -129,10 +129,7 @@ export default function Footer() {
                             <p>
                                 <a
                                     className={styles.link}
-                                    href={
-                                        data?.gphotos_link ||
-                                        'https://photos.app.goo.gl/Cj5QHG2k3EkVacES8'
-                                    }
+                                    href={formattedLinks['Google Photos']}
                                     target="_blank"
                                     style={{ textDecoration: 'none' }}
                                 >
