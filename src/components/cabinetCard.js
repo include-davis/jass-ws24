@@ -30,7 +30,10 @@ export function CabinetCard({ position, description, key }) {
             </div>
 
             {isOpened && (
-                <div dangerouslySetInnerHTML={{ __html: description }}></div>
+                <div
+                    className={styles.description_list}
+                    dangerouslySetInnerHTML={{ __html: description }}
+                ></div>
             )}
         </div>
     );
