@@ -4,12 +4,12 @@ import Image from 'next/image';
 
 export async function getStaticProps() {
     const cabinet_res = await fetch(
-        `${process.env.HEARTH_CONNECTION_STRING}/cabinet-member`
+        `${process.env.HEARTH_CONNECTION_STRING}/cabinet-member?_published=true`
     );
     const cabinet_json = await cabinet_res.json();
 
     const meet_us_res = await fetch(
-        `${process.env.HEARTH_CONNECTION_STRING}/meet-us`
+        `${process.env.HEARTH_CONNECTION_STRING}/meet-us?_published=true`
     );
     const meet_us_json = await meet_us_res.json();
 
