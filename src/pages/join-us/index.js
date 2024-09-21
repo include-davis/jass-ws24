@@ -13,7 +13,6 @@ export async function getStaticProps() {
         `${process.env.HEARTH_CONNECTION_STRING}/cabinet-position`
     );
     const cabinet_positions_json = await cabinet_positions_res.json();
-    console.log(cabinet_positions_json);
 
     return {
         props: {
