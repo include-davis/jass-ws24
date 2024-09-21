@@ -7,6 +7,15 @@ export function EventsSlider({ events }) {
     const [eventIndex, setEventIndex] = useState(0);
     const eventRef = useRef(null);
 
+    events = events.map((event) => {
+        return {
+            ...event,
+            display_order: Number(event.display_order),
+        };
+    });
+
+    events = events.sort((a, b) => +a.display_order - +b.display_order);
+
     const handleScroll = () => {
         if (eventRef.current) {
             const { scrollLeft, offsetWidth } = eventRef.current;

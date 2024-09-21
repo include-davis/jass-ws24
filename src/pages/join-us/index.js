@@ -13,7 +13,6 @@ export async function getStaticProps() {
         `${process.env.HEARTH_CONNECTION_STRING}/cabinet-position`
     );
     const cabinet_positions_json = await cabinet_positions_res.json();
-    console.log(cabinet_positions_json);
 
     return {
         props: {
@@ -31,7 +30,7 @@ export default function JoinUs({ join_us, cabinet_positions }) {
         };
     });
 
-    // put cabinent members in order from 1-12
+    // put cabinent positions in order from 1-8
     cabinet_positions = cabinet_positions.sort(
         (a, b) => +a.display_order - +b.display_order
     );
