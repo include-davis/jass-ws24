@@ -4,16 +4,16 @@
 
 .font {
     font-family: 'Gaegu';
-    font-size: 32px;
+    font-size: 1.75rem;
     font-weight: 400;
     font-style: normal;
     
     @include mixins.tablet {
-        font-size: 24px;
+        font-size: 1.5rem;
     }
 
-    @include mixins.phone {
-        font-size: 16px;
+    @include mixins.sm-tablet {
+        font-size: 1rem;
     }
 }
 
@@ -25,7 +25,7 @@
     height: 120px;
     width: 100%;
     background-color: #2C3868;
-    @include mixins.phone {
+    @include mixins.sm-tablet {
         padding-left: 24px;
         padding-right: 24px;
         justify-content: space-between;
@@ -45,7 +45,7 @@
 
 .buttonmobile {
     display:none;
-    @include mixins.phone{
+    @include mixins.sm-tablet{
         display:flex;
         background-color: #F47F8F;
         color: #022751;
@@ -75,7 +75,7 @@
         padding: 8px 16px;
     }
     
-    @include mixins.phone {
+    @include mixins.sm-tablet {
         display:none;
     }
 }
@@ -85,7 +85,7 @@
     width: 86px;
     height: auto;
     // margin-right: 230px;
-    @include mixins.phone{
+    @include mixins.sm-tablet{
         margin-right: 0px;
     }
 }
@@ -101,7 +101,7 @@
         gap: 16px;
     }
 
-    @include mixins.phone {
+    @include mixins.sm-tablet {
         flex-direction: row; 
         gap: 0;
     }
@@ -118,7 +118,7 @@
     display: none; 
     flex-direction: column;
     cursor: pointer;
-    @include mixins.phone{
+    @include mixins.sm-tablet{
         display: flex;
     }
 }
@@ -148,14 +148,14 @@
     display: flex;
     list-style: none;
     flex-direction: row;
-    gap: 32px;
+    gap: 48px;
     transition: 0.4s ease-in-out;
 
     @include mixins.tablet {
-        gap: 16px;
+        gap: 32px;
     }
 
-    @include mixins.phone {
+    @include mixins.sm-tablet {
         display: none;
         gap: 0; 
         flex-direction: column;
@@ -176,7 +176,7 @@
     display: flex;
     align-items: center;
 
-    @include mixins.phone {
+    @include mixins.sm-tablet {
         margin: 1rem 0; 
         width: 100%;
         border-bottom: 2px solid #F47F8F;
