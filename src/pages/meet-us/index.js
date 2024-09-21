@@ -3,304 +3,34 @@ import { MeetUsCard } from '@/components/meetUsCard';
 import Image from 'next/image';
 
 export async function getStaticProps() {
-    // const meet_res = await fetch(
-    //     `${process.env.NEXT_PUBLIC_CMS_URL}/api/meet-us?populate=*`
-    // );
-    // const meetus_json = await meet_res.json();
-    // // console.log(meetus_json);
+    const cabinet_res = await fetch(
+        `${process.env.HEARTH_CONNECTION_STRING}/cabinet-member`
+    );
+    const cabinet_json = await cabinet_res.json();
 
-    // const meetcab_res = await fetch(
-    //     `${process.env.NEXT_PUBLIC_CMS_URL}/api/cabinets?populate[0]=roles&populate[1]=roles.bio_pic`
-    // );
-    // const meetcab_json = await meetcab_res.json();
-    // // console.log(meetcab_json);
-
-    const meetus_json = {
-        data: {
-            attributes: {
-                hero_image: {
-                    data: {
-                        attributes: {
-                            formats: {
-                                large: {
-                                    url: '/images/JASS_GROUP.jpeg',
-                                },
-                            },
-                        },
-                    },
-                },
-                description:
-                    'Meet the team that makes JASS at UC Davis possible!',
-            },
-        },
-    };
-
-    const meetcab_json = {
-        data: [
-            {
-                attributes: {
-                    roles: [
-                        {
-                            id: 1,
-                            officer_name: 'Thing',
-                            pronouns: 'she/her',
-                            role_title: 'President',
-                            major: 'Computer Science',
-                            year: '3rd Year',
-                            bio_pic: {
-                                data: {
-                                    attributes: {
-                                        formats: {
-                                            large: {
-                                                url: '/images/JASS_cabinet.jpg',
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                        {
-                            id: 2,
-                            officer_name: 'Thing',
-                            pronouns: 'she/her',
-                            role_title: 'President',
-                            major: 'Computer Science',
-                            year: '3rd Year',
-                            bio_pic: {
-                                data: {
-                                    attributes: {
-                                        formats: {
-                                            large: {
-                                                url: '/images/JASS_cabinet.jpg',
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                        {
-                            id: 3,
-                            officer_name: 'Thing',
-                            pronouns: 'she/her',
-                            role_title: 'President',
-                            major: 'Computer Science',
-                            year: '3rd Year',
-                            bio_pic: {
-                                data: {
-                                    attributes: {
-                                        formats: {
-                                            large: {
-                                                url: '/images/JASS_cabinet.jpg',
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                        {
-                            id: 4,
-                            officer_name: 'Thing',
-                            pronouns: 'she/her',
-                            role_title: 'President',
-                            major: 'Computer Science',
-                            year: '3rd Year',
-                            bio_pic: {
-                                data: {
-                                    attributes: {
-                                        formats: {
-                                            large: {
-                                                url: '/images/JASS_cabinet.jpg',
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                        {
-                            id: 5,
-                            officer_name: 'Thing',
-                            pronouns: 'she/her',
-                            role_title: 'President',
-                            major: 'Computer Science',
-                            year: '3rd Year',
-                            bio_pic: {
-                                data: {
-                                    attributes: {
-                                        formats: {
-                                            large: {
-                                                url: '/images/JASS_cabinet.jpg',
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                        {
-                            id: 6,
-                            officer_name: 'John Doe',
-                            pronouns: 'he/him',
-                            role_title: 'Vice President',
-                            major: 'Mechanical Engineering',
-                            year: '4th Year',
-                            bio_pic: {
-                                data: {
-                                    attributes: {
-                                        formats: {
-                                            large: {
-                                                url: '/images/JASS_cabinet.jpg',
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                        {
-                            id: 7,
-                            officer_name: 'Jane Smith',
-                            pronouns: 'she/her',
-                            role_title: 'Secretary',
-                            major: 'Biology',
-                            year: '2nd Year',
-                            bio_pic: {
-                                data: {
-                                    attributes: {
-                                        formats: {
-                                            large: {
-                                                url: '/images/JASS_cabinet.jpg',
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                        {
-                            id: 8,
-                            officer_name: 'Alice Johnson',
-                            pronouns: 'they/them',
-                            role_title: 'Treasurer',
-                            major: 'Economics',
-                            year: '3rd Year',
-                            bio_pic: {
-                                data: {
-                                    attributes: {
-                                        formats: {
-                                            large: {
-                                                url: '/images/JASS_cabinet.jpg',
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                        {
-                            id: 9,
-                            officer_name: 'Bob Brown',
-                            pronouns: 'he/him',
-                            role_title: 'Event Coordinator',
-                            major: 'Political Science',
-                            year: '4th Year',
-                            bio_pic: {
-                                data: {
-                                    attributes: {
-                                        formats: {
-                                            large: {
-                                                url: '/images/JASS_cabinet.jpg',
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                        {
-                            id: 10,
-                            officer_name: 'Charlie Davis',
-                            pronouns: 'she/her',
-                            role_title: 'Public Relations',
-                            major: 'Communications',
-                            year: '2nd Year',
-                            bio_pic: {
-                                data: {
-                                    attributes: {
-                                        formats: {
-                                            large: {
-                                                url: '/images/JASS_cabinet.jpg',
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                        {
-                            id: 11,
-                            officer_name: 'Dana Lee',
-                            pronouns: 'they/them',
-                            role_title: 'Historian',
-                            major: 'History',
-                            year: '3rd Year',
-                            bio_pic: {
-                                data: {
-                                    attributes: {
-                                        formats: {
-                                            large: {
-                                                url: '/images/JASS_cabinet.jpg',
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                        {
-                            id: 12,
-                            officer_name: 'Evan Green',
-                            pronouns: 'he/him',
-                            role_title: 'Webmaster',
-                            major: 'Computer Science',
-                            year: '4th Year',
-                            bio_pic: {
-                                data: {
-                                    attributes: {
-                                        formats: {
-                                            large: {
-                                                url: '/images/JASS_cabinet.jpg',
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                    ],
-                },
-            },
-        ],
-    };
+    const meet_us_res = await fetch(
+        `${process.env.HEARTH_CONNECTION_STRING}/meet-us`
+    );
+    const meet_us_json = await meet_us_res.json();
 
     return {
         props: {
-            meet_us: meetus_json.data,
-            meet_cab: meetcab_json.data,
+            cabinet: cabinet_json,
+            meet_us: meet_us_json,
         },
     };
 }
 
-// TODO: add the cab member profile picture
+export default function MeetUs({ cabinet, meet_us }) {
+    cabinet = cabinet?.body.map((member) => {
+        return {
+            ...member,
+            display_order: Number(member.display_order),
+        };
+    });
 
-// {meetcab.map((member) => (
-//     <MeetUsCard
-//         key={member.id}
-//         name={member.officer_name}
-//         pronouns={member.pronouns}
-//         position={member.role_title}
-//         major={member.major}
-//         year={member.year}
-//         photo={
-//             member.bio_pic.data.attributes.formats.large.url
-//         }
-//     />
-// ))}
-
-export default function MeetUs({ meet_us, meet_cab }) {
-    const meetus = meet_us.attributes;
-    const meetcab = meet_cab[0].attributes.roles;
+    // put cabinent members in order from 1-12
+    cabinet = cabinet.sort((a, b) => a.display_order - b.display_order);
 
     return (
         <div className={styles.board}>
@@ -309,25 +39,21 @@ export default function MeetUs({ meet_us, meet_cab }) {
                     className={styles.heroImg}
                     width={500}
                     height={500}
-                    src={meetus.hero_image.data.attributes.formats.large.url}
+                    src={meet_us?.body[0].meet_us_hero_image[0].src}
                     alt="Meet Us"
                 />
                 <div className={styles.headerInfo}>
-                    <h1> Meet Us </h1>
-                    <p>{meetus.description}</p>
+                    <h1>{meet_us?.body[0].meet_us_hero_title}</h1>
+                    <p>{meet_us?.body[0].meet_us_hero_description}</p>
                 </div>
             </div>
 
             <div className={styles.memberCards}>
-                {meetcab.map((member) => (
+                {cabinet.map((member) => (
                     <MeetUsCard
-                        key={member.id}
-                        name={member.officer_name}
-                        pronouns={member.pronouns}
-                        position={member.role_title}
-                        major={member.major}
-                        year={member.year}
-                        photo={member.bio_pic.data.attributes.formats.large.url}
+                        key={member._id}
+                        name={member.cabinet_member_name}
+                        photo={member.cabinet_member_image[0].src}
                     />
                 ))}
             </div>

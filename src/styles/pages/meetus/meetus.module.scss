@@ -97,7 +97,8 @@
   }
 
   @include mixins.phone {
-    gap: 64px;
+    column-gap: 32px;
+    row-gap: 64px;
   }
 }
 
@@ -108,6 +109,8 @@
   align-items: center;
   flex-grow: 1;
   gap: 24px;
+
+  text-align: center;
 
   @include mixins.tablet {
     width: calc(calc(100% - 120px) / 4);

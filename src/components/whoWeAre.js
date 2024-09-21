@@ -14,17 +14,15 @@ export function InfoCard({ text }) {
     );
 }
 
-export function ConstitutionButton(link) {
+export function ConstitutionButton({ link }) {
     return (
-        <>
-            <a
-                className={`${styles.constitutionButton} `}
-                href={link}
-                target="_blank"
-            >
-                <button>{button.message}</button>
-            </a>
-        </>
+        <a
+            className={`${styles.constitutionButton} `}
+            href={link}
+            target="_blank"
+        >
+            <button>{button.message}</button>
+        </a>
     );
 }
 
@@ -55,10 +53,10 @@ export function WhoWeAre({ data }) {
                 <CardDots numDots={2} curCard={curCard} />
             </div>
             <div className={styles.button}>
-                <ConstitutionButton link={data.link} />
+                <ConstitutionButton link={data.constitution_link} />
             </div>
             <div className={`${styles.button} ${styles.mobile}`}>
-                <ConstitutionButton link={data.link} />
+                <ConstitutionButton link={data.constitution_link} />
             </div>
         </div>
     );

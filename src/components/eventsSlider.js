@@ -3,15 +3,7 @@ import { EventsCard } from '@/components/eventsCard';
 import { useState, useRef } from 'react';
 import { Dots } from './dots';
 
-// TODO: get photos for events
-
-// data -> event
-// event.id
-// event.event_title
-// event.event_description
-// event.event_image.data.attributes.formats.large.url
-
-export function EventsSlider({ data }) {
+export function EventsSlider({ events }) {
     const [eventIndex, setEventIndex] = useState(0);
     const eventRef = useRef(null);
 
@@ -32,21 +24,18 @@ export function EventsSlider({ data }) {
                     ref={eventRef}
                     onScroll={handleScroll}
                 >
-                    {data.map((event) => {
+                    {events.map((event) => {
                         return (
                             <EventsCard
-                                key={event.id}
+                                key={event._id}
                                 title={event.event_title}
                                 description={event.event_description}
-                                photo={
-                                    event.event_image.data.attributes.formats
-                                        .large.url
-                                }
+                                photo={event.event_image[0].src}
                             />
                         );
                     })}
                 </div>
-                <Dots numDots={data.length} curCard={eventIndex} />
+                <Dots numDots={events.length} curCard={eventIndex} />
             </div>
         </div>
     );
