@@ -104,7 +104,7 @@
   }
 }
 .gaegu_regular {
-  font-family: 'Gaegu', sans-serif;
+  font-family: var(--font-gaegu);
   font-weight: 400;
   font-style: normal;
   max-width: 1400px;

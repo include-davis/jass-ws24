@@ -2,7 +2,7 @@
 @import 'mixins';
 
 .main {
-  font-family: 'gaegu';
+  font-family: var(--font-gaegu);
   color: #f8f8f9 !important;
   background-color: #f8f8f9 !important;
 }
@@ -22,11 +22,11 @@
   }
 
   input, textarea {
-    font-family: 'Gaegu';
+    font-family: var(--font-gaegu);
     padding: 10px 14px;
     width: 100%;
     &::placeholder {
-        font-family: 'Gaegu';
+        font-family: var(--font-gaegu);
     }
   }
 }
@@ -37,7 +37,7 @@
 }
 
 .contactTitle {
-  font-family: 'Gaegu';
+  font-family: var(--font-gaegu);
   color: #2c3868;
   font-size: 4.2rem;
   margin-bottom: 7px;
@@ -48,7 +48,7 @@
 }
 
 .contactText {
-  font-family: 'Gaegu';
+  font-family: var(--font-gaegu);
   font-size: 1.5rem;
   color: #404447;
   margin-bottom: 24px;
@@ -58,7 +58,7 @@
 }
 
 .contactField {
-  font-family: 'Gaegu';
+  font-family: var(--font-gaegu);
   font-size: 1.5rem;
   color: #e40000;
   margin-bottom: 7px;
@@ -68,7 +68,7 @@
 }
 
 .label {
-  font-family: 'Gaegu';
+  font-family: var(--font-gaegu);
   font-size: 1.5rem;
   font-weight: bold;
   text-align: left;
@@ -153,7 +153,7 @@
 .submitButton {
   border: none;
   padding: 10px 20px;
-  font-family: 'Gaegu';
+  font-family: var(--font-gaegu);
   font-size: 1.2rem;
   font-weight: bold;
   cursor: pointer;

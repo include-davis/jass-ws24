@@ -2,7 +2,7 @@
 @import 'mixins';
 
 .footer {
-  font-family: 'Gaegu';
+  font-family: var(--font-gaegu);
   flex-direction: column;
 }
 
