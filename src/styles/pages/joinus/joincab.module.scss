@@ -5,7 +5,6 @@
   justify-content: space-between;
   align-items: center;
   text-align: left;
-
   > p {
     font-size: 1.375rem;
   }
@@ -19,12 +18,17 @@
     }
 }
 
+.description_list {
+    padding-left: 24px;
+}
+
 .card {
   padding: 17px;
   background-color: white;
   border-radius: 8px;
   width: calc(calc(100% - 24px) / 2);
   max-width: 500px;
+  cursor: pointer;
 
   text-align: left;
   flex-direction: column;

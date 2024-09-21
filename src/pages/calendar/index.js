@@ -2,7 +2,7 @@ import styles from '@/styles/pages/calendar/calendar.module.scss';
 
 export async function getStaticProps() {
     const calendar_res = await fetch(
-        `${process.env.HEARTH_CONNECTION_STRING}/calendar`
+        `${process.env.HEARTH_CONNECTION_STRING}/calendar?_published=true`
     );
     const calendar_json = await calendar_res.json();
 

@@ -8,9 +8,10 @@ const button = {
 
 export function InfoCard({ text }) {
     return (
-        <div className={styles.card}>
-            <p className={styles.cardText}>{text}</p>
-        </div>
+        <div
+            className={styles.card}
+            dangerouslySetInnerHTML={{ __html: text }}
+        ></div>
     );
 }
 

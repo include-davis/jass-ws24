@@ -5,12 +5,12 @@ import { Fragment } from 'react';
 
 export async function getStaticProps() {
     const join_us_res = await fetch(
-        `${process.env.HEARTH_CONNECTION_STRING}/join-us`
+        `${process.env.HEARTH_CONNECTION_STRING}/join-us?_published=true`
     );
     const join_us_json = await join_us_res.json();
 
     const cabinet_positions_res = await fetch(
-        `${process.env.HEARTH_CONNECTION_STRING}/cabinet-position`
+        `${process.env.HEARTH_CONNECTION_STRING}/cabinet-position?_published=true`
     );
     const cabinet_positions_json = await cabinet_positions_res.json();
 

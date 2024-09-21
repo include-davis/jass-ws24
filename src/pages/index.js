@@ -5,12 +5,12 @@ import { WhoWeAre } from '@/components/whoWeAre';
 
 export async function getStaticProps() {
     const home_res = await fetch(
-        `${process.env.HEARTH_CONNECTION_STRING}/home`
+        `${process.env.HEARTH_CONNECTION_STRING}/home?_published=true`
     );
     const home_json = await home_res.json();
 
     const event_res = await fetch(
-        `${process.env.HEARTH_CONNECTION_STRING}/event`
+        `${process.env.HEARTH_CONNECTION_STRING}/event?_published=true`
     );
     const event_json = await event_res.json();
 

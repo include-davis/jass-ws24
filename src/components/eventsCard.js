@@ -10,7 +10,10 @@ export function EventsCard({ title, description, photo }) {
             </div>
             <div className={styles.cardInfo}>
                 <h1 className={styles.cardTitle}>{title}</h1>
-                <p className={styles.cardDescription}>{description}</p>
+                <div
+                    className={styles.cardDescription}
+                    dangerouslySetInnerHTML={{ __html: description }}
+                ></div>
             </div>
         </div>
     );
