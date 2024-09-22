@@ -139,3 +139,15 @@
     text-align: center;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  .footerTop {
+    p, h1, a {
+      color: white;
+    }
+  }
+
+  .link {
+    color: white;
+  }
+}
